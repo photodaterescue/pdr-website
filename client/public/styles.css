@@ -605,7 +605,7 @@ body {
 /* AFFILIATES SECTION (FULLY FIXED)                          */
 /* ========================================================= */
 
-.section-affiliates {
+.section-partners {
   background: var(--bg-page);
   padding: 80px 20px 60px;
   /* FIXED: adds proper spacing so it becomes visible */
@@ -613,12 +613,12 @@ body {
   /* FIXED: clean separation from the Guides section */
 }
 
-.section-affiliates .section-inner {
+.section-partners .section-inner {
   max-width: 720px;
   margin: 0 auto;
 }
 
-.affiliate-strip {
+.partners-strip {
   padding: 22px 24px 26px;
   border-radius: var(--radius-card);
   border: 1px dashed #d6d3ff;
@@ -630,13 +630,13 @@ body {
   gap: 14px;
 }
 
-.affiliate-strip h2 {
+.partners-strip h2 {
   margin: 0 0 6px;
   font-size: 1.4rem;
   color: var(--text-main);
 }
 
-.affiliate-strip a.btn {
+.partners-strip a.btn {
   align-self: flex-start;
 }
 
