@@ -1,26 +1,602 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+      <title>Photo Date Rescue – Fix Wrong Photo Dates Automatically</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Photo Date Rescue automatically repairs wrong or missing photo dates from Google Photos, iCloud, WhatsApp, Messenger, OneDrive, SD cards, scans and more."
+    />
 
-    <meta property="og:title" content="Alex Dev | Creative Developer" />
-    <meta property="og:description" content="Portfolio of a creative developer specializing in building digital experiences." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://replit.com/public/images/opengraph.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@replit" />
-    <meta name="twitter:title" content="Alex Dev | Creative Developer" />
-    <meta name="twitter:description" content="Portfolio of a creative developer specializing in building digital experiences." />
-    <meta name="twitter:image" content="https://replit.com/public/images/opengraph.png" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./favicon.png" />
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css" />
   </head>
+
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- ===================================================== -->
+    <!-- Sticky Top Navigation Bar (with restored original logo) -->
+    <!-- ===================================================== -->
+    <header class="site-header">
+      <div class="nav-inner">
+
+        <!-- === Restored Brand (logo-circle.png + wordmark) === -->
+        <a href="#top" class="brand">
+          <img
+            src="./assets/pdr-logo-circle.png"
+            alt="Photo Date Rescue logo"
+            class="brand-mark"
+          />
+          <span class="brand-wordmark">Photo Date Rescue</span>
+        </a>
+
+        <!-- Primary navigation -->
+        <nav class="primary-nav">
+          <a href="#how-it-works">How it works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#guides">Guides</a>
+          <a href="#faq">FAQ</a>
+          <a href="#support">Support</a>
+          <a href="#affiliates">Affiliates</a>
+        </nav>
+
+        <!-- Top-right CTAs -->
+        <div class="nav-cta">
+          <a
+            class="btn btn-primary"
+            href="https://app.photodaterescue.com"
+            target="_blank"
+            rel="noopener"
+          >
+            Try free web demo
+          </a>
+          <a class="btn btn-outline" href="#pricing">Get desktop app</a>
+        </div>
+
+      </div>
+    </header>
+
+    <main id="top">
+
+      <!-- ===================================================== -->
+      <!-- HERO – What is Photo Date Rescue?                    -->
+      <!-- ===================================================== -->
+      <section id="hero" class="section hero">
+        <div class="hero-inner">
+          <!--<p class="hero-kicker">What is Photo Date Rescue?</p>
+
+          <h1 class="hero-title">Photo Date Rescue</h1>-->
+
+          <!-- Static mission line (matches web app) -->
+          <p class="hero-static-label">
+            Fix wrong photo dates from any device, app, or cloud — instantly.
+          </p>
+
+          <!-- Rotating pain-points (matches web app behaviour) -->
+          <div class="hero-rotator">
+            <p id="hero-phrase" class="hero-phrase"></p>
+
+            <div class="hero-controls">
+              <div id="hero-dots" class="hero-dots"></div>
+            </div>
+          </div>
+
+          <!-- Hero buttons -->
+          <div class="hero-actions">
+            <a
+              class="btn btn-primary btn-hero"
+              href="https://app.photodaterescue.com"
+              target="_blank"
+              rel="noopener"
+            >
+              Try free (100&nbsp;MB web demo)
+            </a>
+            <a class="btn btn-outline btn-hero" href="#pricing">
+              View desktop pricing
+            </a>
+          </div>
+          
+          <!-- Privacy badge -->
+          <p class="privacy-banner">
+            🔒 100% Private — web preview uses temporary processing only; the
+            desktop app runs entirely on your own computer.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- WHY PDR EXISTS + WHAT IS PDR                         -->
+      <!-- ===================================================== -->
+      <section id="why" class="section section-why">
+        <div class="section-inner two-col">
+
+          <!-- LEFT COLUMN -->
+          <div class="why-col">
+            <h2 class="section-title">Why PDR Exists</h2>
+
+            <p>
+              Across phones, clouds, exports, WhatsApp downloads, old devices, Takeout
+              fragments, SD cards, and forgotten backups — your life slowly drifts out
+              of order. Birthdays shift. Holidays detach from their seasons. The first
+              steps, first words, first everything… get buried beside screenshots and
+              duplicates.
+            </p>
+
+            <p>
+              For years, there was no precise, trustworthy way to repair this damage.
+              PDR exists to restore what should never have fallen apart: the true
+              timeline of your life — automatically, safely, and at scale.
+            </p>
+
+            <p>
+              It understands Google Photos, Apple Photos, iCloud, WhatsApp, Messenger,
+              OneDrive, SD cards, scans, and decades of devices. It reads EXIF
+              metadata, interprets JSON sidecars, reconstructs filenames, and applies
+              intelligent fallback logic where data is missing completely.
+            </p>
+
+            <p class="why-highlight">
+              PDR isn’t about editing photos.<br />
+              It is about restoring memory, clarity, and structure — for families,
+              archivists, photographers, professionals, and anyone who wants their
+              story put back in the right order.
+            </p>
+            </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="why-col">
+            <h2 class="section-title">What Is PDR?</h2>
+
+            <p>
+              PDR is a dedicated system for rebuilding your photo history with
+              accuracy that no cloud, app, or device provides on its own. It analyses
+              every signal your files contain — dates, metadata, filenames, folder
+              patterns, and hidden clues — and reconstructs the moment each photo was
+              actually taken.
+            </p>
+
+            <p>
+              It handles real-world chaos effortlessly: mixed Android + iPhone
+              libraries, years of WhatsApp media, decades of uploads, device swaps,
+              corrupted timestamps, Takeout dumps, and boxes of SD cards. It separates
+              duplicates, restores order, and produces a clean, chronological timeline
+              you can trust.
+            </p>
+
+            <p>
+              Behind the scenes, PDR uses layered logic: EXIF recovery, XMP parsing,
+              JSON reconstruction, filename inference, and consistent fallback rules —
+              all designed to rebuild your library even when metadata fails entirely.
+            </p>
+
+            <p class="why-highlight">
+              The result is a single, coherent photo history.<br />
+              A master library you can archive, back up, re-upload, or share with your
+              family — finally organised the way it always should have been.
+            </p>
+            </div>
+
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- HOW IT WORKS                                          -->
+      <!-- ===================================================== -->
+      <section id="how-it-works" class="section section-steps">
+        <div class="section-inner">
+          <h2 class="section-title">How it works</h2>
+          <p class="section-tagline">
+            Premium, simple guidance for restoring your entire photo life.
+          </p>
+
+          <div class="step-grid">
+            <article class="step-card">
+              <div class="step-number">1</div>
+              <h3>Export your photos</h3>
+              <p>
+                Get your photos and videos out of Google Photos, iCloud,
+                WhatsApp, Messenger, OneDrive, SD cards, phones and cameras — at
+                full quality.
+              </p>
+              <ul>
+                <li>
+                  Use <strong>Export Unmodified Originals</strong> from Apple.
+                </li>
+                <li>
+                  Keep Google’s <strong>JSON sidecars</strong> — they’re
+                  metadata gold.
+                </li>
+                <li>Avoid compressing or renaming anything yet.</li>
+              </ul>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">2</div>
+              <h3>Drop everything into PDR</h3>
+              <p>
+                Don’t tidy. Don’t rename. Don’t overthink it. Put all your chaos
+                into a single PDR input folder, then:
+              </p>
+              <ul>
+                <li>
+                  Use the <strong>web demo</strong> for a 100&nbsp;MB preview.
+                </li>
+                <li>
+                  Use the <strong>desktop app</strong> for full collections
+                  (10&nbsp;GB, 100&nbsp;GB, 1&nbsp;TB+).
+                </li>
+                <li>
+                  PDR repairs EXIF, XMP, filenames and timestamps automatically.
+                </li>
+              </ul>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">3</div>
+              <h3>Save your new, clean timeline</h3>
+              <p>
+                PDR outputs a perfectly chronological library with safe, clean
+                filenames. This becomes your new truth layer.
+              </p>
+              <ul>
+                <li>Keep your originals in a separate backup folder.</li>
+                <li>Re-upload the PDR output to Google Photos or iCloud.</li>
+                <li>Build one master archive for your whole family.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- PRICING                                                -->
+      <!-- ===================================================== -->
+      <section id="pricing" class="section section-pricing">
+        <div class="section-inner">
+          <h2 class="section-title section-title-center">PDR Pricing</h2>
+          <p class="section-tagline section-tagline-center">
+            Start with the free web demo. Upgrade when you’re ready to restore
+            everything.
+          </p>
+
+          <div class="pricing-grid">
+            <!-- Free -->
+            <article class="pricing-card">
+              <h3 class="plan-name">Free</h3>
+              <p class="plan-price">$0</p>
+              <p class="plan-period">Web preview only</p>
+              <ul class="plan-features">
+                <li>Fix ZIPs up to 100&nbsp;MB in-browser.</li>
+                <li>Instant preview of corrected dates.</li>
+                <li>Works with Google Takeout / iCloud / WhatsApp exports.</li>
+                <li>No install required.</li>
+                <li>
+                  Files processed in temporary storage only, then deleted.
+                </li>
+                <li><strong>ZIP files only</strong> (up to 100&nbsp;MB).</li>
+              </ul>
+              <a
+                class="btn btn-primary btn-card"
+                href="https://app.photodaterescue.com"
+                target="_blank"
+                rel="noopener"
+              >
+                Free web demo
+              </a>
+            </article>
+
+            <!-- Monthly -->
+            <article class="pricing-card">
+              <h3 class="plan-name">Monthly</h3>
+              <p class="plan-price">$16.99</p>
+              <p class="plan-period">Full desktop access</p>
+              <ul class="plan-features">
+                <li>Fix unlimited ZIPs and folders.</li>
+                <li>Restore EXIF “Date Taken” + XMP timestamps.</li>
+                <li>Repair WhatsApp / Messenger / social downloads.</li>
+                <li>Correct Google Takeout &amp; Apple Photos exports.</li>
+                <li>Fix HEIC / JPG / PNG / MP4 timestamp issues.</li>
+                <li>Smart renaming for clean timelines.</li>
+                <li>Safe processing — originals untouched.</li>
+                <li>Use on up to <strong>3 devices</strong>.</li>
+              </ul>
+              <a
+                class="btn btn-outline btn-card"
+                href="https://pay.photodaterescue.com/buy/ea41d61a-40b5-4be1-9130-2a0c3ee94ebb?embed=1"
+                target="_blank"
+                rel="noopener"
+              >
+                Buy monthly
+              </a>
+            </article>
+
+            <!-- Yearly -->
+            <article class="pricing-card pricing-card--yearly">
+              <div class="plan-badge">Best value</div>
+              <h3 class="plan-name">Yearly</h3>
+              <p class="plan-price">$99</p>
+              <p class="plan-period">For ongoing, long-term photo care</p>
+              <ul class="plan-features">
+                <li>Everything in Monthly.</li>
+                <li>Ideal for large or growing collections.</li>
+                <li>Receive new features as they’re released.</li>
+                <li>Supports large folders (10&nbsp;GB–500&nbsp;GB+).</li>
+                <li>Use on up to <strong>3 devices</strong>.</li>
+              </ul>
+              <a
+                class="btn btn-outline btn-card"
+                href="https://pay.photodaterescue.com/buy/c6ede893-fa25-4d63-95cf-17d099dfe3f0?embed=1"
+                target="_blank"
+                rel="noopener"
+              >
+                Buy yearly
+              </a>
+            </article>
+
+            <!-- Lifetime -->
+            <article class="pricing-card pricing-card--lifetime">
+              <h3 class="plan-name">Lifetime</h3>
+              <p class="plan-price">$199</p>
+              <p class="plan-period">One-time payment</p>
+              <ul class="plan-features">
+                <li>Everything in Yearly.</li>
+                <li>Permanent access for lifetime of the product.</li>
+                <li>No subscriptions — one payment.</li>
+                <li>Best long-term savings for loyal users.</li>
+                <li>Use on up to <strong>10 devices</strong>.</li>
+              </ul>
+              <button class="btn btn-disabled btn-card" disabled>
+                Unlock after first billing cycle
+              </button>
+              <p class="lifetime-note">
+                Available only after one successful Monthly or Yearly payment.
+              </p>
+            </article>
+          </div>
+
+          <p class="pricing-footnote">
+            Some people fix a single ZIP, export, or Takeout — and never need
+            the tool again. Others fix new batches every year as phones, clouds,
+            and apps evolve. Subscriptions keep the app sustainable and
+            continuously updated, while Lifetime rewards loyal users fairly.
+          </p>
+          <p class="hero-footnote">
+            Web demo: ZIPs up to 100&nbsp;MB. Desktop app: unlimited folders,
+            ZIPs and devices.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- GUIDES                                                 -->
+      <!-- ===================================================== -->
+      <section id="guides" class="section section-guides">
+        <div class="section-inner">
+          <h2 class="section-title">Guides: getting your photos in and out</h2>
+          <p class="section-tagline">
+            Short, practical paths for every kind of chaos — cloud, messaging,
+            devices and scans.
+          </p>
+
+          <div class="guide-grid">
+
+            <!-- Cloud Services -->
+            <div class="guide-card">
+              <h3>Cloud Services</h3>
+              <p><strong>Google Photos:</strong> export with Takeout, keep JSON sidecars, avoid tiny ZIP fragments.</p>
+              <p><strong>Apple Photos / iCloud:</strong> export Unmodified Originals, keep HEIC + MOV + Live Photos together.</p>
+              <p><strong>OneDrive / Dropbox:</strong> PDR restores timelines even when camera-roll folders are scattered.</p>
+              <p><strong>Facebook / Instagram / X / YouTube:</strong> download at full resolution where possible — PDR fixes whatever timestamps survive.</p>
+            </div>
+
+            <!-- Social Apps -->
+            <div class="guide-card">
+              <h3>Social Apps</h3>
+              <p><strong>WhatsApp:</strong> filenames + folder patterns let PDR rebuild dates when EXIF is stripped.</p>
+              <p><strong>Messenger / Telegram / Signal:</strong> PDR reconstructs timelines from partial or missing metadata.</p>
+              <p><strong>Snapchat / TikTok:</strong> PDR places short clips and exports back into their correct life-story moments.</p>
+              <p>Ideal for multi-year chat archives, group albums, and shared family histories.</p>
+            </div>
+
+            <!-- Hardware Devices -->
+            <div class="guide-card">
+              <h3>Hardware Devices</h3>
+              <p><strong>Phones & Cameras:</strong> copy DCIM folders directly; PDR reads every real timestamp it can identify.</p>
+              <p><strong>Old Devices:</strong> PDR repairs broken chronology from forgotten backups and mixed-generation hardware.</p>
+              <p><strong>External Drives:</strong> perfect for decades of scattered archives across different machines.</p>
+              <p>Best for families consolidating long-term device histories.</p>
+            </div>
+
+            <!-- Scans & Legacy Media -->
+            <div class="guide-card">
+              <h3>Scans & Legacy Media</h3>
+              <p><strong>Old Prints & Film:</strong> after digitising, PDR helps you build a clean timeline for your pre-digital life.</p>
+              <p><strong>Bulk Scan Projects:</strong> organise scanned folders so PDR can rebuild approximate chronological order.</p>
+              <p><strong>Mixed Formats:</strong> integrates scans alongside modern photos without disrupting your timeline.</p>
+              <p>Ideal for families digitising decades of albums.</p>
+            </div>
+
+            <!-- Tools & Recommendations -->
+            <div class="guide-card">
+              <h3>Tools & Recommendations</h3>
+              <p>Suggested apps, hardware, and workflows that pair perfectly with PDR for fast, organised photo management.</p>
+              <p>Export tools, folder strategies, backup drives, scanning devices, and more.</p>
+              <p>Includes affiliate-friendly recommendations that genuinely help users build and maintain a master library.</p>
+              <p>Your go-to toolkit for keeping everything tidy long-term.</p>
+            </div>
+
+            <!-- Picture for 6th grid card -->
+            <div class="guide-card placeholder-card">
+              <img src="assets/pdr-guides-lavender-field.jpg" style="width:100%; border-radius:12px;" />
+            </div>
+
+          </div> <!-- end guide-grid -->
+        </div> <!-- end section-inner -->
+      </section> <!-- end guides -->
+
+
+      <!-- ===================================================== -->
+      <!-- AFFILIATES / PARTNER SIGNUP                           -->
+      <!-- ===================================================== -->
+      <section id="affiliates" class="section section-affiliates">
+        <div class="section-inner">
+          <div class="affiliate-strip">
+            <h2 class="section-title">Affiliates & Partners</h2>
+            <p>
+              If you run a photo-organising, digitising, or printing service,
+              PDR can quietly power the “date-fixing” layer behind your offers.
+              Deliver cleaner libraries, better albums, and more meaningful
+              photo products for your clients.
+            </p>
+
+            <a class="btn btn-outline"
+               href="mailto:partners@photodaterescue.com?subject=PDR Affiliate or Partner Interest">
+              Enquire about affiliate & partner options
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+      
+      <!-- ===================================================== -->
+      <!-- FAQ                                                    -->
+      <!-- ===================================================== -->
+      <section id="faq" class="section section-faq">
+        <div class="section-inner">
+          <h2 class="section-title">Key questions people ask</h2>
+          <p class="section-tagline">
+            Helping you feel confident from the very first click.
+          </p>
+
+          <div class="faq-grid">
+            <article class="faq-card">
+              <h3>Will PDR work with all my photos — even the messy ones?</h3>
+              <p>
+                Yes. PDR is built for real-world chaos: Google Photos, iCloud,
+                WhatsApp, Messenger, OneDrive, Takeout ZIPs, SD cards, old
+                phones, scanned prints and more.
+              </p>
+            </article>
+
+            <article class="faq-card">
+              <h3>What if my dates are completely wrong or missing?</h3>
+              <p>
+                PDR uses layered detection and reconstruction. If valid metadata
+                exists, it fixes it. If filenames hold clues, it restores them.
+                If nothing exists, PDR applies consistent fallback logic to
+                rebuild chronological order.
+              </p>
+            </article>
+
+            <article class="faq-card">
+              <h3>Is this safe for my personal memories?</h3>
+              <p>
+                Web preview uses temporary processing only and deletes files
+                after download. The desktop app runs entirely on your own
+                computer — your photos never leave your device.
+              </p>
+            </article>
+
+            <article class="faq-card">
+              <h3>Is this going to take me hours?</h3>
+              <p>
+                No. You prepare exports once, then drag folders into PDR and let
+                it do the work. Most libraries process in minutes, not days.
+              </p>
+            </article>
+
+            <article class="faq-card">
+              <h3>Will it handle older devices and backups?</h3>
+              <p>
+                Yes. Old Androids, early iPhones, digital cameras, WhatsApp
+                backups, Google Takeout dumps, SD cards and scanned albums are
+                all part of the design brief.
+              </p>
+            </article>
+
+            <article class="faq-card">
+              <h3>How much does this really cost? Am I locked in?</h3>
+              <p>
+                You’re never locked in. Start with the free web preview. Choose
+                Monthly or Yearly when you’re ready, and unlock Lifetime after
+                your first billing cycle if that suits your long-term plans.
+              </p>
+            </article>
+
+            <article class="faq-card faq-card-full">
+              <h3>Why isn’t there already an app that does this properly?</h3>
+              <p>
+                Because the problem is messy, technical, and unglamorous. Most
+                developers avoid it. PDR was built because someone finally cared
+                enough to solve it properly.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- PRIVACY GUARANTEE                                      -->
+      <!-- ===================================================== -->
+      <section id="privacy" class="section section-privacy">
+        <div class="section-inner">
+          <article class="privacy-card">
+            <h2>Privacy guarantee</h2>
+            <p>
+              <strong>Web preview:</strong> files are processed only in
+              temporary storage, never retained, and deleted automatically
+              immediately after your download completes.
+            </p>
+            <p>
+              <strong>Desktop app:</strong> everything runs locally on your own
+              computer — your photos never leave your device.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SUPPORT / CONTACT                                      -->
+      <!-- ===================================================== -->
+      <section id="support" class="section section-support">
+        <div class="section-inner">
+          <h2 class="section-title">Need help or want to talk?</h2>
+          <p class="section-tagline">
+            If you have questions about huge libraries, edge-case exports, or
+            professional use, reach out and we’ll help you plan the smoothest
+            path.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="mailto:support@photodaterescue.com?subject=Photo%20Date%20Rescue%20support"
+          >
+            Contact support
+          </a>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- FOOTER                                                 -->
+      <!-- ===================================================== -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <p>© 2025 Photo Date Rescue. All rights reserved.</p>
+          <nav class="footer-nav">
+            <a href="#privacy">Privacy</a>
+            <span>·</span>
+            <a href="#faq">FAQ</a>
+            <span>·</span>
+            <a href="#pricing">Pricing</a>
+          </nav>
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js" defer></script>
   </body>
 </html>
