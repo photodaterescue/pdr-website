@@ -58,22 +58,109 @@
       </div>
     </header>
 
-    <main>
+    <main class="guide-content">
       <section class="section">
         <div class="section-inner">
-          <h1 class="section-title">Social Apps</h1>
-          <p class="section-tagline">
-            Recovering timelines from chat histories and social media downloads.
+          <h1 class="section-title section-title-center">Social Apps</h1>
+          <p class="section-tagline section-tagline-center">
+            Recovering accurate timelines from chat history and social media downloads — even when metadata is stripped.
           </p>
           
-          <div class="why-card">
-            <h3>Handling Social Media Exports</h3>
-            <ul>
-                <li><strong>WhatsApp:</strong> WhatsApp strips EXIF metadata but often encodes the date in the filename (e.g., IMG-20230101-WA0001). PDR parses these filenames to restore the correct date taken.</li>
-                <li><strong>Messenger / Telegram / Signal:</strong> Similar to WhatsApp, these apps often modify metadata. PDR uses file attributes and naming patterns to reconstruct the timeline.</li>
-                <li><strong>Snapchat / TikTok:</strong> Downloaded clips often lose their original creation time. PDR can help place them back in context based on export dates or filenames.</li>
-                <li><strong>Consolidating Chats:</strong> If you have multiple backups from different years or devices, put them all in one folder. PDR will sort them out chronologically.</li>
-            </ul>
+          <div class="guide-section">
+            <h2>The "Chat App" Problem</h2>
+            <p>Most messaging apps and social platforms strip sensitive metadata (EXIF dates, GPS location) the moment you hit send. This protects privacy, but it destroys your timeline when you try to save those photos years later.</p>
+            
+            <p>PDR solves this by looking where others don't: filenames, embedded JSON data, and file system attributes.</p>
+
+            <hr class="guide-divider">
+
+            <h2>1. Quick Reference — Recovery Strategy by App</h2>
+            
+            <div class="guide-table-container">
+              <table class="guide-table">
+                <thead>
+                  <tr>
+                    <th>App / Platform</th>
+                    <th>Metadata Status</th>
+                    <th>Best Export Method</th>
+                    <th>PDR Recovery Strategy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>WhatsApp</strong></td>
+                    <td><span class="status-icon cross">✗</span> Stripped completely</td>
+                    <td>Copy "WhatsApp Images" folder</td>
+                    <td>Parses <code>IMG-YYYYMMDD-WA...</code> filenames</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Facebook / Messenger</strong></td>
+                    <td><span class="status-icon cross">✗</span> Stripped completely</td>
+                    <td>"Download Your Information" (JSON)</td>
+                    <td>Rebuilds date from JSON export data</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Instagram</strong></td>
+                    <td><span class="status-icon cross">✗</span> Stripped</td>
+                    <td>"Download Your Information"</td>
+                    <td>Uses export structure + filenames</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Telegram</strong></td>
+                    <td><span class="status-icon check">✓</span> Sometimes preserved</td>
+                    <td>Desktop App Export</td>
+                    <td>Reads EXIF if present, falls back to file date</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Snapchat</strong></td>
+                    <td><span class="status-icon cross">✗</span> Stripped</td>
+                    <td>"Memories" Download</td>
+                    <td>Infers date from export structure</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+             <hr class="guide-divider">
+          </div>
+
+          <div class="guide-section">
+            <h2>2. Detailed Workflows</h2>
+            
+            <h3>WhatsApp</h3>
+            <p>WhatsApp is the most common source of "undated" photos. Thankfully, it saves files with a very specific filename pattern.</p>
+            <p><strong>The Fix:</strong> PDR automatically detects <code>IMG-20190615-WA0002.jpg</code> and understands it was taken on June 15, 2019. It then writes this date back into the file's standard EXIF metadata so other apps can read it.</p>
+            
+            <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
+
+            <h3>Facebook & Messenger</h3>
+            <p>Downloading photos one-by-one results in useless filenames like <code>received_987234.jpg</code>. The only reliable way to fix this is a bulk export.</p>
+            <p><strong>The Fix:</strong></p>
+            <ol>
+                <li>Go to Facebook Settings → "Download Your Information".</li>
+                <li>Request a download of "Messages" and "Posts".</li>
+                <li>Choose <strong>JSON</strong> format (High Quality).</li>
+                <li>Feed the extracted folder into PDR.</li>
+            </ol>
+            
+            <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
+
+            <h3>Instagram</h3>
+            <p>Like Facebook, Instagram strips everything. Use the "Download Your Information" tool in Instagram settings.</p>
+            <p><strong>Tip:</strong> Request JSON format if available. PDR scans these exports to rematch photos with their original upload timestamps.</p>
+          </div>
+
+          <div class="guide-section">
+             <h2>3. Handling "Received" and Random Files</h2>
+             <p>Sometimes you just have a folder full of <code>image5.jpg</code>, <code>download.png</code>, or <code>received_123.jpg</code> with absolutely no metadata or filename clues.</p>
+             
+             <h3>PDR's Last Resort Logic</h3>
+             <p>When all else fails, PDR looks at:</p>
+             <ul>
+                 <li><strong>File System Creation Date:</strong> If the file hasn't been moved across drives too many times, this might still be accurate.</li>
+                 <li><strong>Folder Context:</strong> If the photo is inside a folder named <code>2018-Christmas</code>, PDR can use that context.</li>
+             </ul>
+             <p>It ensures that even your messiest folders get sorted into a logical chronological order, rather than being dumped at "Today's Date".</p>
           </div>
         </div>
       </section>
