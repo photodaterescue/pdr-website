@@ -1,0 +1,158 @@
+2. Exporting from Each Social Platform — Premium, Optimal Best Practices
+WhatsApp
+
+Reality: WhatsApp deletes all EXIF and compresses JPEGs.
+Good news: Filenames carry exact timestamps.
+
+Optimal workflow
+
+Open a chat → Tap Export Chat → choose Media Included.
+
+Export each important chat individually.
+
+Extract everything.
+
+Place all exported chats into a single PDR_Input folder.
+
+PDR detects timestamps inside filenames → rebuilds true order.
+
+Common Issues PDR Fixes
+
+Images taken minutes apart but shuffled
+
+Mixed device types (Android/iPhone)
+
+Missing months/years due to phone changes
+
+Duplicate media from forwarded messages
+
+Messenger (Facebook Messenger)
+
+Why this is better than random downloads:
+Only the full "Download Your Information" export preserves message/media grouping.
+
+Optimal workflow
+
+Visit Facebook → Settings → “Download Your Information”.
+
+Select JSON format and Media.
+
+Download the export once ready.
+
+Extract and merge all media folders into PDR_Input.
+
+Run PDR — it reconstructs real chronology using filename + fallback patterns.
+
+Telegram
+
+Strength: Telegram generally preserves original quality.
+
+Optimal workflow
+
+Use Telegram Desktop → Export Data.
+
+Select Photos, Videos, Documents, Voice Notes.
+
+Export locally (not cloud-only).
+
+Feed the exported folders into PDR.
+
+Signal
+
+Why Signal is unusually good:
+Local backups include consistent filenames and folder structures.
+
+Optimal workflow
+
+Go to Signal Settings → Chats → Create Backup.
+
+Extract backup.
+
+Place images + videos into PDR_Input.
+
+Run PDR.
+
+Snapchat
+
+What makes Snapchat difficult:
+Snaps lose EXIF and rely on internal metadata that isn’t always included.
+
+Optimal workflow
+
+Visit Snapchat My Data → request an export.
+
+Extract memories, videos, stories.
+
+Place them in PDR_Input.
+
+PDR will reconstruct using filename inference + event grouping.
+
+TikTok
+
+TikTok creators often export to rebuild content calendars.
+
+Optimal workflow
+
+Request Personal Data Export.
+
+Extract photos, videos, drafts.
+
+Add them to PDR_Input.
+
+PDR sorts by filename + embed timestamps (for MP4s).
+
+Instagram
+
+Albums break apart — PDR fixes this.
+
+Optimal workflow
+
+Visit Instagram → “Download Your Information”.
+
+Select JSON + Media.
+
+Extract and place everything into PDR_Input.
+
+PDR rebuilds chronology and detects album pairings when possible.
+
+YouTube
+
+Creators use PDR to align filming timelines across multiple cameras.
+
+Optimal workflow
+
+Use Takeout → YouTube or export via YouTube Studio.
+
+Extract video files.
+
+Run PDR to align clips by creation timestamps.
+
+3. After PDR — Where Should Your Fixed Social Media Library Live?
+Option A — Reupload to the cloud
+
+Use Google Photos, iCloud, Amazon Photos, OneDrive, etc.
+
+Option B — Keep a private creator archive
+
+Use SSD + HDD + cloud backup (3-2-1 rule).
+
+Option C — Build a master “Life Timeline”
+
+Combine social exports + phone photos + camera archives.
+
+4. Social App Pain Points — and How You Avoid Them
+1. Missing EXIF
+
+PDR uses filename inference + fallback metadata to rebuild chronology.
+
+2. Compressed, low-quality images
+
+Not fixable, but PDR keeps them placed correctly in the timeline.
+
+3. Albums and groupings broken
+
+PDR detects patterns and reconstructs context.
+
+4. Mixed device timelines
+
+PDR synchronises events across Android, iPhone, Windows, Mac, cloud exports.
