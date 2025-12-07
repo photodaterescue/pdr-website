@@ -199,8 +199,11 @@ body {
 
 .btn-hero {
   /* Matching standard .btn size as requested */
-  padding: 8px 18px;
-  font-size: 0.88rem;
+  padding: 8px 18px !important;
+  font-size: 0.88rem !important;
+  line-height: 1.5 !important; 
+  height: auto !important;
+  min-height: 0 !important;
 }
 
 /* ========================================================= */
