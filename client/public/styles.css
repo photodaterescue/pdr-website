@@ -718,17 +718,17 @@ body {
 /* AFFILIATES SECTION (FULLY FIXED)                          */
 /* ========================================================= */
 
-.section-affiliates {
+.section-partners {
   background: var(--bg-page);
   padding-top: 76px; /* Increased visual weight */
 }
 
-.section-affiliates .section-inner {
+.section-partners .section-inner {
   max-width: 720px;
   margin: 0 auto;
 }
 
-.affiliate-strip {
+.partners-strip {
   padding: 22px 24px 26px;
   border-radius: var(--radius-card);
   border: 1px dashed #d6d3ff;
@@ -740,20 +740,20 @@ body {
   gap: 14px;
 }
 
-.affiliate-strip h2 {
+.partners-strip h2 {
   margin: 0 0 6px;
   font-size: 1.4rem;
   color: var(--text-main);
 }
 
-.affiliate-strip .btn-outline {
+.partners-strip .btn-outline {
   align-self: flex-start;
   border-width: 2px; /* Bolder outline */
   font-weight: 600;
   box-shadow: 0 4px 12px rgba(108, 99, 255, 0.08); /* Micro-shadow */
 }
 
-.affiliate-strip .btn-outline:hover {
+.partners-strip .btn-outline:hover {
   box-shadow: 0 6px 16px rgba(108, 99, 255, 0.15);
   transform: translateY(-2px);
 }
