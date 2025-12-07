@@ -657,6 +657,11 @@ body {
   margin-top: 22px;
   font-size: 0.82rem;
   color: var(--text-soft);
+  text-align: center;
+}
+
+.section-pricing .hero-footnote {
+  text-align: center;
 }
 
 /* ========================================================= */
@@ -740,7 +745,7 @@ body {
 .partners-strip {
   padding: 22px 24px 26px;
   border-radius: var(--radius-card);
-  border: 1px dashed #d6d3ff;
+  border: 1px solid var(--border-subtle); /* Changed from dashed to solid */
   background: #faf9ff;
   font-size: 0.9rem;
   color: var(--text-soft);
@@ -834,6 +839,8 @@ body {
   border: 1px solid #e1def7;
   box-shadow: var(--shadow-card);
   max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .privacy-card h2 {
