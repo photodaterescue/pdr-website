@@ -509,7 +509,7 @@ body {
 /* Yearly badge */
 
 .pricing-card--yearly {
-  background: #fffbe8;
+  background: #FFF8E6;
 }
 
 .pricing-card--yearly .plan-badge {
@@ -518,7 +518,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   right: auto;
-  background: radial-gradient(circle, var(--accent-gold) 0%, var(--lavender) 100%);
+  background: var(--lavender);
   color: #ffffff;
   padding: 4px 12px;
   border-radius: var(--radius-pill);
@@ -528,20 +528,25 @@ body {
   font-weight: 600;
   white-space: nowrap;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.pricing-card--yearly .plan-badge:hover {
+  box-shadow: 0 0 0 3px rgba(140, 123, 255, 0.3);
 }
 
 /* Specific button styling for Yearly */
 .pricing-card--yearly .btn-outline {
-  background: radial-gradient(circle, var(--accent-gold) 0%, var(--lavender) 100%);
-  color: #ffffff;
-  border: none;
-  box-shadow: 0 4px 12px rgba(140, 123, 255, 0.25);
+  background: #ffffff;
+  color: var(--lavender-deep);
+  border: 1px solid var(--lavender);
+  box-shadow: 0 4px 12px rgba(140, 123, 255, 0.15);
 }
 
 .pricing-card--yearly .btn-outline:hover {
+  background: var(--lavender-soft);
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 16px rgba(140, 123, 255, 0.35);
-  opacity: 0.95;
+  box-shadow: 0 6px 16px rgba(140, 123, 255, 0.25);
 }
 
 /* Lifetime ripple gradient */
