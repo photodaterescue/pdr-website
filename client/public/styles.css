@@ -948,7 +948,7 @@ body {
 
 .guide-table th,
 .guide-table td {
-  padding: 16px 20px;
+  padding: 20px 24px; /* Increased padding +4px */
   text-align: left;
   border-bottom: 1px solid #f0f0f5;
   vertical-align: top;
@@ -990,13 +990,13 @@ body {
 /* Guide Content Styling */
 .guide-content h2 {
   font-size: 1.8rem;
-  margin: 48px 0 24px;
+  margin: 58px 0 30px; /* Increased margins: +10px top, +6px bottom */
   color: var(--text-main);
 }
 
 .guide-content h3 {
   font-size: 1.4rem;
-  margin: 32px 0 16px;
+  margin: 42px 0 22px; /* Increased margins: +10px top, +6px bottom */
   color: var(--text-main);
 }
 
@@ -1054,6 +1054,66 @@ body {
   color: var(--text-main);
   font-weight: 500;
   box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* Guide specific additions */
+.guide-divider {
+  border: 0;
+  border-top: 1px solid rgba(140, 123, 255, 0.12);
+  width: 70%;
+  margin: 40px auto;
+}
+
+.guide-btn-grid {
+  margin-top: 24px; /* Reduced from default */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.guide-cloud-btn {
+  background: #fff;
+  padding: 12px 16px;
+  border: 1px solid #e1def7;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  transition: all 0.2s ease;
+}
+
+.guide-cloud-btn:hover {
+  border-color: var(--lavender);
+  color: var(--lavender-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(108, 99, 255, 0.08);
+}
+
+.guide-cloud-btn svg {
+  color: var(--lavender-soft); /* Default icon color: lavender-soft (which is usually #efecff, but might be too light on white bg. Let's use a slightly darker shade if needed, or keep lavender-accent #8C7BFF) */
+  /* Re-reading user request: "lavender-soft default". If lavender-soft is #efecff, it's very light. 
+     Wait, user said "lavender-soft default". I'll use var(--lavender) or var(--lavender-accent) which is more visible, 
+     or maybe they meant the variable name. Let's stick to var(--lavender) as a soft purple, 
+     or maybe create a new specific color if needed. 
+     Actually, looking at variables: --lavender: #A99CFF; --lavender-soft: #efecff. 
+     #efecff is nearly white. I suspect they might mean the color OF lavender soft, or maybe standard lavender.
+     I'll use var(--lavender) for better visibility as "soft" implies not the strong deep one.
+  */
+  color: var(--lavender); 
+  width: 18px;
+  height: 18px;
+  stroke-width: 2px;
+  transition: color 0.2s ease;
+}
+
+.guide-cloud-btn:hover svg {
+  color: var(--lavender-deep);
 }
 
 
