@@ -10,7 +10,8 @@
   --text-muted: #5b5a75;
   --text-soft: #7a7a96;
 
-  --lavender: #8c7bff;
+  --lavender: #A99CFF;
+  --lavender-accent: #8C7BFF;
   --lavender-soft: #efecff;
   --lavender-deep: #6b5aff;
 
@@ -123,7 +124,7 @@ body {
   width: 0;
   height: 2px;
   border-radius: 1px;
-  background: linear-gradient(90deg, var(--lavender), var(--accent-gold));
+  background: linear-gradient(90deg, var(--lavender-accent), var(--accent-gold));
   transition: width 0.22s ease;
 }
 
@@ -174,7 +175,7 @@ body {
 .btn-outline {
   background: rgba(255, 255, 255, 0.9);
   color: var(--lavender-deep);
-  border-color: var(--lavender);
+  border-color: var(--lavender-accent);
 }
 
 .btn-outline:hover {
@@ -540,14 +541,14 @@ body {
 .pricing-card--yearly .btn-outline {
   background: var(--lavender);
   color: #ffffff;
-  border: 1px solid var(--lavender);
+  border: 1px solid var(--lavender-accent);
   box-shadow: 0 8px 20px rgba(140, 123, 255, 0.3);
 }
 
 .pricing-card--yearly .btn-outline:hover {
-  background: var(--lavender-deep);
+  background: var(--lavender-accent);
   color: #ffffff;
-  border-color: var(--lavender-deep);
+  border-color: var(--lavender-accent);
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 10px 25px rgba(140, 123, 255, 0.4);
 }
