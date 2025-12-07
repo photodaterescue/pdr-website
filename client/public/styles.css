@@ -518,7 +518,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   right: auto;
-  background: linear-gradient(90deg, var(--lavender), var(--accent-gold));
+  background: radial-gradient(circle, var(--accent-gold) 0%, var(--lavender) 100%);
   color: #ffffff;
   padding: 4px 12px;
   border-radius: var(--radius-pill);
@@ -532,7 +532,7 @@ body {
 
 /* Specific button styling for Yearly */
 .pricing-card--yearly .btn-outline {
-  background: linear-gradient(90deg, var(--lavender), var(--accent-gold));
+  background: radial-gradient(circle, var(--accent-gold) 0%, var(--lavender) 100%);
   color: #ffffff;
   border: none;
   box-shadow: 0 4px 12px rgba(140, 123, 255, 0.25);
