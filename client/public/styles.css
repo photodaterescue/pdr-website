@@ -446,7 +446,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  transition: transform 0.16s ease, border-color 0.16s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s ease;
 }
 
 .pricing-card:hover {
@@ -489,17 +489,26 @@ body {
 
 /* Yearly badge */
 
+.pricing-card--yearly {
+  background: #fffbe8;
+}
+
 .pricing-card--yearly .plan-badge {
   position: absolute;
-  top: 10px;
-  right: 16px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  right: auto;
   background: #ffb347;
   color: #5a3300;
-  padding: 4px 8px;
+  padding: 4px 12px;
   border-radius: var(--radius-pill);
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* Lifetime ripple gradient */
@@ -605,7 +614,7 @@ body {
 /* AFFILIATES SECTION (FULLY FIXED)                          */
 /* ========================================================= */
 
-.section-partners {
+.section-affiliates {
   background: var(--bg-page);
   padding: 80px 20px 60px;
   /* FIXED: adds proper spacing so it becomes visible */
@@ -613,12 +622,12 @@ body {
   /* FIXED: clean separation from the Guides section */
 }
 
-.section-partners .section-inner {
+.section-affiliates .section-inner {
   max-width: 720px;
   margin: 0 auto;
 }
 
-.partners-strip {
+.affiliate-strip {
   padding: 22px 24px 26px;
   border-radius: var(--radius-card);
   border: 1px dashed #d6d3ff;
@@ -630,13 +639,13 @@ body {
   gap: 14px;
 }
 
-.partners-strip h2 {
+.affiliate-strip h2 {
   margin: 0 0 6px;
   font-size: 1.4rem;
   color: var(--text-main);
 }
 
-.partners-strip a.btn {
+.affiliate-strip a.btn {
   align-self: flex-start;
 }
 
