@@ -847,7 +847,7 @@ body {
 }
 
 .privacy-card:hover {
-  background-color: var(--lavender-soft);
+  background-color: #faf9ff; /* Very subtle tint (lighter than lavender-soft) */
 }
 
 .privacy-card h2 {
