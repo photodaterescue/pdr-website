@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-      <title>Scans & Legacy Media – Photo Date Rescue</title>
+    <title>Scans & Legacy Media – Photo Date Rescue</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Guide for integrating scanned photos, film, and slides into your digital photo timeline."
+      content="Guide for recovering photos from prints, film, flatbed scanners, shoebox collections, and mixed-era albums with clean timelines."
     />
 
     <!-- Favicon -->
@@ -58,23 +58,241 @@
       </div>
     </header>
 
-    <main>
+    <main class="guide-content">
       <section class="section">
         <div class="section-inner">
-          <h1 class="section-title">Scans & Legacy Media</h1>
-          <p class="section-tagline">
-            Bringing your physical history into your digital timeline.
+          <h1 class="section-title section-title-center">Scans & Legacy Media</h1>
+          <p class="section-tagline section-tagline-center">
+            Recovering photos from prints, film, flatbed scanners, shoebox collections, mixed-era albums, and other pre-digital media — with clean timelines, correct sequencing, and optimal metadata reconstruction.
           </p>
           
-          <div class="why-card">
-            <h3>Digitising Old Memories</h3>
+          <div class="guide-section">
+            <h2>Overview: Why Scans & Legacy Media Need Special Care</h2>
+            <p>Digitised photos behave differently from modern digital files. Scanned images rarely contain EXIF timestamps, may be named inconsistently, and often arrive in mixed folders from different years — or even different decades. PDR restores order, but your scanning method still determines how much chronological accuracy we can rebuild.</p>
+            
+            <p>This guide gives you:</p>
             <ul>
-                <li><strong>Scanning Workflow:</strong> When scanning, try to organise files into folders named by year or event (e.g., "1995 - Summer Vacation"). PDR can infer dates from folder names.</li>
-                <li><strong>Metadata Injection:</strong> Scanned files usually have the "scan date" as the creation date. PDR allows you to batch-correct these to the estimated "content date" if you have folder cues.</li>
-                <li><strong>Mixed Formats:</strong> Don't worry if your scans are BMP, TIFF, or JPEG. PDR handles various formats and helps standardise them for modern libraries.</li>
-                <li><strong>Pre-Digital Era:</strong> Use PDR to shift timestamps of scanned collections to their approximate decades, ensuring they appear <em>before</em> your digital photos in timeline views.</li>
+                <li>The best scanning workflow for prints, negatives, albums, and bulk projects</li>
+                <li>How to structure your scanned library before feeding it into PDR</li>
+                <li>How PDR infers dates from filenames, contextual clues, and bulk-scan patterns</li>
+                <li>How to avoid the biggest problems with digitisation: duplicates, compression, inconsistent DPI, random filenames</li>
+                <li>Best practices for re-uploading your PDR output to cloud services</li>
             </ul>
+            
+            <p>Everything here is designed for a premium, optimal experience — no chaos, no guesswork, no lost family history.</p>
+
+            <hr class="guide-divider">
+
+            <h2>1. Quick Decision Table — What’s the Best Scanning Method?</h2>
+            
+            <div class="guide-table-container">
+              <table class="guide-table">
+                <thead>
+                  <tr>
+                    <th>Material Type</th>
+                    <th>Best Method</th>
+                    <th>Metadata Available</th>
+                    <th>Ideal For</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Loose Prints</strong></td>
+                    <td>Flatbed scanner at 600 DPI</td>
+                    <td><span class="status-icon cross">None</span></td>
+                    <td>High-quality family archives</td>
+                    <td>Avoid phone scanning apps if possible — low resolution and distortions.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Photo Albums</strong></td>
+                    <td>Flatbed scanner (page-by-page)</td>
+                    <td><span class="status-icon cross">None</span></td>
+                    <td>Preserving album order</td>
+                    <td>Capture whole-page scans, then crop — keeps original sequencing.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Negatives / Slides</strong></td>
+                    <td>Dedicated film scanner (2400–4000 DPI)</td>
+                    <td><span class="status-icon star">★</span> Partial (scanner date only)</td>
+                    <td>Highest-quality preservation</td>
+                    <td>Keep RAW/48-bit scans; avoid auto-colour features that distort originals.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bulk Shoebox Collections</strong></td>
+                    <td>Sheet-fed scanner OR photo-scan service</td>
+                    <td><span class="status-icon cross">None</span></td>
+                    <td>Large family archives</td>
+                    <td>Expect mixed years — PDR will infer sequencing via filename ordering.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Mixed Digital + Scans</strong></td>
+                    <td>Separate into folders before PDR</td>
+                    <td>Digital = Full, Scans = None</td>
+                    <td>Clean merges across decades</td>
+                    <td>PDR handles multi-source blending but works best when pre-separated.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <hr class="guide-divider">
           </div>
+
+          <div class="guide-section">
+            <hr class="guide-divider" style="margin-top: 0; margin-bottom: 30px;">
+            <h2>2. Best Practices for Scanning — Premium, Optimal Workflows</h2>
+
+            <h3>Loose Prints</h3>
+            <p><strong>Best for:</strong> High-quality preservation of individual photos.</p>
+
+            <h4>Optimal Workflow</h4>
+            <ol>
+                <li>Clean scanner glass; dust the prints lightly.</li>
+                <li>Scan at 600 DPI (don’t go lower; 300 DPI loses detail permanently).</li>
+                <li>Save as TIFF or high-quality JPEG.</li>
+                <li>Name files by approximate date or batch (e.g., <code>Prints_1990s_001</code>).</li>
+                <li>Place scans into a folder named <code>Scans_YYYYs</code> or <code>Scans_Era</code>.</li>
+            </ol>
+            <p><strong>Why PDR works here:</strong> Scanned filenames and folder names guide PDR’s year inference; internal grouping restores multi-year collections smoothly.</p>
+
+            <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
+
+            <h3>Albums (Sticky Albums, Pocket Albums)</h3>
+            <p><strong>Best for:</strong> Preserving the album’s original storytelling.</p>
+
+            <h4>Optimal Workflow</h4>
+            <ol>
+                <li>Scan whole pages first — not individual photos.</li>
+                <li>Save page scans in album order.</li>
+                <li>Optionally crop individual photos after PDR restores sequencing.</li>
+                <li>Keep album-name folders (e.g., <code>Mums_Album_1980s</code>).</li>
+            </ol>
+            <p><strong>Why PDR works here:</strong> Album order acts as a timeline proxy. PDR preserves sequencing even when individual image metadata is missing.</p>
+
+            <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
+
+            <h3>Negatives & Slides</h3>
+            <p><strong>Best for:</strong> Maximum archival quality.</p>
+
+            <h4>Optimal Workflow</h4>
+            <ol>
+                <li>Use a dedicated film scanner (Epson V600+, Plustek 8200i, etc.).</li>
+                <li>Scan at 2400–4000 DPI.</li>
+                <li>Save in TIFF or 48-bit RAW if supported.</li>
+                <li>Avoid colour auto-correction unless calibrated.</li>
+                <li>Preserve reel order — it is often chronological.</li>
+            </ol>
+            <p><strong>Why PDR works here:</strong> Scan order + folder grouping gives PDR strong clues; RAW timestamps help with batch ordering.</p>
+            
+            <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
+
+            <h3>Bulk Shoebox Projects</h3>
+            <p><strong>Best for:</strong> Very large, mixed-era family collections.</p>
+
+            <h4>Optimal Workflow</h4>
+            <ol>
+                <li>Use a sheet-fed scanner OR a scanning service.</li>
+                <li>Scan in batches labeled roughly by decade (e.g., <code>Shoebox_1970s</code>, <code>Shoebox_1980s</code>).</li>
+                <li>Keep scans in the order they were fed.</li>
+                <li>Avoid renaming individual files.</li>
+            </ol>
+            <p><strong>Why PDR works here:</strong> PDR uses filename ordering and batch grouping to reconstruct rough chronological sequences — without forcing manual date inputs.</p>
+          </div>
+
+          <div class="guide-section">
+            <h2>3. After PDR — How to Store & Structure Your Scanned Archive</h2>
+            <p>Scanning may lack EXIF data, but correct structure still creates a clean, intuitive archive.</p>
+
+            <h3>Recommended Folder Structure</h3>
+            <pre style="background: #f8f8fc; padding: 16px; border-radius: 8px; font-size: 0.9rem; color: var(--text-muted); border: 1px solid #e1def7; overflow-x: auto;">
+/My Photo Library
+   /Camera Originals (High Res)
+   /Scans & Prints
+       /Albums – 1970s
+       /Loose Prints – 1980s
+       /Slides – 1990s
+       /Shoebox Projects
+   /Social Media (Low Res)
+   /Screenshots
+            </pre>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li>Keep scans separate from camera originals — different resolution tiers.</li>
+                <li>Maintain album grouping to preserve historical storytelling.</li>
+                <li>Store scans on a fast SSD or NAS, not on cloud-only storage.</li>
+                <li>Never re-scan “fixed” images — keep your raw scans safe.</li>
+            </ul>
+
+            <hr class="guide-divider">
+          </div>
+
+          <div class="guide-section">
+            <h2>4. Common Scan-Related Pain Points — And How PDR Solves Them</h2>
+            
+            <h3>1. “My scans have no dates.”</h3>
+            <p>Correct — scanners don’t embed EXIF. PDR infers dates from filenames, folder clues, and batch order.</p>
+
+            <h3>2. “Everything appears out of order.”</h3>
+            <p>PDR restores sequencing using filename sorting + contextual grouping.</p>
+
+            <h3>3. “Resolution is inconsistent.”</h3>
+            <p>Some scans come from services, others from home scanners. PDR does not scale resolution but retains order.</p>
+            
+            <h3>4. “I have duplicates from multiple scan jobs.”</h3>
+            <p>PDR deduplicates using perceptual hashing.</p>
+          </div>
+
+          <div class="guide-section" style="background: #f8f8fc; margin-top: -30px;">
+             <h2>Recommended Tools for Scanning & Digitising</h2>
+             <p>Premium hardware ensures your digital archive matches the quality of your physical memories. These tools are industry standards for preservation.</p>
+             <p><em>(Affiliate links below help support PDR at no extra cost to you.)</em></p>
+             
+             <div class="guide-btn-grid guide-btn-grid-hardware">
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Scanner icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m19.07 4.93-14.14 14.14"/></svg>
+                   Epson V600 / V850 Flatbed Scanners
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Film icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg>
+                   Plustek 8200i Film Scanner
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Bulk Scanner icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/><path d="M4 14h16"/><path d="M9 14v-4"/><path d="M12 14v-4"/><path d="M15 14v-4"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/></svg>
+                   Fujitsu ScanSnap
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Phone Scan icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                   Google PhotoScan (Best Phone Option)
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Dust Removal icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 10a2.5 2.5 0 1 1 3 0 2.5 2.5 0 0 1-3 0z"/><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path d="M22 21l-3-8"/></svg>
+                   Dust Removal Tools
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Cleaning Kit icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v14a2 2 0 0 0 4 0V6a4 4 0 0 0-4-4z"/><path d="M8 6h8"/></svg>
+                   Microfiber Cleaning Kits
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Gloves icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 14v-4a2 2 0 0 0-2-2h-4v-4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v10"/><path d="M18 14v4a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4"/><path d="M18 14h2a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-2"/></svg>
+                   Anti-static Gloves
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Box icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                   Archival Storage Boxes
+                 </a>
+             </div>
+          </div>
+
         </div>
       </section>
 

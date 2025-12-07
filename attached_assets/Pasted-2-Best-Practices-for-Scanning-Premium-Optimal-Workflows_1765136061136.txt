@@ -1,0 +1,141 @@
+2. Best Practices for Scanning — Premium, Optimal Workflows
+Loose Prints
+
+Best for: High-quality preservation of individual photos.
+
+Optimal Workflow
+
+Clean scanner glass; dust the prints lightly.
+
+Scan at 600 DPI (don’t go lower; 300 DPI loses detail permanently).
+
+Save as TIFF or high-quality JPEG.
+
+Name files by approximate date or batch (e.g., Prints_1990s_001).
+
+Place scans into a folder named Scans_YYYYs or Scans_Era.
+
+Why PDR works here:
+Scanned filenames and folder names guide PDR’s year inference; internal grouping restores multi-year collections smoothly.
+
+Albums (Sticky Albums, Pocket Albums)
+
+Best for: Preserving the album’s original storytelling.
+
+Optimal Workflow
+
+Scan whole pages first — not individual photos.
+
+Save page scans in album order.
+
+Optionally crop individual photos after PDR restores sequencing.
+
+Keep album-name folders (e.g., Mums_Album_1980s).
+
+Why PDR works here:
+Album order acts as a timeline proxy. PDR preserves sequencing even when individual image metadata is missing.
+
+Negatives & Slides
+
+Best for: Maximum archival quality.
+
+Optimal Workflow
+
+Use a dedicated film scanner (Epson V600+, Plustek 8200i, etc.).
+
+Scan at 2400–4000 DPI.
+
+Save in TIFF or 48-bit RAW if supported.
+
+Avoid colour auto-correction unless calibrated.
+
+Preserve reel order — it is often chronological.
+
+Why PDR works here:
+Scan order + folder grouping gives PDR strong clues; RAW timestamps help with batch ordering.
+
+Bulk Shoebox Projects
+
+Best for: Very large, mixed-era family collections.
+
+Optimal Workflow
+
+Use a sheet-fed scanner OR a scanning service.
+
+Scan in batches labeled roughly by decade (e.g., Shoebox_1970s, Shoebox_1980s).
+
+Keep scans in the order they were fed.
+
+Avoid renaming individual files.
+
+Why PDR works here:
+PDR uses filename ordering and batch grouping to reconstruct rough chronological sequences — without forcing manual date inputs.
+
+3. After PDR — How to Store & Structure Your Scanned Archive
+
+Scanning may lack EXIF data, but correct structure still creates a clean, intuitive archive.
+
+Recommended Folder Structure
+/My Photo Library
+   /Camera Originals (High Res)
+   /Scans & Prints
+       /Albums – 1970s
+       /Loose Prints – 1980s
+       /Slides – 1990s
+       /Shoebox Projects
+   /Social Media (Low Res)
+   /Screenshots
+
+Best Practices
+
+Keep scans separate from camera originals — different resolution tiers.
+
+Maintain album grouping to preserve historical storytelling.
+
+Store scans on a fast SSD or NAS, not on cloud-only storage.
+
+Never re-scan “fixed” images — keep your raw scans safe.
+
+4. Common Scan-Related Pain Points — And How PDR Solves Them
+1. “My scans have no dates.”
+
+Correct — scanners don’t embed EXIF. PDR infers dates from filenames, folder clues, and batch order.
+
+2. “Everything appears out of order.”
+
+PDR restores sequencing using filename sorting + contextual grouping.
+
+3. “Resolution is inconsistent.”
+
+Some scans come from services, others from home scanners. PDR does not scale resolution but retains order.
+
+4. “I have duplicates from multiple scan jobs.”
+
+PDR deduplicates using perceptual hashing.
+
+5. Recommended Tools for Scanning & Digitising
+
+Just like the previous pages, include premium affiliate-friendly options.
+
+Recommended Tools (Pill Buttons)
+
+(Agent will format these exactly like other pages)
+
+Epson V600 / V850 Flatbed Scanners
+
+Plustek 8200i Film Scanner
+
+Fujitsu ScanSnap (Bulk Shoebox Scanner)
+
+Google PhotoScan (Best Phone Option)
+
+Dust Removal Tools (Rocket Air Blaster)
+
+Microfiber Cleaning Kits
+
+Anti-static Gloves
+
+Archival Storage Boxes
+
+All of these have affiliate programs.
+Perfect for your monetization strategy.
