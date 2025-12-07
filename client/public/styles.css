@@ -349,6 +349,19 @@ body {
   gap: 16px;
 }
 
+.why-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-card);
+  padding: 32px;
+  border: 1px solid #e1def7;
+  box-shadow: var(--shadow-card);
+  color: var(--text-soft);
+}
+
+.why-card .section-title {
+  margin-bottom: 16px;
+}
+
 /* Highlight paragraph */
 .why-highlight {
   font-weight: 600;
