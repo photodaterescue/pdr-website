@@ -156,8 +156,7 @@ body {
   border: 1px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease,
-    box-shadow 0.18s ease, transform 0.12s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
   white-space: nowrap;
 }
 
@@ -169,7 +168,7 @@ body {
 
 .btn-primary:hover {
   background: var(--lavender-deep);
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .btn-outline {
@@ -180,6 +179,7 @@ body {
 
 .btn-outline:hover {
   background: var(--lavender-soft);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .btn-disabled {
@@ -652,6 +652,12 @@ body {
   border: 1px solid #ecebff;
   font-size: 0.9rem;
   color: var(--text-soft);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s ease;
+}
+
+.guide-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--lavender);
 }
 
 .guide-card h3 {
