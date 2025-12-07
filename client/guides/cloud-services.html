@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-      <title>Cloud Services – Photo Date Rescue</title>
+    <title>Cloud Services – Photo Date Rescue</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
@@ -58,23 +58,229 @@
       </div>
     </header>
 
-    <main>
+    <main class="guide-content">
       <section class="section">
         <div class="section-inner">
           <h1 class="section-title">Cloud Services</h1>
           <p class="section-tagline">
-            How to export and repair your photo libraries from the cloud.
+            How to export and repair your photo libraries from the cloud — reliably, safely, and without losing what matters most.
           </p>
           
-          <div class="why-card">
-            <h3>Key Export Strategies</h3>
+          <div class="guide-section">
+            <h2>Overview: Why Cloud Exports Matter for PDR</h2>
+            <p>Cloud providers often transform your photos behind the scenes — compressing, renaming, converting formats, or stripping metadata completely. PDR restores your true timeline, but only if your export contains the richest version of your files.</p>
+            
+            <p>This guide shows you:</p>
             <ul>
-                <li><strong>Google Photos:</strong> Use Google Takeout. Always ensure JSON sidecar files are included in your download. These contain the original dates and metadata that PDR uses to restore your timeline.</li>
-                <li><strong>iCloud / Apple Photos:</strong> Select "Export Unmodified Original" when exporting from the Mac Photos app. This preserves the original file creation dates and metadata.</li>
-                <li><strong>OneDrive / Dropbox:</strong> Simply download your folders. PDR can scan through nested folder structures to find and fix dates.</li>
-                <li><strong>Social Media:</strong> For platforms like Facebook or Instagram, request a full data download to get the highest quality images available, even if metadata is stripped.</li>
+                <li>The correct export method for each major platform</li>
+                <li>Common pitfalls and how to avoid them</li>
+                <li>How to prepare your files for PDR</li>
+                <li>How to re-upload your fixed library cleanly afterward</li>
+                <li>A decision table so you always pick the right export workflow</li>
             </ul>
+            
+            <p>Everything here is designed to give you a premium, optimal experience — no wasted time, no frustrating do-overs.</p>
+
+            <h2>1. Quick Decision Table — Which Export Method Should You Use?</h2>
+            
+            <div class="guide-table-container">
+              <table class="guide-table">
+                <thead>
+                  <tr>
+                    <th>Cloud Service</th>
+                    <th>Best Export Method</th>
+                    <th>Includes Original Metadata?</th>
+                    <th>Recommended for Large Libraries?</th>
+                    <th>Export Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Google Photos</strong></td>
+                    <td>Google Takeout</td>
+                    <td><span class="status-icon check">✓</span> JSON sidecars contain full metadata</td>
+                    <td><span class="status-icon check">✓</span> Yes — handles 50GB+ libraries via multi-ZIP</td>
+                    <td>Must merge all ZIPs into one folder before PDR</td>
+                  </tr>
+                  <tr>
+                    <td><strong>iCloud / Apple Photos</strong></td>
+                    <td>"Export Unmodified Original"</td>
+                    <td><span class="status-icon check">✓</span> Preserves HEIC, MOV, Live Photos pairs</td>
+                    <td><span class="status-icon check">✓</span> Works best on Mac</td>
+                    <td>Avoid "Export X Items" (may modify metadata)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>OneDrive</strong></td>
+                    <td>Desktop Sync Client</td>
+                    <td><span class="status-icon check">✓</span> Retains filesystem metadata</td>
+                    <td><span class="status-icon check">✓</span> Very stable for big folders</td>
+                    <td>Web ZIP download may fail above ~4GB</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Dropbox</strong></td>
+                    <td>Desktop App Sync</td>
+                    <td><span class="status-icon check">✓</span> Preserves timestamps</td>
+                    <td><span class="status-icon check">✓</span> Yes, extremely reliable</td>
+                    <td>Web "Download as ZIP" has limits</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Facebook / Instagram / X / YouTube</strong></td>
+                    <td>"Download Your Data" tools</td>
+                    <td><span class="status-icon cross">✗</span> Metadata often incomplete</td>
+                    <td><span class="status-icon cross">✗</span> Not suitable as a primary library</td>
+                    <td>Still useful for restoring context & old memories</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
+
+          <div class="guide-section">
+            <h2>2. Exporting from Each Cloud — Premium, Optimal Best Practices</h2>
+
+            <h3>Google Photos (via Google Takeout)</h3>
+            <p><strong>Best for:</strong> Anyone who has ever used Google Photos, Android backups, or Gmail-linked accounts.</p>
+
+            <p><strong>Why this method is essential:</strong> Only Google Takeout includes JSON sidecars — these hold the original timestamps, camera info, and hidden metadata PDR uses to rebuild your correct timeline. Standard "Download" does not include this.</p>
+
+            <h4>How to export (best practice)</h4>
+            <ol>
+                <li>Go to Google Takeout.</li>
+                <li>Select Google Photos only.</li>
+                <li>Ensure JSON metadata is enabled.</li>
+                <li>Export as 2–50GB chunks (smaller chunks = fewer corrupt downloads).</li>
+                <li>Download all ZIPs.</li>
+                <li>Extract every ZIP into a single folder named <code>PDR_Input</code>.</li>
+            </ol>
+
+            <div class="guide-pain-points">
+                <div class="pain-point-item">Wrong “Date Taken”</div>
+                <div class="pain-point-item">Split Live Photos</div>
+                <div class="pain-point-item">Duplicated images</div>
+                <div class="pain-point-item">Scrambled folder order</div>
+            </div>
+
+            <div class="guide-affiliate-box">
+                If you're organising your library long-term, Google One offers expanded storage for a more stable workflow.
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
+
+            <h3>iCloud / Apple Photos</h3>
+            <p><strong>Best for:</strong> iPhone owners, Mac users, families with shared Apple accounts.</p>
+            
+            <p><strong>Why "Unmodified Original" matters:</strong> It preserves HEIC, MOV, Live Photo pairing, Original EXIF timestamps, and Apple-specific metadata.</p>
+
+            <h4>Optimal export workflow</h4>
+            <p><strong>On Mac:</strong></p>
+            <ol>
+                <li>Open Apple Photos</li>
+                <li>Select your entire library</li>
+                <li>Click File → Export → Export Unmodified Original</li>
+                <li>Tick "Export IPTC as XMP" if available</li>
+                <li>Export to a local drive folder</li>
+                <li>Feed the exported folder into PDR</li>
+            </ol>
+
+            <p><strong>On iCloud.com:</strong></p>
+            <ul>
+                <li>Use the "Download unmodified originals" option where available.</li>
+                <li>Avoid bulk web downloads for very large libraries; the Mac app handles them far better.</li>
+            </ul>
+
+            <div class="guide-affiliate-box">
+                Upgrade to iCloud+ for secure family-wide storage.
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
+
+            <h3>OneDrive</h3>
+            <p><strong>Why OneDrive works well with PDR:</strong> Keeps files structured, preserves timestamps reliably, handles huge libraries if synced locally.</p>
+
+            <h4>Optimal workflow</h4>
+            <ol>
+                <li>Install the OneDrive desktop client</li>
+                <li>Sync your Pictures folder locally</li>
+                <li>Once sync completes, drag the local copy into PDR</li>
+                <li>Avoid "Download as ZIP" if your library is over ~4GB.</li>
+            </ol>
+
+            <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
+
+            <h3>Dropbox</h3>
+            <p><strong>Strengths:</strong> Very stable syncing, excellent for mixed-device families, good for professional workflows.</p>
+
+            <h4>Optimal export workflow</h4>
+            <ol>
+                <li>Install Dropbox desktop app</li>
+                <li>Allow full folder sync</li>
+                <li>Copy synced folder → PDR Input</li>
+                <li>Avoid huge "Download as ZIP" jobs — Dropbox intentionally limits this.</li>
+            </ol>
+
+            <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
+
+            <h3>Facebook / Instagram / X / YouTube</h3>
+            <p><strong>Reality check:</strong> Exports from social apps often contain compressed images, stripped EXIF, no original resolution, and no original timestamps. But PDR can still restore order and rebuild a usable timeline.</p>
+
+            <h4>Best workflow</h4>
+            <ol>
+                <li>Use the "Download Your Information" tool</li>
+                <li>Select Photos & Videos (or channel exports for YouTube)</li>
+                <li>Extract everything</li>
+                <li>Place into your PDR Input folder</li>
+                <li>Expect metadata gaps — PDR fills these with filename inference + fallback logic</li>
+            </ol>
+          </div>
+
+          <div class="guide-section">
+            <h2>3. After PDR — Where Should Your Fixed Library Live?</h2>
+            <p>Your new timeline is flawless, so treat it properly.</p>
+
+            <h3>Step 1 — Create a Master Library</h3>
+            <p>Store your PDR output in a local SSD, a NAS, or a high-capacity external drive. This is the single source of truth.</p>
+
+            <h3>Step 2 — Optionally re-upload to the cloud</h3>
+            <p><strong>Option A — Clean reset in same Google Photos account</strong><br>
+            Export everything, Run PDR, Delete originals from Google Photos, Re-upload fixed images. Note: Albums must be recreated manually.</p>
+
+            <p><strong>Option B — Use a fresh cloud account</strong><br>
+            Keeps personal chaos separate from your newly curated timeline.</p>
+
+            <p><strong>Option C — Move to another provider</strong><br>
+            Dropbox, OneDrive, iCloud — all become clean "views" of your library.</p>
+
+            <h3>Step 3 — Never mix old cloud syncs with PDR output</h3>
+            <p>Avoid having multiple sync clients write into your master folder. That’s how re-corruption begins.</p>
+          </div>
+
+          <div class="guide-section">
+            <h2>4. Common Cloud Export Pain Points — and How You Avoid Them</h2>
+            
+            <h3>1. Missing metadata</h3>
+            <p>Solved by choosing the correct export method for each platform.</p>
+
+            <h3>2. Massive ZIP files failing</h3>
+            <p>Use desktop sync clients for OneDrive/Dropbox, and smaller chunk sizes for Google Takeout.</p>
+
+            <h3>3. Duplicate or fragmented libraries</h3>
+            <p>PDR recognises patterns and rebuilds continuity.</p>
+
+            <h3>4. “My upload dates are wrong”</h3>
+            <p>Cloud services show "Upload date" separately from "Date Taken" — the latter is now perfect thanks to PDR.</p>
+          </div>
+
+          <div class="guide-section" style="background: #f8f8fc;">
+             <h2>Recommended Cloud Services & Upgrades</h2>
+             <p>Premium cloud plans ensure your PDR-fixed library stays safe long-term. These recommended providers offer reliable storage, strong metadata retention, and seamless multi-device access.</p>
+             <p><em>(Affiliate links below help support PDR at no extra cost to you.)</em></p>
+             
+             <!-- Placeholders for future links -->
+             <div style="margin-top: 20px; opacity: 0.6;">
+                 [Link placeholders would go here]
+             </div>
+          </div>
+
         </div>
       </section>
 

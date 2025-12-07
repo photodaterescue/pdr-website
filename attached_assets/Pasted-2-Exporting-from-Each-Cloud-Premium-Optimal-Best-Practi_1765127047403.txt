@@ -1,0 +1,227 @@
+2. Exporting from Each Cloud — Premium, Optimal Best Practices
+Google Photos (via Google Takeout)
+
+Best for: Anyone who has ever used Google Photos, Android backups, or Gmail-linked accounts.
+
+Why this method is essential
+
+Only Google Takeout includes JSON sidecars — these hold the original timestamps, camera info, and hidden metadata PDR uses to rebuild your correct timeline.
+
+Standard “Download” does not include this.
+
+How to export (best practice)
+
+Go to Google Takeout.
+
+Select Google Photos only.
+
+Ensure JSON metadata is enabled.
+
+Export as 2–50GB chunks (smaller chunks = fewer corrupt downloads).
+
+Download all ZIPs.
+
+Extract every ZIP into a single folder named PDR_Input.
+
+Pain points eliminated by doing this correctly
+
+Wrong “Date Taken”
+
+Split Live Photos
+
+Duplicated images
+
+Scrambled folder order
+
+Old JSON mismatches
+
+Affiliate placeholder:
+→ “If you're organising your library long-term, Google One offers expanded storage for a more stable workflow.”
+[GOOGLE_ONE_AFFILIATE_HERE]
+
+iCloud / Apple Photos
+
+Best for: iPhone owners, Mac users, families with shared Apple accounts.
+
+Why “Unmodified Original” matters
+
+It preserves:
+
+HEIC
+
+MOV
+
+Live Photo pairing
+
+Original EXIF timestamps
+
+Apple-specific metadata
+
+Optimal export workflow
+
+On Mac:
+
+Open Apple Photos
+
+Select your entire library
+
+Click File → Export → Export Unmodified Original
+
+Tick “Export IPTC as XMP” if available
+
+Export to a local drive folder
+
+Feed the exported folder into PDR
+
+On iCloud.com:
+
+Use the “Download unmodified originals” option where available.
+
+Avoid bulk web downloads for very large libraries; the Mac app handles them far better.
+
+Affiliate placeholder:
+→ Upgrade to iCloud+ for secure family-wide storage:
+[APPLE_ICLOUD_AFFILIATE_HERE]
+
+OneDrive
+Why OneDrive works well with PDR
+
+Keeps files structured
+
+Preserves timestamps reliably
+
+Handles huge libraries if synced locally
+
+Optimal workflow
+
+Install the OneDrive desktop client
+
+Sync your Pictures folder locally
+
+Once sync completes, drag the local copy into PDR
+
+Avoid “Download as ZIP” if your library is over ~4GB.
+
+Affiliate placeholder:
+[MICROSOFT_365_AFFILIATE_HERE]
+
+Dropbox
+Strengths
+
+Very stable syncing
+
+Excellent for mixed-device families
+
+Good for professional workflows
+
+Optimal export workflow
+
+Install Dropbox desktop app
+
+Allow full folder sync
+
+Copy synced folder → PDR Input
+
+Avoid huge “Download as ZIP” jobs — Dropbox intentionally limits this.
+
+Affiliate placeholder:
+[DROPBOX_AFFILIATE_HERE]
+
+Facebook / Instagram / X / YouTube
+Reality check
+
+Exports from social apps often contain:
+
+Compressed images
+
+Stripped EXIF
+
+No original resolution
+
+No original timestamps
+
+But PDR can still restore order and rebuild a usable timeline.
+
+Best workflow
+
+Use the “Download Your Information” tool
+
+Select Photos & Videos (or channel exports for YouTube)
+
+Extract everything
+
+Place into your PDR Input folder
+
+Expect metadata gaps — PDR fills these with filename inference + fallback logic
+
+Affiliate placeholder:
+[META_AFFILIATE_HERE]
+[YOUTUBE_PREMIUM_AFFILIATE_HERE]
+
+3. After PDR — Where Should Your Fixed Library Live?
+
+Your new timeline is flawless, so treat it properly.
+
+Step 1 — Create a Master Library
+
+Store your PDR output in:
+
+A local SSD,
+
+A NAS,
+
+Or a high-capacity external drive.
+
+This is the single source of truth.
+
+Step 2 — Optionally re-upload to the cloud
+Option A — Clean reset in same Google Photos account
+
+Export everything
+
+Run PDR
+
+Delete originals from Google Photos
+
+Re-upload fixed images
+
+Albums must be recreated manually
+
+Option B — Use a fresh cloud account
+
+Keeps personal chaos separate from your newly curated timeline.
+
+Option C — Move to another provider
+
+Dropbox, OneDrive, iCloud — all become clean “views” of your library.
+
+Step 3 — Never mix old cloud syncs with PDR output
+
+Avoid having multiple sync clients write into your master folder. That’s how re-corruption begins.
+
+4. Common Cloud Export Pain Points — and How You Avoid Them
+1. Missing metadata
+
+Solved by choosing the correct export method for each platform.
+
+2. Massive ZIP files failing
+
+Use desktop sync clients for OneDrive/Dropbox, and smaller chunk sizes for Google Takeout.
+
+3. Duplicate or fragmented libraries
+
+PDR recognises patterns and rebuilds continuity.
+
+4. “My upload dates are wrong”
+
+Cloud services show “Upload date” separately from “Date Taken” — the latter is now perfect thanks to PDR.
+
+5. Optional Placeholder Section — Monetisation Without Being Pushy
+
+Use this wording when you eventually add affiliate buttons:
+
+Recommended Cloud Services & Upgrades
+Premium cloud plans ensure your PDR-fixed library stays safe long-term. These recommended providers offer reliable storage, strong metadata retention, and seamless multi-device access.
+(Affiliate links below help support PDR at no extra cost to you.)
+
+Then list them.

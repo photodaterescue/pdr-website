@@ -925,9 +925,137 @@ body {
   color: var(--lavender-deep);
 }
 
+
 /* ========================================================= */
-/* Responsive tweaks                                          */
+/* Guide Tables                                               */
 /* ========================================================= */
+
+.guide-table-container {
+  overflow-x: auto;
+  margin: 32px 0 48px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.guide-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: #fff;
+  min-width: 800px; /* Force scroll on mobile */
+}
+
+.guide-table th,
+.guide-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f5;
+  vertical-align: top;
+}
+
+.guide-table th {
+  background: #f9f9fc;
+  font-weight: 600;
+  color: var(--text-main);
+  border-bottom: 2px solid #e1def7;
+}
+
+.guide-table td {
+  color: var(--text-muted);
+}
+
+.guide-table tr:last-child td {
+  border-bottom: none;
+}
+
+.guide-table tr:hover td {
+  background: #faf9ff;
+}
+
+.status-icon {
+  display: inline-block;
+  margin-right: 6px;
+  font-weight: bold;
+}
+
+.status-icon.check {
+  color: #2e7d32;
+}
+
+.status-icon.cross {
+  color: #c62828;
+}
+
+/* Guide Content Styling */
+.guide-content h2 {
+  font-size: 1.8rem;
+  margin: 48px 0 24px;
+  color: var(--text-main);
+}
+
+.guide-content h3 {
+  font-size: 1.4rem;
+  margin: 32px 0 16px;
+  color: var(--text-main);
+}
+
+.guide-content p {
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.guide-content ul {
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+.guide-content li {
+  margin-bottom: 10px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.guide-section {
+  background: #fff;
+  padding: 40px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-card);
+}
+
+.guide-affiliate-box {
+  background: #f8f8fc;
+  border: 1px solid #e1def7;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 24px 0;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  font-style: italic;
+}
+
+.guide-pain-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.pain-point-item {
+  background: #fff;
+  border: 1px solid #f0f0f5;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  color: var(--text-main);
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
 
 @media (max-width: 900px) {
   .nav-inner {
