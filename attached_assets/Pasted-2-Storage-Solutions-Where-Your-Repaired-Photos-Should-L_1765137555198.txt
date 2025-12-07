@@ -1,0 +1,213 @@
+2. Storage Solutions — Where Your Repaired Photos Should Live
+A. Cloud Storage (Easiest to use)
+
+Recommended for small → medium libraries.
+
+Google One
+
+iCloud+
+
+Microsoft OneDrive
+
+Amazon Photos
+
+Strengths: auto-sync, easy sharing, built-in AI search.
+Weakness: expensive at high TB sizes.
+
+B. External Drives (Best price per TB)
+
+Perfect for home users with 20–200k photos.
+
+Samsung T7/T9 SSDs
+
+WD My Passport Ultra
+
+Seagate Expansion Desktop (8–16 TB)
+
+Strengths: fast, affordable, easy.
+Weakness: single point of failure → must be backed up.
+
+C. NAS Systems (For huge libraries)
+
+For users with 100k+, or anyone preserving family history long-term.
+
+Synology DS220+ / DS923+
+
+QNAP TS-230 / TS-462
+
+Strengths: RAID protection, centralised library, remote access.
+Weakness: higher upfront cost.
+
+3. Backup Strategy — The Premium Optimal Rule (3–2–1)
+
+Your restored library should never be in only one place.
+
+3 copies
+2 different types of storage
+1 off-site (cloud or NAS)
+
+This is the industry gold standard for preserving irreplaceable memories.
+
+Recommended combo examples:
+
+NAS + external SSD + cloud
+
+2× external drives + cloud
+
+Cloud + NAS + Google Takeout export
+
+4. Editing & Enhancement Software
+A. Photography Editing (Premium Tools)
+
+Adobe Lightroom Classic — industry standard for cataloguing + editing
+
+Adobe Photoshop — ultimate control for retouching
+
+Capture One Pro — professional colour accuracy
+
+Topaz Photo AI — world-class upscaling & noise removal
+
+Luminar Neo — AI-based artistic edits
+
+B. Beginner-Friendly Editors
+
+Google Photos Editor
+
+Apple Photos Editor
+
+Snapseed
+
+Pixlr
+
+C. Batch Renaming & Utilities (for advanced users)
+
+Adobe Bridge
+
+XnView MP
+
+A Better Finder Rename
+
+Every tool above has a strong affiliate program, and all are genuinely helpful.
+
+5. Creative Uses — Prints, Albums, Gifts & Displays
+
+Once PDR restores everything, many people want to create something meaningful.
+
+Recommended Print & Display Services
+
+Photobook UK / Photobox — albums & books
+
+Shutterfly — gifts, mugs, canvases
+
+Mixbook — premium custom designs
+
+Saal Digital — professional quality prints
+
+Cewe — European leader in photo products
+
+Digital Displays
+
+Nixplay digital frames
+
+Aura frames
+
+Large Prints & Posters
+
+Loxley Colour
+
+WhiteWall
+
+This page is a massive opportunity for affiliate conversion because the intent is naturally high.
+
+6. AI Tools — When You Want More Than Just Date Fixing
+AI Enhancement & Restoration
+
+Topaz Photo AI
+
+Remini Pro
+
+Pixelcut
+
+Use cases:
+
+Upscaling old scans
+
+Repairing faded prints
+
+Removing noise
+
+Colourising black-and-white photos
+
+AI Creativity Tools
+
+Leonardo.ai
+
+Midjourney
+
+Runway ML
+
+For posters, stylised edits, social content, etc.
+
+7. Recommended Tools (Pill Buttons Section)
+
+Just like the other guides, this should be a visually-consistent grid.
+
+Categories to include as pill-buttons:
+
+Storage
+
+Google One
+
+iCloud+
+
+OneDrive
+
+Amazon Photos
+
+Samsung T7 SSD
+
+WD My Passport
+
+Seagate Expansion
+
+NAS
+
+Synology DS220+
+
+QNAP TS-230
+
+Editing
+
+Adobe Lightroom
+
+Adobe Photoshop
+
+Capture One
+
+Topaz Photo AI
+
+Luminar Neo
+
+Print & Display
+
+Photobox
+
+Shutterfly
+
+Mixbook
+
+Saal Digital
+
+Nixplay Frames
+
+AI Tools
+
+Remini
+
+Topaz Photo AI
+
+Leonardo.ai
+
+Midjourney
+
+The agent will style these identically to the other guides.
