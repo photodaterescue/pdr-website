@@ -327,7 +327,8 @@ body {
 .hero-actions {
   display: inline-flex;
   gap: 10px;
-  margin-top: 4px;
+  margin-top: 16px;
+  margin-bottom: 12px;
 }
 
 .hero-footnote {
@@ -537,16 +538,18 @@ body {
 
 /* Specific button styling for Yearly */
 .pricing-card--yearly .btn-outline {
-  background: #ffffff;
-  color: var(--lavender-deep);
+  background: var(--lavender);
+  color: #ffffff;
   border: 1px solid var(--lavender);
-  box-shadow: 0 4px 12px rgba(140, 123, 255, 0.15);
+  box-shadow: 0 8px 20px rgba(140, 123, 255, 0.3);
 }
 
 .pricing-card--yearly .btn-outline:hover {
-  background: var(--lavender-soft);
+  background: var(--lavender-deep);
+  color: #ffffff;
+  border-color: var(--lavender-deep);
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 16px rgba(140, 123, 255, 0.25);
+  box-shadow: 0 10px 25px rgba(140, 123, 255, 0.4);
 }
 
 /* Lifetime ripple gradient */
