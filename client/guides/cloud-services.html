@@ -61,8 +61,8 @@
     <main class="guide-content">
       <section class="section">
         <div class="section-inner">
-          <h1 class="section-title">Cloud Services</h1>
-          <p class="section-tagline">
+          <h1 class="section-title section-title-center">Cloud Services</h1>
+          <p class="section-tagline section-tagline-center">
             How to export and repair your photo libraries from the cloud — reliably, safely, and without losing what matters most.
           </p>
           
@@ -96,39 +96,60 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><strong>Google Photos</strong></td>
+                    <td><a href="#" style="text-decoration:none; color:inherit;"><strong>Google Photos</strong></a></td>
                     <td>Google Takeout</td>
                     <td><span class="status-icon check">✓</span> JSON sidecars contain full metadata</td>
                     <td><span class="status-icon check">✓</span> Yes — handles 50GB+ libraries via multi-ZIP</td>
                     <td>Must merge all ZIPs into one folder before PDR</td>
                   </tr>
                   <tr>
-                    <td><strong>iCloud / Apple Photos</strong></td>
+                    <td><a href="#" style="text-decoration:none; color:inherit;"><strong>iCloud / Apple Photos</strong></a></td>
                     <td>"Export Unmodified Original"</td>
                     <td><span class="status-icon check">✓</span> Preserves HEIC, MOV, Live Photos pairs</td>
                     <td><span class="status-icon check">✓</span> Works best on Mac</td>
                     <td>Avoid "Export X Items" (may modify metadata)</td>
                   </tr>
                   <tr>
-                    <td><strong>OneDrive</strong></td>
+                    <td><a href="#" style="text-decoration:none; color:inherit;"><strong>OneDrive</strong></a></td>
                     <td>Desktop Sync Client</td>
                     <td><span class="status-icon check">✓</span> Retains filesystem metadata</td>
                     <td><span class="status-icon check">✓</span> Very stable for big folders</td>
                     <td>Web ZIP download may fail above ~4GB</td>
                   </tr>
                   <tr>
-                    <td><strong>Dropbox</strong></td>
+                    <td><a href="#" style="text-decoration:none; color:inherit;"><strong>Dropbox</strong></a></td>
                     <td>Desktop App Sync</td>
                     <td><span class="status-icon check">✓</span> Preserves timestamps</td>
                     <td><span class="status-icon check">✓</span> Yes, extremely reliable</td>
                     <td>Web "Download as ZIP" has limits</td>
                   </tr>
                   <tr>
-                    <td><strong>Facebook / Instagram / X / YouTube</strong></td>
-                    <td>"Download Your Data" tools</td>
-                    <td><span class="status-icon cross">✗</span> Metadata often incomplete</td>
-                    <td><span class="status-icon cross">✗</span> Not suitable as a primary library</td>
-                    <td>Still useful for restoring context & old memories</td>
+                    <td><a href="#" style="text-decoration:none; color:inherit;"><strong>Amazon Photos</strong></a></td>
+                    <td>Desktop Sync App</td>
+                    <td><span class="status-icon check">✓</span> Retains original file metadata</td>
+                    <td><span class="status-icon check">✓</span> Very stable for huge libraries if fully synced</td>
+                    <td>Desktop sync avoids the compression/metadata stripping seen in web downloads</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" style="text-decoration:none; color:inherit;"><strong>pCloud</strong></a></td>
+                    <td>Desktop Sync App</td>
+                    <td><span class="status-icon check">✓</span> Preserves filesystem timestamps reliably</td>
+                    <td><span class="status-icon check">✓</span> Handles very large collections if synced locally</td>
+                    <td>Web downloads sometimes re-order files; desktop sync avoids fragmentation</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" style="text-decoration:none; color:inherit;"><strong>Sync.com</strong></a></td>
+                    <td>Desktop Sync App</td>
+                    <td><span class="status-icon check">✓</span> Zero-knowledge system keeps originals intact</td>
+                    <td><span class="status-icon check">✓</span> Suitable for long-term archival and multi-device families</td>
+                    <td>Slower initial sync due to end-to-end encryption, but safest for privacy</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" style="text-decoration:none; color:inherit;"><strong>Backblaze B2</strong></a></td>
+                    <td>Cloud Bucket → Local Download via B2 Client</td>
+                    <td><span class="status-icon check">✓</span> All original metadata preserved</td>
+                    <td><span class="status-icon check">✓</span> Best for extremely large archives (100k+ files)</td>
+                    <td>Designed for bulk storage; requires a B2 client to structure folders correctly</td>
                   </tr>
                 </tbody>
               </table>
@@ -275,9 +296,15 @@
              <p>Premium cloud plans ensure your PDR-fixed library stays safe long-term. These recommended providers offer reliable storage, strong metadata retention, and seamless multi-device access.</p>
              <p><em>(Affiliate links below help support PDR at no extra cost to you.)</em></p>
              
-             <!-- Placeholders for future links -->
-             <div style="margin-top: 20px; opacity: 0.6;">
-                 [Link placeholders would go here]
+             <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+                 <a href="#" style="background: #fff; padding: 12px 16px; border: 1px solid #e1def7; border-radius: 8px; text-decoration: none; color: var(--text-main); font-weight: 500; display: block; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">Google One</a>
+                 <a href="#" style="background: #fff; padding: 12px 16px; border: 1px solid #e1def7; border-radius: 8px; text-decoration: none; color: var(--text-main); font-weight: 500; display: block; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">iCloud+</a>
+                 <a href="#" style="background: #fff; padding: 12px 16px; border: 1px solid #e1def7; border-radius: 8px; text-decoration: none; color: var(--text-main); font-weight: 500; display: block; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">OneDrive</a>
+                 <a href="#" style="background: #fff; padding: 12px 16px; border: 1px solid #e1def7; border-radius: 8px; text-decoration: none; color: var(--text-main); font-weight: 500; display: block; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">Dropbox</a>
+                 <a href="#" style="background: #fff; padding: 12px 16px; border: 1px solid #e1def7; border-radius: 8px; text-decoration: none; color: var(--text-main); font-weight: 500; display: block; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">Amazon Photos</a>
+                 <a href="#" style="background: #fff; padding: 12px 16px; border: 1px solid #e1def7; border-radius: 8px; text-decoration: none; color: var(--text-main); font-weight: 500; display: block; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">pCloud</a>
+                 <a href="#" style="background: #fff; padding: 12px 16px; border: 1px solid #e1def7; border-radius: 8px; text-decoration: none; color: var(--text-main); font-weight: 500; display: block; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">Sync.com</a>
+                 <a href="#" style="background: #fff; padding: 12px 16px; border: 1px solid #e1def7; border-radius: 8px; text-decoration: none; color: var(--text-main); font-weight: 500; display: block; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">Backblaze B2</a>
              </div>
           </div>
 
