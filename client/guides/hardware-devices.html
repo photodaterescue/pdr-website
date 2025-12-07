@@ -115,6 +115,13 @@
                     <td>Avoid Google Photos "Save to device" — it strips metadata.</td>
                   </tr>
                   <tr>
+                    <td><strong>ChromeOS / Chromebooks</strong></td>
+                    <td>Copy DCIM and Pictures folders via Files app</td>
+                    <td><span class="status-icon star">★</span> Full EXIF if originals; timestamps may rewrite on copy</td>
+                    <td>Budget Android-photo users, school devices</td>
+                    <td>Avoid Google Photos "Save to device" — recompressed duplicates.</td>
+                  </tr>
+                  <tr>
                     <td><strong>Digital Cameras</strong> (DSLR / Mirrorless / Compact)</td>
                     <td>Copy SD card root folder (including subfolders)</td>
                     <td><span class="status-icon star">★</span> The richest metadata of all</td>
@@ -190,6 +197,20 @@
 
             <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
 
+            <h3>ChromeOS / Chromebooks</h3>
+            <p><strong>Best for:</strong> Budget Android-photo users and managing files on school or lightweight devices.</p>
+
+            <h4>Optimal Workflow</h4>
+            <ol>
+                <li>Connect your external drive or SD card.</li>
+                <li>Open the "Files" app.</li>
+                <li>Copy the DCIM and Pictures folders directly to your external storage.</li>
+                <li>Avoid using the Google Photos app to "Save to device" as this creates duplicates.</li>
+            </ol>
+            <p><strong>Why PDR works here:</strong> While ChromeOS sometimes modifies file timestamps during copy, PDR prioritizes the internal EXIF data which remains intact.</p>
+
+            <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
+
             <h3>Digital Cameras (DSLR / Mirrorless)</h3>
             <p><strong>Best for:</strong> RAW files, JPEG + RAW pairs, burst sets, and the cleanest EXIF metadata.</p>
 
@@ -220,7 +241,7 @@
                 <li>Copy everything into a single folder for PDR processing.</li>
                 <li>Do not reorganise — PDR will deduplicate and restore order.</li>
             </ol>
-            <p><strong>Why PDR works here:</strong> Even if modified dates are wrong, EXIF usually survives. When EXIF is missing, PDR falls back to filename logic or contextual inference.</p>
+            <p><strong>Why PDR works here:</strong> EXIF often survives even when filenames and folder structures have deteriorated. When EXIF is missing, PDR falls back to filename logic or contextual inference.</p>
           </div>
 
           <div class="guide-section">
@@ -292,6 +313,26 @@
                    <!-- Server/NAS icon -->
                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
                    Synology NAS (DS220+)
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Cable icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a2 2 0 0 1 2-2h2"/><path d="M6 12h.01"/><path d="M18 12h.01"/></svg>
+                   Anker USB-C Data Cables
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Hub icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="8" rx="2"/><path d="M6 8v-2"/><path d="M10 8v-2"/><path d="M14 8v-2"/><path d="M18 8v-2"/></svg>
+                   UGREEN USB-C Hub & SD Dock
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Hard Drive icon (alt 2) -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"/><path d="M12 6v6l4 2"/></svg>
+                   Seagate Expansion Desktop Drives
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Server/NAS icon (alt) -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                   QNAP TS-230 NAS
                  </a>
              </div>
           </div>
