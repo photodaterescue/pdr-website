@@ -542,44 +542,59 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 24px;
+  border-radius: 28px; /* Slightly more rounded for 3D feel */
   border: 1px solid transparent;
-  box-shadow: 0 0 15px rgba(0,0,0,0.02); /* subtle depth */
 }
 
 /* Ring 1 (Innermost) */
 .ring-1 {
   width: 65%;
   height: 60%;
-  border-color: rgba(248, 193, 92, 0.4); /* Gold */
-  box-shadow: 0 0 20px rgba(248, 193, 92, 0.15);
+  border-color: rgba(248, 193, 92, 0.5);
+  box-shadow: 
+    0 4px 12px rgba(248, 193, 92, 0.25),
+    inset 0 1px 8px rgba(255, 255, 255, 0.6);
 }
 
 /* Ring 2 */
 .ring-2 {
   width: 80%;
   height: 75%;
-  border-color: rgba(183, 124, 255, 0.3); /* Purple */
+  border-color: rgba(183, 124, 255, 0.35);
+  box-shadow: 
+    0 6px 16px rgba(183, 124, 255, 0.15),
+    inset 0 1px 8px rgba(255, 255, 255, 0.4);
 }
 
 /* Ring 3 */
 .ring-3 {
   width: 95%;
   height: 90%;
-  border-color: rgba(248, 193, 92, 0.3); /* Gold */
+  border-color: rgba(248, 193, 92, 0.3);
+  box-shadow: 
+    0 8px 20px rgba(248, 193, 92, 0.1),
+    inset 0 1px 12px rgba(255, 255, 255, 0.3);
 }
 
 /* Ring 4 (Outermost) */
 .ring-4 {
   width: 110%;
   height: 105%;
-  border-color: rgba(183, 124, 255, 0.2); /* Purple */
+  border-color: rgba(183, 124, 255, 0.2);
+  box-shadow: 
+    0 10px 24px rgba(183, 124, 255, 0.08),
+    inset 0 1px 15px rgba(255, 255, 255, 0.2);
 }
 
 .lifetime-note {
-  margin-top: 6px;
+  margin-top: 12px;
+  margin-bottom: 2px;
   font-size: 0.8rem;
   color: var(--text-soft);
+  text-align: center;
+  font-style: italic;
+  position: relative;
+  z-index: 5;
 }
 
 /* Pricing footnote */
