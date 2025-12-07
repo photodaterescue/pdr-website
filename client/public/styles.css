@@ -516,35 +516,35 @@ body {
 .pricing-card--lifetime {
   overflow: hidden;
   background: #fff7ef;
+  z-index: 1;
 }
 
 .pricing-card--lifetime::before {
   content: "";
   position: absolute;
-  inset: -40%;
-  background:
-    radial-gradient(circle at 0% 0%, rgba(183, 124, 255, 0.3), transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(248, 193, 92, 0.35), transparent 55%);
-  opacity: 0.9;
-  transform: scale(1);
-  animation: ripple 8s ease-in-out infinite alternate;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(
+    circle,
+    rgba(248, 193, 92, 0.15) 0%,
+    rgba(183, 124, 255, 0.15) 25%,
+    rgba(248, 193, 92, 0.15) 50%,
+    rgba(183, 124, 255, 0.15) 75%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: rippleGlow 8s ease-in-out infinite alternate;
+  z-index: -1;
   pointer-events: none;
-  z-index: 0;
+  filter: blur(20px);
 }
 
-.pricing-card--lifetime>* {
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes ripple {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(1.08);
-  }
+@keyframes rippleGlow {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.9; }
 }
 
 .lifetime-note {
