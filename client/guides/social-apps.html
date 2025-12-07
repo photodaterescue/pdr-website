@@ -58,22 +58,224 @@
       </div>
     </header>
 
-    <main>
+    <main class="guide-content">
       <section class="section">
         <div class="section-inner">
-          <h1 class="section-title">Social Apps</h1>
-          <p class="section-tagline">
-            Recovering timelines from chat histories and social media downloads.
+          <h1 class="section-title section-title-center">Social Apps</h1>
+          <p class="section-tagline section-tagline-center">
+            Recovering timelines from chat histories, social media downloads, short-form platforms, and fragmented exports — cleanly, safely, and with maximum metadata recovery.
           </p>
           
-          <div class="why-card">
-            <h3>Handling Social Media Exports</h3>
+          <div class="guide-section">
+            <h2>Overview: Why Social App Exports Need Special Care</h2>
+            <p>Social apps were never designed to preserve your memories long-term. They strip EXIF, compress photos, rename files, split albums, and often break chronological order entirely.</p>
+            
+            <p>PDR rebuilds that timeline — but your export method still determines how much realism we can restore.</p>
+            
+            <p>This guide gives you:</p>
             <ul>
-                <li><strong>WhatsApp:</strong> WhatsApp strips EXIF metadata but often encodes the date in the filename (e.g., IMG-20230101-WA0001). PDR parses these filenames to restore the correct date taken.</li>
-                <li><strong>Messenger / Telegram / Signal:</strong> Similar to WhatsApp, these apps often modify metadata. PDR uses file attributes and naming patterns to reconstruct the timeline.</li>
-                <li><strong>Snapchat / TikTok:</strong> Downloaded clips often lose their original creation time. PDR can help place them back in context based on export dates or filenames.</li>
-                <li><strong>Consolidating Chats:</strong> If you have multiple backups from different years or devices, put them all in one folder. PDR will sort them out chronologically.</li>
+                <li>The correct export method for each major social platform</li>
+                <li>The limitations of each platform (resolution, metadata, pairing, ordering)</li>
+                <li>How PDR repairs them</li>
+                <li>How to structure your exports before feeding them into PDR</li>
+                <li>Best practices for re-uploading or archiving after PDR</li>
+                <li>A quick-decision table so you always pick the optimal export workflow</li>
             </ul>
+            
+            <p>Everything here is built for a premium, optimal experience — no trial-and-error, no wasted time.</p>
+
+            <hr class="guide-divider">
+
+            <h2>1. Quick Decision Table — Which Export Method Should You Use?</h2>
+            
+            <div class="guide-table-container">
+              <table class="guide-table">
+                <thead>
+                  <tr>
+                    <th>Social App</th>
+                    <th>Best Export Method</th>
+                    <th>Metadata Status</th>
+                    <th>Resolution</th>
+                    <th>PDR Repair Strategy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>WhatsApp</strong></td>
+                    <td>Chat Export (with Media)</td>
+                    <td><span class="status-icon cross">✗</span> Stripped</td>
+                    <td>Compressed</td>
+                    <td>Filename inference (IMG-YYYYMMDD)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Messenger</strong></td>
+                    <td>Download Your Information</td>
+                    <td><span class="status-icon cross">✗</span> Stripped</td>
+                    <td>Compressed</td>
+                    <td>JSON pairing + Filename logic</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Instagram</strong></td>
+                    <td>Download Your Information</td>
+                    <td><span class="status-icon cross">✗</span> Partial</td>
+                    <td>Compressed</td>
+                    <td>JSON pairing + Date inference</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Facebook</strong></td>
+                    <td>Download Your Information</td>
+                    <td><span class="status-icon cross">✗</span> Stripped</td>
+                    <td>Compressed</td>
+                    <td>JSON metadata reconstruction</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Snapchat</strong></td>
+                    <td>My Data Download</td>
+                    <td><span class="status-icon cross">✗</span> Stripped</td>
+                    <td>Original (mostly)</td>
+                    <td>Memory filenames + JSON dates</td>
+                  </tr>
+                  <tr>
+                    <td><strong>TikTok</strong></td>
+                    <td>Data Download</td>
+                    <td><span class="status-icon cross">✗</span> Stripped</td>
+                    <td>Original</td>
+                    <td>Date-posted inference from filename</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Telegram</strong></td>
+                    <td>Desktop App Export</td>
+                    <td><span class="status-icon cross">✗</span> Stripped</td>
+                    <td>Compressed (unless file)</td>
+                    <td>Unix timestamp decoding</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <hr class="guide-divider">
+          </div>
+
+          <div class="guide-section">
+            <hr class="guide-divider" style="margin-top: 0; margin-bottom: 30px;">
+            <h2>2. Exporting from Each Social Platform — Premium, Optimal Best Practices</h2>
+
+            <h3>WhatsApp</h3>
+            <p><strong>Best for:</strong> Reclaiming years of shared family photos, group chat histories, and "lost" memories.</p>
+            <p><strong>The problem:</strong> WhatsApp strips all EXIF data. A photo taken in 2015 but saved today will appear as "today" in most apps.</p>
+            <h4>Optimal Workflow</h4>
+            <ol>
+                <li>Open the specific chat or group info.</li>
+                <li>Scroll to "Export Chat" (bottom).</li>
+                <li>Select "Attach Media".</li>
+                <li>Save the resulting ZIP file.</li>
+                <li>Feed the unzipped folder directly into PDR.</li>
+            </ol>
+            <p><strong>Why PDR works here:</strong> WhatsApp filenames (e.g., <code>IMG-20190521-WA0002.jpg</code>) contain the perfect date. PDR reads this string and injects a valid "Date Taken" timestamp back into the file itself.</p>
+
+            <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
+
+            <h3>Facebook (Download Your Information)</h3>
+            <p><strong>Best for:</strong> Retrieving college albums, early digital uploads, and tagged photos from 2008–2015.</p>
+            <h4>Optimal Workflow</h4>
+            <ol>
+                <li>Go to Settings & Privacy → Your Information and Permissions.</li>
+                <li>Click "Download your information".</li>
+                <li>Request a download for "Posts" (Photos and Videos).</li>
+                <li>Select Format: <strong>JSON</strong> (Crucial! HTML is much harder to parse).</li>
+                <li>Select Quality: <strong>High</strong>.</li>
+                <li>Download and unzip into your PDR input folder.</li>
+            </ol>
+            <p><strong>Why JSON?</strong> The JSON files contain the exact upload time, album names, and descriptions. PDR uses this to fix the otherwise generic filenames facebook assigns.</p>
+
+            <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
+
+            <h3>Instagram</h3>
+            <p><strong>Best for:</strong> Curated visual diaries, stories archives, and filtered memories.</p>
+            <h4>Optimal Workflow</h4>
+            <ol>
+                <li>Go to "Your Activity" → "Download your information".</li>
+                <li>Request a download for "Content" (Photos, Videos, Stories).</li>
+                <li>Select Format: <strong>JSON</strong>.</li>
+                <li>Extract the ZIP.</li>
+                <li>Drag the entire folder into PDR.</li>
+            </ol>
+            <p>PDR will re-associate the media files with their correct creation dates found in the JSON data, fixing the "everything happened today" issue common with bulk downloads.</p>
+
+            <hr style="border: 0; border-top: 1px solid #e1def7; margin: 40px 0;">
+
+            <h3>Messenger</h3>
+            <p><strong>Best for:</strong> One-on-one shared histories and privately sent media.</p>
+            <h4>Optimal Workflow</h4>
+            <ol>
+                <li>Use the same "Download Your Information" tool as Facebook.</li>
+                <li>Select "Messages" only.</li>
+                <li>Format: <strong>JSON</strong>.</li>
+                <li>This export is often huge; extract it carefully.</li>
+            </ol>
+            <p>PDR scans the message logs to find when an image was sent and applies that timestamp to the image file.</p>
+          </div>
+
+          <div class="guide-section">
+            <h2>3. After PDR — Structuring Your Social Archive</h2>
+            <p>Social media photos are usually lower resolution than camera originals. It is best to keep them slightly separate.</p>
+
+            <h3>Recommended Folder Structure</h3>
+            <pre style="background: #f8f8fc; padding: 16px; border-radius: 8px; font-size: 0.9rem; color: var(--text-muted); border: 1px solid #e1def7; overflow-x: auto;">
+/My Photo Library
+    /Camera Originals (High Res)
+    /Scans & Legacy
+    /Social Media Archive (Low Res)
+        /WhatsApp - Family Group
+        /Facebook - College Years
+        /Instagram - 2012-2020
+            </pre>
+
+            <p>By keeping them in a "Social Media Archive" folder, you preserve the memories without cluttering your high-quality print-ready timeline.</p>
+
+            <hr class="guide-divider">
+          </div>
+
+          <div class="guide-section">
+            <h2>4. Common Social Export Pain Points</h2>
+            
+            <h3>1. "All my photos are dated today"</h3>
+            <p>This is standard behavior for downloaded files. PDR fixes this by reading the filename or JSON sidecar.</p>
+
+            <h3>2. "The resolution is low"</h3>
+            <p>Social apps compress images aggressively. PDR cannot restore pixels that were never there, but it <em>can</em> ensure the low-res photo appears in the correct year.</p>
+
+            <h3>3. "My videos have no dates"</h3>
+            <p>Video metadata is notoriously fragile in social exports. PDR attempts to deduce dates from the file container or surrounding file context.</p>
+          </div>
+
+          <div class="guide-section" style="background: #f8f8fc; margin-top: -30px;">
+             <h2>Recommended Storage for Archives</h2>
+             <p>Once you've rescued these memories, give them a safe home.</p>
+             <p><em>(Affiliate links below help support PDR at no extra cost to you.)</em></p>
+             
+             <div class="guide-btn-grid">
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Cloud icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19c0-1.7-1.3-3-3-3h-1.1c-.5-3-3.1-5-6-5-3.3 0-6 2.7-6 6 0 2.4 1.4 4.5 3.5 5.5"/><path d="M22 17c0-2.8-2.2-5-5-5-1.4 0-2.7.6-3.6 1.5"/><path d="M16 19h6"/></svg>
+                   Google One
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Cloud Rain icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/></svg>
+                   iCloud+
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Cloud Drizzle icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M8 19v1"/><path d="M8 14v1"/><path d="M16 19v1"/><path d="M16 14v1"/><path d="M12 21v1"/><path d="M12 16v1"/></svg>
+                   OneDrive
+                 </a>
+                 <a href="#" class="guide-cloud-btn">
+                   <!-- Archive (Box) icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>
+                   Dropbox
+                 </a>
+             </div>
           </div>
         </div>
       </section>
