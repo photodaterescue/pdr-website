@@ -747,6 +747,17 @@ body {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  /* Centering */
+  text-align: center;
+  align-items: center;
+  /* Hover effects */
+  box-shadow: var(--shadow-card);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s ease;
+}
+
+.partners-strip:hover {
+  transform: translateY(-2px);
+  border-color: var(--lavender);
 }
 
 .partners-strip h2 {
@@ -756,7 +767,7 @@ body {
 }
 
 .partners-strip .btn-outline {
-  align-self: flex-start;
+  /* Removed align-self: flex-start to allow align-items: center to work */
   border-width: 2px; /* Bolder outline */
   font-weight: 600;
   box-shadow: 0 4px 12px rgba(108, 99, 255, 0.08); /* Micro-shadow */
