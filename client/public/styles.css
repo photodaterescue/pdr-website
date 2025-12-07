@@ -199,9 +199,16 @@ body {
 
 .btn-hero {
   /* Matching standard .btn size as requested */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
   padding: 8px 18px !important;
   font-size: 0.88rem !important;
   line-height: 1.5 !important; 
+  border-width: 1px !important;
+  border-style: solid !important;
+  /* Ensure border-color is not overridden to none/null, but respects the class colors */
   height: auto !important;
   min-height: 0 !important;
 }
