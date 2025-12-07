@@ -516,46 +516,64 @@ body {
 .pricing-card--lifetime {
   position: relative;
   overflow: hidden;
-  background: var(--bg-surface);
+  background: #ffffff;
   z-index: 1;
-  border-color: rgba(183, 124, 255, 0.5);
+  border-color: rgba(183, 124, 255, 0.3);
 }
 
-.pricing-card--lifetime::before,
-.pricing-card--lifetime::after {
-  content: "";
+/* Ensure content sits above ripples */
+.pricing-card--lifetime > *:not(.ripple-background) {
+  position: relative;
+  z-index: 5;
+}
+
+.ripple-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ripple-ring {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  border-radius: var(--radius-card);
+  border-radius: 24px;
   border: 1px solid transparent;
-  box-shadow: 0 0 16px 2px rgba(183, 124, 255, 0.15);
-  z-index: -1;
-  animation: rippleLines 3s linear infinite;
-  opacity: 0;
-  pointer-events: none;
+  box-shadow: 0 0 15px rgba(0,0,0,0.02); /* subtle depth */
 }
 
-.pricing-card--lifetime::after {
-  animation-delay: 1.5s;
+/* Ring 1 (Innermost) */
+.ring-1 {
+  width: 65%;
+  height: 60%;
+  border-color: rgba(248, 193, 92, 0.4); /* Gold */
+  box-shadow: 0 0 20px rgba(248, 193, 92, 0.15);
 }
 
-@keyframes rippleLines {
-  0% {
-    width: 95%;
-    height: 95%;
-    border-color: rgba(248, 193, 92, 0.6);
-    opacity: 0.8;
-  }
-  100% {
-    width: 135%;
-    height: 125%;
-    border-color: rgba(183, 124, 255, 0);
-    opacity: 0;
-  }
+/* Ring 2 */
+.ring-2 {
+  width: 80%;
+  height: 75%;
+  border-color: rgba(183, 124, 255, 0.3); /* Purple */
+}
+
+/* Ring 3 */
+.ring-3 {
+  width: 95%;
+  height: 90%;
+  border-color: rgba(248, 193, 92, 0.3); /* Gold */
+}
+
+/* Ring 4 (Outermost) */
+.ring-4 {
+  width: 110%;
+  height: 105%;
+  border-color: rgba(183, 124, 255, 0.2); /* Purple */
 }
 
 .lifetime-note {
