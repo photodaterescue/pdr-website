@@ -1,0 +1,154 @@
+2. Exporting from Each Device Type — Premium, Optimal Best Practices
+iPhone / iPad
+
+Best for:
+Uncompressed originals, Live Photo pairs, HEIC + MOV pairing, and rich EXIF metadata.
+
+Optimal Workflow (Mac)
+
+Connect your iPhone/iPad via USB.
+
+Open Finder → Locations → [Your Device].
+
+Enter the DCIM folder.
+
+Copy all subfolders into a master folder (e.g., PDR_Input/iPhone_2020_2024).
+
+Ensure Live Photo .HEIC and .MOV pairs remain together.
+
+Optimal Workflow (Windows)
+
+Connect iPhone and trust the device.
+
+Open This PC → Apple iPhone → Internal Storage → DCIM.
+
+Copy all folders without renaming.
+
+Avoid importing through third-party apps — they often strip EXIF.
+
+Why PDR works here:
+iPhone preserves original timestamps perfectly. PDR simply reaffirms these dates and renames files into your new clean universal format.
+
+Android Phones
+
+Best for:
+Camera folders, screenshots, WhatsApp camera photos, and app-specific albums.
+
+Optimal Workflow
+
+Connect via USB and set the phone to File Transfer (MTP) mode.
+
+Copy the following folders:
+
+DCIM/Camera
+
+DCIM/Screenshots
+
+Pictures/*
+
+Any app-specific camera folders
+
+Do not mix with Google Photos “Saved” copies — those are recompressed duplicates.
+
+Place the originals into your PDR Input folder.
+
+Why PDR works here:
+Android filenames often contain embedded timestamps (IMG_20200614_142300.jpg), which PDR reads and confirms against EXIF.
+
+Digital Cameras (DSLR / Mirrorless)
+
+Best for:
+RAW files, JPEG + RAW pairs, burst sets, and the cleanest EXIF metadata.
+
+Optimal Workflow
+
+Remove the SD card.
+
+Copy the entire card structure — not just the DCIM folder.
+
+Keep RAW files (PDR reads their timestamps even if not editing them).
+
+Do not rename or reorganise until after PDR.
+
+Why PDR works here:
+Cameras store the purest metadata. PDR can rebuild flawless timelines with almost no inference needed.
+
+Legacy Devices & Old Backups
+
+Best for:
+Recovering forgotten photos from early smartphones, old laptops, and mixed-generation drives.
+
+Optimal Workflow
+
+Search old drives for folders named:
+
+DCIM
+
+Camera
+
+Photos
+
+100MEDIA, 101APPLE, Nikon, Canon
+
+Copy everything into a single folder for PDR processing.
+
+Do not reorganise — PDR will deduplicate and restore order.
+
+Why PDR works here:
+Even if modified dates are wrong, EXIF usually survives. When EXIF is missing, PDR falls back to filename logic or contextual inference.
+
+3. After PDR — How to Store and Structure Your Hardware Archive
+
+Hardware-sourced photos are often higher quality and deserve prioritisation.
+
+Recommended Folder Structure
+/My Photo Library
+    /Camera Originals (High Res)
+        /iPhone 2015–2020
+        /iPhone 2020–2024
+        /Canon 5D Archive
+        /Sony Mirrorless RAW
+    /Social Media (Low Res)
+    /Screenshots
+    /Scans & Prints
+
+Best Practices
+
+Keep RAW files separate — they don’t need renaming.
+
+Keep high-resolution lenses grouped (Canon, Sony, Nikon).
+
+Store these on your fastest drive or NAS for long-term archiving.
+
+Never re-sync these originals into cloud services that may modify them.
+
+4. Common Hardware Export Pain Points — And How You Avoid Them
+1. “My photos have today’s date”
+
+Windows sometimes rewrites Modified Date during copy.
+PDR fixes this using EXIF.
+
+2. Mixed folders and duplicates
+
+Old phone migrations create copies everywhere.
+PDR normalises and deduplicates automatically.
+
+3. RAW files not handled by other tools
+
+PDR doesn’t edit RAW, but it does read timestamps so your timeline stays chronological.
+
+4. Burst modes and Live Photos split apart
+
+PDR detects bursts + Live Photos, keeping sequences correctly ordered.
+
+Recommended Tools for Hardware Imports
+
+(Like other pages, the agent can insert your affiliate links here.)
+
+SanDisk Extreme Pro SD Readers – reliable, fast, no corruption.
+
+Samsung T7 / T9 SSDs – perfect master library drives.
+
+WD My Passport Ultra – long-term cold storage.
+
+Synology NAS (DS220+ / DS423+) – best for multi-device families.
