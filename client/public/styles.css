@@ -161,12 +161,9 @@ body {
 }
 
 .btn-primary {
-  background: 
-    linear-gradient(var(--lavender), var(--lavender)) padding-box,
-    linear-gradient(90deg, var(--lavender), var(--accent-gold)) border-box;
+  background: var(--lavender);
   color: #ffffff;
   box-shadow: 0 10px 25px rgba(108, 99, 255, 0.35);
-  border: 2px solid transparent;
 }
 
 .btn-primary:hover {
