@@ -165,7 +165,7 @@ body {
 .btn-primary {
   background: var(--lavender);
   color: #ffffff;
-  box-shadow: 0 10px 25px rgba(108, 99, 255, 0.35);
+  box-shadow: 0 10px 25px rgba(108, 99, 255, 0.3); /* Reduced opacity from 0.35 */
 }
 
 .btn-primary:hover {
@@ -207,7 +207,7 @@ body {
 /* ========================================================= */
 
 .section {
-  padding: 64px 20px;
+  padding: 80px 20px; /* Increased from 64px */
 }
 
 .section-inner {
@@ -710,8 +710,17 @@ body {
   color: var(--text-main);
 }
 
-.guide-card p {
-  margin: 0 0 6px;
+.guide-card-image {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.guide-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ========================================================= */
@@ -781,6 +790,12 @@ body {
   box-shadow: var(--shadow-card);
   font-size: 0.9rem;
   color: var(--text-soft);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s ease;
+}
+
+.faq-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--lavender);
 }
 
 .faq-card h3 {
