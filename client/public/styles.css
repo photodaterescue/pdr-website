@@ -941,6 +941,32 @@ body {
   color: var(--lavender-deep);
 }
 
+/* Footer brand logo (matches header style) */
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-brand-mark {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+.footer-brand-wordmark {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  transition: color 0.2s ease;
+}
+
+.footer-brand:hover .footer-brand-wordmark {
+  color: var(--lavender-deep);
+}
+
 
 /* ========================================================= */
 /* Guide Tables                                               */
