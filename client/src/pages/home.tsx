@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Twitter, Mail, ExternalLink, Code2, Palette, Terminal } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -24,67 +22,15 @@ const staggerContainer = {
 };
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
     }
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-accent selection:text-accent-foreground">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="text-xl font-display font-bold tracking-tighter flex items-center gap-2">
-            <div className="w-8 h-8 bg-foreground text-background rounded-full flex items-center justify-center font-mono text-sm">A</div>
-            Alex Dev
-          </Link>
-          
-          <div className="hidden md:flex items-center gap-8">
-            {["About", "Work", "Contact"].map((item) => (
-              <button 
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-sm font-medium hover:text-accent transition-colors"
-              >
-                {item}
-              </button>
-            ))}
-            <Button size="sm" className="rounded-full px-6">Hire Me</Button>
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              {isMenuOpen ? <path d="M18 6L6 18M6 6l12 12" /> : <path d="M3 12h18M3 6h18M3 18h18" />}
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-background border-b border-border p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
-            {["About", "Work", "Contact"].map((item) => (
-              <button 
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-lg font-medium text-left"
-              >
-                {item}
-              </button>
-            ))}
-            <Button className="w-full mt-2">Hire Me</Button>
-          </div>
-        )}
-      </nav>
-
       <main>
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
@@ -290,19 +236,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <footer className="py-8 border-t border-border">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
-            © 2025 Alex Dev. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms</a>
-            <a href="#" className="hover:text-foreground transition-colors">Sitemap</a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
