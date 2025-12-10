@@ -514,6 +514,15 @@ body {
   color: var(--text-soft);
 }
 
+.plan-footer {
+  text-align: center;
+  margin-top: auto;
+  padding-top: 12px;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  border-top: 1px solid var(--border);
+}
+
 .plan-features {
   list-style: disc;
   padding-left: 18px;
