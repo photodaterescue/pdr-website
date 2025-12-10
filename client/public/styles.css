@@ -658,15 +658,29 @@ body {
   box-shadow: none;
 }
 
-.lifetime-note {
-  margin-top: 12px;
-  margin-bottom: 2px;
-  font-size: 0.8rem;
-  color: var(--text-soft);
+.plan-footer {
+  margin-top: auto;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  color: var(--text-main);
   text-align: center;
-  font-style: italic;
   position: relative;
   z-index: 5;
+}
+
+.lifetime-note {
+  margin-top: 8px;
+  margin-bottom: 2px;
+  font-size: 0.8rem;
+  color: var(--text-main);
+  text-align: center;
+  font-style: normal;
+  position: relative;
+  z-index: 5;
+}
+
+.lifetime-note:first-of-type {
+  margin-top: 12px;
 }
 
 /* Pricing footnote */
