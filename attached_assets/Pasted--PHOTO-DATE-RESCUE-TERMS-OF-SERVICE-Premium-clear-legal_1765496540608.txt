@@ -1,0 +1,240 @@
+⭐ PHOTO DATE RESCUE — TERMS OF SERVICE
+
+(Premium, clear, legally strong)
+
+Last updated: [add date]
+
+Welcome to Photo Date Rescue (“PDR”, “we”, “our”, “us”).
+By accessing or using our software or website (photodaterescue.com), you agree to the following Terms.
+
+1. What PDR Is
+
+Photo Date Rescue is a software application designed to repair, organise, and rename photo and video metadata. The service includes:
+
+a free demo (web-based),
+
+a paid desktop application,
+
+optional subscription plans (monthly or yearly),
+
+an optional lifetime licence (available only after completing one full paid billing cycle).
+
+2. User Responsibilities
+
+Users must:
+
+create a full backup of their photos before using the app,
+
+ensure they have the legal right to process any images,
+
+use the app responsibly and for lawful purposes,
+
+keep their licence key secure and private.
+
+PDR is not responsible for accidental data loss caused by user error, corrupted files, unsupported formats, or unbacked-up data.
+
+3. Software Licence Terms
+
+When you purchase PDR, you receive a non-transferable, single-user licence.
+You may:
+
+install and use the licence on multiple personal devices belonging to you,
+
+request support via email if activation fails.
+
+You may not:
+
+share, sell, lend, or gift your licence to another person,
+
+resell activation keys,
+
+reverse engineer, copy, or distribute the software.
+
+Misuse may result in licence suspension without refund.
+
+4. Lifetime Licence Eligibility
+
+The lifetime licence is only available after a user completes one full paid billing cycle (one full month or one full year).
+Early upgrades, bypassing the cycle, or using the free demo does not grant access.
+
+This ensures customers fully test compatibility and workflow before long-term commitment.
+
+5. Payments
+
+All payments are processed securely through Lemon Squeezy (our merchant of record).
+You agree that:
+
+Lemon Squeezy handles billing, receipts, and tax collection.
+
+Prices are listed in the currency shown at checkout.
+
+No VAT is applied unless the company becomes VAT-registered (currently not VAT registered).
+
+6. Refund Policy
+
+Refunds are governed by our separate Refund Policy, which forms part of these Terms.
+
+7. Limitation of Liability
+
+Our software is provided “as is”.
+To the fullest extent permitted by law, PDR is not liable for:
+
+loss of data,
+
+indirect or incidental damages,
+
+corrupted or unsupported files.
+
+Users must maintain personal backups and test the demo before purchasing.
+
+8. Marketing Consent
+
+If a user consents to marketing during checkout, PDR may contact them about updates, offers, or new products.
+Without consent, communications will be strictly limited to transactional emails (orders, receipts, support).
+
+9. Contact
+
+For support or legal enquiries:
+admin@photodaterescue.com
+
+10. Governing Law
+
+These Terms are governed by UK law.
+
+⭐ PHOTO DATE RESCUE — REFUND POLICY
+
+Last updated: [add date]
+
+We aim to deliver software that feels premium, reliable, and genuinely helpful.
+Because PDR offers a free demo and clear system requirements, refunds are limited.
+
+1. Refund Window
+
+Refund requests must be made within 14 days of purchase.
+
+2. Valid Reasons for Refund
+
+A refund may be approved if:
+
+the software fails to function as advertised,
+
+we cannot resolve a technical issue after support attempts,
+
+the activation system fails and cannot be restored.
+
+3. Not Eligible for Refund
+
+Refunds will not be issued for:
+
+user error,
+
+unsupported file types,
+
+lack of backups resulting in data loss,
+
+dissatisfaction based on results after full processing (demo exists for testing),
+
+attempting to misuse licences or circumvent the lifetime eligibility rule.
+
+4. How to Request a Refund
+
+Email: admin@photodaterescue.com
+ with:
+
+order number,
+
+email used at checkout,
+
+brief explanation of the issue.
+
+Refunds, if approved, are processed by Lemon Squeezy.
+
+⭐ PHOTO DATE RESCUE — PRIVACY POLICY
+
+Last updated: [add date]
+
+Your privacy matters. We collect only what is necessary to run our service effectively and support your experience.
+
+1. What Data We Collect
+
+Email address (via Lemon Squeezy checkout)
+
+Order details (plan, date, amount)
+
+Licence activation data (device ID, OS type)
+
+Support emails sent to us
+
+We do not collect your photos or store your media files.
+
+2. Why We Collect Data
+
+We use your information to:
+
+deliver your licence,
+
+provide customer support,
+
+verify purchases,
+
+send transactional emails (confirmation, receipts),
+
+send marketing emails only if you opt in.
+
+3. Email Marketing
+
+Customers must explicitly opt in to receive marketing messages.
+If you do not opt in, you will only receive necessary transactional messages.
+
+4. Data Storage & Security
+
+Data is stored securely through:
+
+Lemon Squeezy (payments + receipts)
+
+Secure email servers (support requests)
+
+Internal licence management systems
+
+You may request data deletion at any time.
+
+5. ICO Registration
+
+Photo Date Rescue Ltd will be registered with the UK ICO as required for handling customer email data.
+
+6. Contact
+
+admin@photodaterescue.com
+
+⭐ WHERE TO PLACE THESE ON YOUR WEBSITE
+1. Footer (3 links)
+
+Add links labelled:
+
+Terms of Service
+
+Refund Policy
+
+Privacy Policy
+
+All three link to simple HTML pages (we can format these into pages next).
+
+2. Checkout Page
+
+Add a small line under the “Buy” button:
+
+“By purchasing, you agree to our Terms of Service and Refund Policy.”
+
+3. Pricing Page
+
+Add two subtle lines underneath the pricing table:
+
+“Lifetime licence available only after completing one full paid billing cycle.”
+“Photo Date Rescue Ltd is not currently VAT registered.”
+
+4. Support Page
+
+Add:
+admin@photodaterescue.com
+
+and link to the Refund Policy.
