@@ -1281,6 +1281,15 @@ body {
   }
 }
 
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(169, 156, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 6px 28px rgba(169, 156, 255, 0.25);
+  }
+}
+
 main.guide-page-exit {
   animation: fadeOutLeft 0.4s ease-out;
 }
@@ -1308,6 +1317,7 @@ main.guide-page-enter {
   overflow: hidden;
   max-width: 48px;
   opacity: 0.6;
+  cursor: pointer;
 }
 
 .guide-nav-btn:hover {
@@ -1315,8 +1325,9 @@ main.guide-page-enter {
   max-width: 280px;
   gap: 10px;
   padding: 12px 18px;
-  box-shadow: 0 8px 32px rgba(169, 156, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(169, 156, 255, 0.3), inset 0 0 20px rgba(169, 156, 255, 0.1);
   border-color: var(--lavender);
+  transform: translateY(-50%) scale(1.02);
 }
 
 .guide-nav-btn.prev {
@@ -1344,6 +1355,7 @@ main.guide-page-enter {
 .guide-nav-btn:hover .nav-icon {
   background: var(--lavender);
   color: white;
+  box-shadow: 0 0 12px rgba(169, 156, 255, 0.4);
 }
 
 .guide-nav-btn .nav-icon svg {
@@ -1359,6 +1371,7 @@ main.guide-page-enter {
   opacity: 0;
   transform: translateX(-10px);
   transition: all 0.3s ease;
+  letter-spacing: 0.3px;
 }
 
 .guide-nav-btn.next .nav-label {
@@ -1370,17 +1383,34 @@ main.guide-page-enter {
   transform: translateX(0);
 }
 
-.guide-nav-btn.disabled {
-  opacity: 0.2;
+/* Desktop tooltip on hover via aria-label (title attribute fallback) */
+.guide-nav-btn[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  background: var(--lavender-deep);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 200;
   pointer-events: none;
-  cursor: not-allowed;
+  animation: fadeIn 0.2s ease-in;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
 }
 
-.guide-nav-btn.disabled:hover {
-  max-width: 48px;
-  gap: 0;
-  padding: 12px;
-  box-shadow: 0 4px 20px rgba(169, 156, 255, 0.15);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 /* Mobile responsive */
@@ -1389,6 +1419,10 @@ main.guide-page-enter {
     top: auto;
     bottom: 20px;
     transform: none;
+  }
+  
+  .guide-nav-btn:hover {
+    transform: scale(1.02);
   }
   
   .guide-nav-btn.prev {
