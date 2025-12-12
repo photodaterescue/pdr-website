@@ -1290,6 +1290,15 @@ body {
   }
 }
 
+@keyframes fadeInNavButtons {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
 main.guide-page-exit {
   animation: fadeOutLeft 0.4s ease-out;
 }
@@ -1318,6 +1327,7 @@ main.guide-page-enter {
   max-width: 48px;
   opacity: 0.6;
   cursor: pointer;
+  animation: fadeInNavButtons 0.5s ease-in forwards;
 }
 
 .guide-nav-btn:hover {
