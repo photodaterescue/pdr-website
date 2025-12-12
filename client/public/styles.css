@@ -982,6 +982,32 @@ body {
   color: var(--lavender-deep);
 }
 
+/* Footer legal links */
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 8px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(214, 210, 246, 0.5);
+}
+
+.footer-legal a {
+  color: var(--text-soft);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.footer-legal a:hover {
+  color: var(--lavender-deep);
+}
+
+.footer-legal span {
+  color: var(--text-soft);
+  opacity: 0.5;
+}
 
 /* ========================================================= */
 /* Guide Tables                                               */
