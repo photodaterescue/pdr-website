@@ -1232,3 +1232,145 @@ body {
     padding-bottom: 46px;
   }
 }
+
+/* ========================================================= */
+/* Guide Floating Navigation                                  */
+/* ========================================================= */
+
+.guide-nav-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 50px;
+  padding: 12px;
+  text-decoration: none;
+  color: var(--text-main);
+  box-shadow: 0 4px 20px rgba(169, 156, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  max-width: 48px;
+  opacity: 0.6;
+}
+
+.guide-nav-btn:hover {
+  opacity: 1;
+  max-width: 280px;
+  gap: 10px;
+  padding: 12px 18px;
+  box-shadow: 0 8px 32px rgba(169, 156, 255, 0.25);
+  border-color: var(--lavender);
+}
+
+.guide-nav-btn.prev {
+  left: 20px;
+}
+
+.guide-nav-btn.next {
+  right: 20px;
+  flex-direction: row-reverse;
+}
+
+.guide-nav-btn .nav-icon {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lavender-soft);
+  border-radius: 50%;
+  color: var(--lavender-deep);
+  transition: all 0.3s ease;
+}
+
+.guide-nav-btn:hover .nav-icon {
+  background: var(--lavender);
+  color: white;
+}
+
+.guide-nav-btn .nav-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.5px;
+}
+
+.guide-nav-btn .nav-label {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.guide-nav-btn.next .nav-label {
+  transform: translateX(10px);
+}
+
+.guide-nav-btn:hover .nav-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.guide-nav-btn.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.guide-nav-btn.disabled:hover {
+  max-width: 48px;
+  gap: 0;
+  padding: 12px;
+  box-shadow: 0 4px 20px rgba(169, 156, 255, 0.15);
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .guide-nav-btn {
+    top: auto;
+    bottom: 20px;
+    transform: none;
+  }
+  
+  .guide-nav-btn.prev {
+    left: 16px;
+  }
+  
+  .guide-nav-btn.next {
+    right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .guide-nav-btn {
+    bottom: 16px;
+    padding: 10px;
+  }
+  
+  .guide-nav-btn:hover {
+    max-width: 180px;
+    padding: 10px 14px;
+  }
+  
+  .guide-nav-btn .nav-icon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+  }
+  
+  .guide-nav-btn .nav-icon svg {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .guide-nav-btn .nav-label {
+    font-size: 0.75rem;
+  }
+}
