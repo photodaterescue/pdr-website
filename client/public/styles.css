@@ -1313,7 +1313,7 @@ main.guide-page-enter {
   text-decoration: none;
   color: var(--text-main);
   box-shadow: 0 4px 20px rgba(169, 156, 255, 0.15);
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow: hidden;
   max-width: 48px;
   opacity: 0.6;
@@ -1349,7 +1349,7 @@ main.guide-page-enter {
   background: var(--lavender-soft);
   border-radius: 50%;
   color: var(--lavender-deep);
-  transition: all 0.3s ease;
+  transition: all 0.42s ease;
 }
 
 .guide-nav-btn:hover .nav-icon {
@@ -1370,7 +1370,7 @@ main.guide-page-enter {
   font-weight: 500;
   opacity: 0;
   transform: translateX(-10px);
-  transition: all 0.3s ease;
+  transition: all 0.42s ease;
   letter-spacing: 0.3px;
 }
 
