@@ -38,9 +38,6 @@ async function buildAll() {
   console.log("building client...");
   await viteBuild();
 
-  console.log("copying guides...");
-  await cp("client/guides", "dist/public/guides", { recursive: true });
-
   console.log("building server...");
   const pkg = JSON.parse(await readFile("package.json", "utf-8"));
   const allDeps = [
