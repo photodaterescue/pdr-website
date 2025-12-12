@@ -1327,7 +1327,6 @@ main.guide-page-enter {
   max-width: 48px;
   opacity: 0.6;
   cursor: pointer;
-  animation: fadeInNavButtons 0.5s ease-in forwards;
 }
 
 .guide-nav-btn:hover {
