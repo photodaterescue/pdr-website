@@ -300,6 +300,7 @@ export default function Home() {
             <Link href="/terms" className="hover:text-foreground transition-colors" data-testid="footer-link-terms">Terms of Service</Link>
             <Link href="/refund-policy" className="hover:text-foreground transition-colors" data-testid="footer-link-refund">Refund Policy</Link>
             <Link href="/privacy" className="hover:text-foreground transition-colors" data-testid="footer-link-privacy">Privacy Policy</Link>
+            <Link href="/support" className="hover:text-foreground transition-colors" data-testid="footer-link-support">Support</Link>
           </div>
         </div>
       </footer>

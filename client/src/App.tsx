@@ -8,11 +8,13 @@ import Home from "@/pages/home";
 import Terms from "@/pages/terms";
 import RefundPolicy from "@/pages/refund-policy";
 import Privacy from "@/pages/privacy";
+import Support from "@/pages/support";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/support" component={Support} />
       <Route path="/terms" component={Terms} />
       <Route path="/refund-policy" component={RefundPolicy} />
       <Route path="/privacy" component={Privacy} />
