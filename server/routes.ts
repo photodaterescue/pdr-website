@@ -11,8 +11,16 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  // Support form submission endpoint
-  app.post("/api/support", async (req, res) => {
+  // Health check endpoint
+  app.get("/api/health", (_req, res) => {
+    res.json({ status: "ok", timestamp: new Date().toISOString() });
+  });
+
+  // Support form submission endpoint - handle all methods to diagnose 405
+  app.all("/api/support", async (req, res) => {
+    if (req.method !== "POST") {
+      return res.status(405).json({ error: "Method not allowed", method: req.method, expected: "POST" });
+    }
     try {
       const validatedData = insertSupportSubmissionSchema.parse(req.body);
       const submission = await storage.createSupportSubmission(validatedData);
