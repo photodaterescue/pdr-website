@@ -73,7 +73,7 @@ export default function Privacy() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">6. Contact</h2>
             <p>
-              <a href="mailto:admin@photodaterescue.com" className="text-accent hover:underline" data-testid="link-contact-email">admin@photodaterescue.com</a>
+              For support: <a href="/support" className="text-accent hover:underline" data-testid="link-contact-support">contact support</a>. For privacy enquiries: <a href="mailto:admin@photodaterescue.com" className="text-accent hover:underline" data-testid="link-contact-email">admin@photodaterescue.com</a>
             </p>
           </section>
         </div>

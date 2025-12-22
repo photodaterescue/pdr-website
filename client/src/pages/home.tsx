@@ -189,12 +189,13 @@ export default function Home() {
                   {[
                     { icon: Github, href: "#" },
                     { icon: Twitter, href: "#" },
-                    { icon: Mail, href: "mailto:hello@example.com" }
+                    { icon: Mail, href: "/support" }
                   ].map((Social, i) => (
                     <a 
                       key={i} 
                       href={Social.href} 
                       className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"
+                      data-testid={i === 2 ? "link-contact-mail" : ""}
                     >
                       <Social.icon className="h-5 w-5" />
                     </a>

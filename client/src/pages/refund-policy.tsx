@@ -50,7 +50,7 @@ export default function RefundPolicy() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">4. How to Request a Refund</h2>
             <p className="mb-4">
-              Email: <a href="mailto:admin@photodaterescue.com" className="text-accent hover:underline" data-testid="link-refund-email">admin@photodaterescue.com</a> with:
+              <a href="/support" className="text-accent hover:underline" data-testid="link-refund-support">Contact support</a> or email <a href="mailto:admin@photodaterescue.com" className="text-accent hover:underline" data-testid="link-refund-email">admin@photodaterescue.com</a> with:
             </p>
             <ul className="list-disc pl-6 space-y-2 mb-4">
               <li>order number,</li>
