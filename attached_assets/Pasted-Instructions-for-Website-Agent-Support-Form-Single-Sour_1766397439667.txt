@@ -1,0 +1,143 @@
+Instructions for Website Agent – Support Form (Single Source of Truth)
+Objective
+
+Create one unified Support page + form on the Photo Date Rescue website that:
+
+Works for website visitors and desktop app users
+
+Replaces all mailto links
+
+Captures where the user came from (web vs app) without asking them
+
+Keeps support volume structured and manageable
+
+1. Create / Update Support Page
+
+URL (canonical):
+
+https://www.photodaterescue.com/support
+
+
+This page will be the only support entry point used by:
+
+Website menu → Support
+
+In-app “Contact Support” button
+
+Any future links (email footers, docs, etc.)
+
+2. Build a Web-Based Support Form (NOT mailto)
+Visible fields (keep it minimal):
+
+Email (required)
+
+Message (required)
+
+Optional dropdown:
+
+“What is this about?”
+
+App not launching
+
+Fix crashed / stopped
+
+License issue
+
+Something else
+
+No file upload for now (keeps noise down).
+
+3. Hidden Tracking Fields (Critical)
+
+Add hidden inputs that auto-populate:
+
+source        = web | app
+app_version   = x.x.x (if present)
+os            = windows | mac | unknown
+page_referrer = document.referrer
+timestamp     = submission time
+
+Logic:
+
+Default source = web
+
+If URL contains ?source=app → override to app
+
+If additional params exist, capture them silently
+
+Example desktop app link:
+
+https://www.photodaterescue.com/support?source=app&app_version=1.0.0&os=windows
+
+4. Pre-Form Guardrail (Noise Reduction)
+
+Above the form, include a short guidance block:
+
+Before contacting support
+Most setup, planning, and “is this normal?” questions are answered faster in the Guides.
+
+Include links:
+
+https://www.photodaterescue.com/guides
+
+https://www.photodaterescue.com/guides/cloud-services
+
+https://www.photodaterescue.com/guides/social-apps
+
+https://www.photodaterescue.com/guides/hardware-devices
+
+This subconsciously diverts low-value tickets.
+
+5. Submission Handling
+
+On submit:
+
+Send to one inbox only (no CC chaos)
+
+Include hidden field values in the message body
+
+Subject line format:
+
+[PDR Support] source=app | license issue
+
+
+Confirmation message (important):
+
+Thanks — your message has been received.
+If this is a setup or planning question, you may get a faster answer via the Guides.
+
+No auto-reply essay.
+
+6. Replace Existing Mail Links
+
+Remove or replace:
+
+Any mailto: links
+
+Any button that opens an email client
+
+All “Contact support” buttons must:
+
+→ /support
+
+7. Test Cases (Must Pass)
+
+Agent should test:
+
+Website menu → Support → form submits (source = web)
+
+Direct link with ?source=app → form submits (source = app)
+
+Form works on desktop + mobile
+
+No email client opens anywhere
+
+Why This Matters (for the agent)
+
+One form = one workflow
+
+Hidden metadata = no back-and-forth
+
+Guides reduce support load
+
+Desktop app stays clean (no embedded support UI needed)
