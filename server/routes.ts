@@ -5,6 +5,7 @@ import { insertSupportSubmissionSchema } from "@shared/schema";
 import { getUncachableResendClient } from "./resend";
 
 const SUPPORT_EMAIL = "admin@photodaterescue.com";
+const FROM_EMAIL = "support@updates.photodaterescue.com";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -18,7 +19,7 @@ export async function registerRoutes(
       
       // Send email using Resend
       try {
-        const { client, fromEmail } = await getUncachableResendClient();
+        const { client } = await getUncachableResendClient();
         
         const subjectLine = `[PDR Support] source=${submission.source} | ${submission.category}`;
         
@@ -41,7 +42,7 @@ Support Request ID: ${submission.id}
         `.trim();
 
         await client.emails.send({
-          from: fromEmail,
+          from: FROM_EMAIL,
           to: SUPPORT_EMAIL,
           replyTo: submission.email,
           subject: subjectLine,
