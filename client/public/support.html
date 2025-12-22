@@ -351,10 +351,7 @@
             timestamp: document.getElementById('timestamp').value
           };
 
-          var apiUrl = '/api/support';
-          if (window.location.hostname === 'photodaterescue.com') {
-            apiUrl = 'https://www.photodaterescue.com/api/support';
-          }
+          var apiUrl = 'https://www.photodaterescue.com/api/support';
           
           fetch(apiUrl, {
             method: 'POST',
