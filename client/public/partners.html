@@ -70,6 +70,11 @@
         align-items: center;
         gap: 0.5rem;
       }
+      .path-icon {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+      }
       .path-card p {
         margin: 0;
         color: var(--text-muted);
@@ -277,11 +282,11 @@
       <div id="main-content">
         <div class="path-selection" id="path-selection">
           <button type="button" class="path-card" id="affiliate-path" data-testid="button-affiliate-path">
-            <h2>🤝 Become an Affiliate</h2>
+            <h2><img src="/assets/pdr-affiliates.png" alt="" class="path-icon" /> Become an Affiliate</h2>
             <p>Earn commission by promoting Photo Date Rescue to your audience.</p>
           </button>
           <button type="button" class="path-card" id="partner-path" data-testid="button-partner-path">
-            <h2>🏢 Partner / Recommend Your Product</h2>
+            <h2><img src="/assets/pdr-partners.png" alt="" class="path-icon" /> Partner / Recommend Your Product</h2>
             <p>Have a product or service that complements Photo Date Rescue? Apply to be considered.</p>
           </button>
         </div>
