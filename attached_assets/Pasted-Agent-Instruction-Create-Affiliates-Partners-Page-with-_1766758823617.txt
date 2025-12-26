@@ -1,0 +1,133 @@
+Agent Instruction: Create Affiliates & Partners Page with Smart Split Application Flow
+Objective
+
+Create a dedicated Affiliates & Partners page for the Photo Date Rescue website that supports two distinct application paths:
+
+Affiliates (individuals/creators promoting PDR)
+
+Partners (companies requesting to be recommended within the PDR ecosystem)
+
+This page should be linked from the existing “Enquire about affiliate & partner options” button on the current Affiliates page.
+
+Page Structure
+1. Page Header
+
+Title:
+
+Affiliates & Partners
+
+Intro copy (calm, premium, non-salesy):
+
+Photo Date Rescue works with a small number of trusted affiliates and carefully selected partners.
+Choose the option that best fits how you’d like to work with us.
+
+2. Initial Split (Required – First Interaction)
+
+Present two clear cards or buttons:
+
+Become an Affiliate
+Earn commission by promoting Photo Date Rescue.
+
+Partner / Recommend Your Product
+Have a product or service that complements Photo Date Rescue? Apply to be considered.
+
+Selecting one reveals a different form path (do not mix questions).
+
+Affiliate Application Flow (Path A)
+
+Purpose: Filter for genuine promoters with reach and relevance.
+
+Questions (in this order):
+
+Full name
+
+Email address
+
+Website / channel / platform URL
+
+Primary audience type
+
+Photography / Archiving
+
+Families / Memories
+
+Tech / Utilities
+
+Other (text)
+
+How do you plan to promote PDR? (short text)
+
+Approximate audience size / monthly reach (dropdown ranges)
+
+Country / region
+
+Confirmation note:
+
+All affiliate applications are reviewed. We’ll only get back to you if it’s a good fit.
+
+Partner Application Flow (Path B)
+
+Purpose: High-signal vendor filtering with editorial control.
+
+Questions (in this order):
+
+Company name
+
+Contact name
+
+Contact email
+
+Website URL
+
+What product or service do you offer? (short text)
+
+How does this complement Photo Date Rescue users? (textarea)
+
+Do you offer an affiliate or referral program? (Yes / No)
+
+If Yes → How does it work? (short text)
+
+Are you open to offering exclusive value for PDR users? (Yes / Discuss)
+
+Anything else we should know? (optional textarea)
+
+Disclosure copy (important):
+
+Submissions are reviewed manually. Placement is selective and based on relevance, quality, and user benefit. Listing is not guaranteed.
+
+UX / Design Notes
+
+One-page experience (no redirects after clicking)
+
+Forms reveal dynamically based on selection
+
+Calm, spacious layout (no aggressive CTAs)
+
+Submit button text:
+
+Affiliate: Submit Affiliate Application
+
+Partner: Submit Partner Enquiry
+
+Post-Submission Behaviour
+
+Show an inline success state (no page reload):
+
+Thanks — we’ve received your application.
+If it’s a good fit, we’ll be in touch.
+
+Form submission should send details to admin@photodaterescue.com
+ only.
+
+Optional (Not for v1, but allow future extension)
+
+Ability to later display approved partner logos at the bottom of the page (enterprise trust signal).
+
+Ability to add a private “Affiliate Resources” section later.
+
+Linking Requirement
+
+Update the existing “Enquire about affiliate & partner options” button to route to this new page.
+
+URL suggestion:
+/partners or /affiliates-partners
