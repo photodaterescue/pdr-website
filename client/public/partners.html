@@ -247,18 +247,25 @@
         line-height: 1.6;
       }
 
-      .error-message {
+      .inline-message {
         display: none;
-        background: #fef2f2;
-        border: 1px solid #fecaca;
         border-radius: 8px;
         padding: 1rem;
         margin-bottom: 1rem;
-        color: #991b1b;
         font-size: 0.95rem;
       }
-      .error-message.show {
+      .inline-message.show {
         display: block;
+      }
+      .error-message {
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #991b1b;
+      }
+      .success-message-inline {
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        color: #166534;
       }
     </style>
   </head>
@@ -308,8 +315,6 @@
         <div class="form-section" id="affiliate-form-section">
           <h3>Affiliate Application</h3>
           <p class="form-intro">Tell us about yourself and how you plan to promote Photo Date Rescue.</p>
-          
-          <div class="error-message" id="affiliate-error"></div>
           
           <form id="affiliate-form" data-testid="form-affiliate">
             <input type="hidden" name="form_type" value="affiliate" />
@@ -414,6 +419,9 @@
               Applications are manually reviewed. Placement is selective and acceptance is not guaranteed. PDR reserves the right to remove listings or partnerships at any time.
             </div>
             
+            <div class="inline-message error-message" id="affiliate-error"></div>
+            <div class="inline-message success-message-inline" id="affiliate-success">Thanks — your application has been received and will be reviewed.</div>
+            
             <button type="submit" class="submit-btn" id="affiliate-submit" data-testid="button-submit-affiliate">
               Submit Affiliate Application
             </button>
@@ -423,8 +431,6 @@
         <div class="form-section" id="partner-form-section">
           <h3>Partner Enquiry</h3>
           <p class="form-intro">Tell us about your product or service and how it complements Photo Date Rescue.</p>
-          
-          <div class="error-message" id="partner-error"></div>
           
           <form id="partner-form" data-testid="form-partner">
             <input type="hidden" name="form_type" value="partner" />
@@ -527,17 +533,14 @@
               Applications are manually reviewed. Placement is selective and acceptance is not guaranteed. PDR reserves the right to remove listings or partnerships at any time.
             </div>
             
+            <div class="inline-message error-message" id="partner-error"></div>
+            <div class="inline-message success-message-inline" id="partner-success">Thanks — your application has been received and will be reviewed.</div>
+            
             <button type="submit" class="submit-btn" id="partner-submit" data-testid="button-submit-partner">
               Submit Partner Enquiry
             </button>
           </form>
         </div>
-      </div>
-
-      <div class="success-message" id="success-message">
-        <div class="icon">✅</div>
-        <h3>Thanks — your application has been received and will be reviewed.</h3>
-        <p></p>
       </div>
     </div>
 
@@ -549,8 +552,6 @@
         const partnerSection = document.getElementById('partner-form-section');
         const affiliateForm = document.getElementById('affiliate-form');
         const partnerForm = document.getElementById('partner-form');
-        const mainContent = document.getElementById('main-content');
-        const successMessage = document.getElementById('success-message');
         const affiliateProgramYes = document.getElementById('affiliate-program-yes');
         const affiliateProgramNo = document.getElementById('affiliate-program-no');
         const affiliateProgramDetails = document.getElementById('affiliate-program-details');
@@ -611,7 +612,7 @@
           }
         });
 
-        async function submitForm(form, errorEl, submitBtn) {
+        async function submitForm(form, errorEl, successEl, submitBtn) {
           const formData = new FormData(form);
           const data = {};
           formData.forEach((value, key) => {
@@ -621,6 +622,7 @@
           submitBtn.disabled = true;
           submitBtn.textContent = 'Submitting...';
           errorEl.classList.remove('show');
+          successEl.classList.remove('show');
 
           try {
             const response = await fetch('https://webapp.photodaterescue.com/api/partners', {
@@ -634,8 +636,8 @@
               throw new Error(result.error || 'Submission failed. Please try again.');
             }
 
-            mainContent.style.display = 'none';
-            successMessage.classList.add('show');
+            successEl.classList.add('show');
+            submitBtn.style.display = 'none';
           } catch (error) {
             errorEl.textContent = error.message;
             errorEl.classList.add('show');
@@ -646,12 +648,12 @@
 
         affiliateForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          submitForm(affiliateForm, document.getElementById('affiliate-error'), document.getElementById('affiliate-submit'));
+          submitForm(affiliateForm, document.getElementById('affiliate-error'), document.getElementById('affiliate-success'), document.getElementById('affiliate-submit'));
         });
 
         partnerForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          submitForm(partnerForm, document.getElementById('partner-error'), document.getElementById('partner-submit'));
+          submitForm(partnerForm, document.getElementById('partner-error'), document.getElementById('partner-success'), document.getElementById('partner-submit'));
         });
       })();
     </script>
