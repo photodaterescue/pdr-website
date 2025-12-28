@@ -253,9 +253,14 @@
         padding: 1rem;
         margin-bottom: 1rem;
         font-size: 0.95rem;
+        line-height: 1.6;
       }
       .inline-message.show {
         display: block;
+      }
+      .inline-message strong {
+        display: block;
+        margin-bottom: 0.5rem;
       }
       .error-message {
         background: #fef2f2;
@@ -266,6 +271,10 @@
         background: #f0fdf4;
         border: 1px solid #bbf7d0;
         color: #166534;
+      }
+      .form-faded .form-group {
+        opacity: 0.5;
+        pointer-events: none;
       }
     </style>
   </head>
@@ -420,7 +429,11 @@
             </div>
             
             <div class="inline-message error-message" id="affiliate-error"></div>
-            <div class="inline-message success-message-inline" id="affiliate-success">Thanks — your application has been received and will be reviewed.</div>
+            <div class="inline-message success-message-inline" id="affiliate-success">
+              <strong>Application received</strong><br>
+              Thanks — your application has been sent successfully and is now under review.<br>
+              If it's a good fit, we'll be in touch by email.
+            </div>
             
             <button type="submit" class="submit-btn" id="affiliate-submit" data-testid="button-submit-affiliate">
               Submit Affiliate Application
@@ -624,6 +637,10 @@
           errorEl.classList.remove('show');
           successEl.classList.remove('show');
 
+          const errorMessage = form.id === 'affiliate-form' 
+            ? '<strong>We couldn\'t submit your application</strong>This isn\'t something you did — the submission didn\'t reach our server.<br>If the issue continues, please use the Support section of the website.'
+            : 'Submission failed. Please try again.';
+
           try {
             const response = await fetch('https://webapp.photodaterescue.com/api/partners', {
               method: 'POST',
@@ -633,13 +650,14 @@
 
             if (!response.ok) {
               const result = await response.json();
-              throw new Error(result.error || 'Submission failed. Please try again.');
+              throw new Error(result.error || errorMessage);
             }
 
             successEl.classList.add('show');
             submitBtn.style.display = 'none';
+            form.classList.add('form-faded');
           } catch (error) {
-            errorEl.textContent = error.message;
+            errorEl.innerHTML = errorMessage;
             errorEl.classList.add('show');
             submitBtn.disabled = false;
             submitBtn.textContent = form.id === 'affiliate-form' ? 'Submit Affiliate Application' : 'Submit Partner Enquiry';
