@@ -196,26 +196,28 @@
       }
 
       .submit-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        padding: 0.9rem 2rem;
+        width: 100%;
+        padding: 0.875rem 1.5rem;
         font-size: 1rem;
-        font-weight: 500;
+        font-weight: 600;
+        color: #fff;
+        background: var(--lavender-accent);
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
         cursor: pointer;
-        background: var(--lavender-deep);
-        color: white;
-        transition: background 0.15s ease, transform 0.1s ease;
+        transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
       }
       .submit-btn:hover {
-        background: var(--lavender-mid);
+        background: var(--lavender-deep);
+        box-shadow: 0 4px 12px rgba(169, 156, 255, 0.3);
+      }
+      .submit-btn:active {
+        transform: scale(0.98);
       }
       .submit-btn:disabled {
-        opacity: 0.6;
+        background: var(--text-soft);
         cursor: not-allowed;
+        box-shadow: none;
       }
 
       .success-message {
@@ -534,8 +536,8 @@
 
       <div class="success-message" id="success-message">
         <div class="icon">✅</div>
-        <h3>Thanks — we've received your application.</h3>
-        <p>If it's a good fit, we'll be in touch.</p>
+        <h3>Thanks — your application has been received and will be reviewed.</h3>
+        <p></p>
       </div>
     </div>
 
