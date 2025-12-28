@@ -639,6 +639,15 @@
 
           const isAffiliate = form.id === 'affiliate-form';
           const endpoint = isAffiliate ? 'https://webapp.photodaterescue.com/api/affiliate' : 'https://webapp.photodaterescue.com/api/partner';
+          
+          // Compose message field from form data (required by backend)
+          const messageLines = Object.entries(data)
+            .filter(([key]) => !['form_type', 'timestamp', 'page_referrer'].includes(key))
+            .map(([key, value]) => `${key.replace(/_/g, ' ')}: ${value || 'Not provided'}`)
+            .join('\n');
+          data.message = isAffiliate 
+            ? `Affiliate Application\n\n${messageLines}`
+            : `Partner Enquiry\n\n${messageLines}`;
           const errorMessage = isAffiliate 
             ? '<strong>We couldn\'t submit your application</strong>This isn\'t something you did — the submission didn\'t reach our server.<br>If the issue continues, please use the Support section of the website.'
             : '<strong>We couldn\'t submit your enquiry</strong>This isn\'t something you did — the submission didn\'t reach our server.<br>If the issue continues, please use the Support section of the website.';
