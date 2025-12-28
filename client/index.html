@@ -625,5 +625,105 @@
     </main>
 
     <script src="/script.js" defer></script>
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Photo Date Rescue",
+      "description": "Photo Date Rescue automatically repairs wrong or missing photo dates from Google Photos, iCloud, WhatsApp, Messenger, OneDrive, SD cards, scans and more.",
+      "url": "https://www.photodaterescue.com/",
+      "applicationCategory": "Photo & Video Utility",
+      "operatingSystem": "Windows, macOS",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free Web Demo",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Try the free web demo with limited features"
+        },
+        {
+          "@type": "Offer",
+          "name": "Monthly Subscription",
+          "price": "16.99",
+          "priceCurrency": "USD",
+          "description": "Full desktop app with monthly billing"
+        },
+        {
+          "@type": "Offer",
+          "name": "Lifetime License",
+          "description": "One-time payment for lifetime access to the desktop app"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will PDR work with all my photos — even the messy ones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. PDR is built for real-world chaos: Google Photos, iCloud, WhatsApp, Messenger, OneDrive, Takeout ZIPs, SD cards, old phones, scanned prints and more."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my dates are completely wrong or missing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PDR uses layered detection and reconstruction. If valid metadata exists, it fixes it. If filenames hold clues, it restores them. If nothing exists, PDR applies consistent fallback logic to rebuild chronological order."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this safe for my personal memories?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Web preview uses temporary processing only and deletes files after download. The desktop app runs entirely on your own computer — your photos never leave your device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this going to take me hours?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. You prepare exports once, then drag folders into PDR and let it do the work. Most libraries process in minutes, not days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will it handle older devices and backups?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Old Androids, early iPhones, digital cameras, WhatsApp backups, Google Takeout dumps, SD cards and scanned albums are all part of the design brief."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does this really cost? Am I locked in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You're never locked in. Start with the free web preview. Choose Monthly or Yearly when you're ready, and unlock Lifetime after your first billing cycle if that suits your long-term plans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why isn't there already an app that does this properly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because the problem is messy, technical, and unglamorous. Most developers avoid it. PDR was built because someone finally cared enough to solve it properly."
+          }
+        }
+      ]
+    }
+    </script>
   </body>
 </html>
