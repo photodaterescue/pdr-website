@@ -638,7 +638,7 @@
           successEl.classList.remove('show');
 
           const isAffiliate = form.id === 'affiliate-form';
-          const endpoint = isAffiliate ? '/api/affiliate' : '/api/partner';
+          const endpoint = isAffiliate ? 'https://webapp.photodaterescue.com/api/affiliate' : 'https://webapp.photodaterescue.com/api/partner';
           const errorMessage = isAffiliate 
             ? '<strong>We couldn\'t submit your application</strong>This isn\'t something you did — the submission didn\'t reach our server.<br>If the issue continues, please use the Support section of the website.'
             : '<strong>We couldn\'t submit your enquiry</strong>This isn\'t something you did — the submission didn\'t reach our server.<br>If the issue continues, please use the Support section of the website.';
