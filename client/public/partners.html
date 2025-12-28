@@ -637,12 +637,14 @@
           errorEl.classList.remove('show');
           successEl.classList.remove('show');
 
-          const errorMessage = form.id === 'affiliate-form' 
+          const isAffiliate = form.id === 'affiliate-form';
+          const endpoint = isAffiliate ? '/api/affiliate' : '/api/partner';
+          const errorMessage = isAffiliate 
             ? '<strong>We couldn\'t submit your application</strong>This isn\'t something you did — the submission didn\'t reach our server.<br>If the issue continues, please use the Support section of the website.'
-            : 'Submission failed. Please try again.';
+            : '<strong>We couldn\'t submit your enquiry</strong>This isn\'t something you did — the submission didn\'t reach our server.<br>If the issue continues, please use the Support section of the website.';
 
           try {
-            const response = await fetch('https://webapp.photodaterescue.com/api/partners', {
+            const response = await fetch(endpoint, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(data)
@@ -660,7 +662,7 @@
             errorEl.innerHTML = errorMessage;
             errorEl.classList.add('show');
             submitBtn.disabled = false;
-            submitBtn.textContent = form.id === 'affiliate-form' ? 'Submit Affiliate Application' : 'Submit Partner Enquiry';
+            submitBtn.textContent = isAffiliate ? 'Submit Affiliate Application' : 'Submit Partner Enquiry';
           }
         }
 
