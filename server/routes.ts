@@ -14,6 +14,16 @@ export async function registerRoutes(
     res.json({ status: "ok", timestamp: new Date().toISOString() });
   });
 
+  // Version check endpoint for desktop app updates
+  app.get("/api/version.json", (_req, res) => {
+    res.json({
+      version: "1.0.1",
+      mandatory: false,
+      downloadUrl: "https://app.lemonsqueezy.com/my-orders",
+      releaseNotes: "Initial release of Photo Date Rescue"
+    });
+  });
+
   // Affiliate Application endpoint
   app.post("/api/affiliate", async (req, res) => {
     try {
