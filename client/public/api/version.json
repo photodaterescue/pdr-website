@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "mandatory": false,
   "downloadUrl": "https://app.lemonsqueezy.com/my-orders",
-  "releaseNotes": "Initial release of Photo Date Rescue"
+  "releaseNotes": "Fixed Google Takeout archives larger than 2 GB, added RAR support for Apple Photos, About PDR panel with version history, performance guidance improvements"
 }
