@@ -316,134 +316,14 @@
 
       <div id="main-content">
         <div class="path-selection" id="path-selection">
-          <button type="button" class="path-card" id="affiliate-path" data-testid="button-affiliate-path">
+          <a href="https://pdr.lemonsqueezy.com/affiliates" target="_blank" rel="noopener noreferrer" class="path-card" id="affiliate-path" data-testid="button-affiliate-path" style="text-decoration: none;">
             <h2><img src="/assets/pdr-affiliates.png" alt="" class="path-icon" /> Become an Affiliate</h2>
-            <p>Earn commission by promoting Photo Date Rescue to your audience.</p>
-          </button>
+            <p>Earn commission by promoting Photo Date Rescue to your audience. Apply directly through our partner portal.</p>
+          </a>
           <button type="button" class="path-card" id="partner-path" data-testid="button-partner-path">
             <h2><img src="/assets/pdr-partners.png" alt="" class="path-icon" /> Partner / Recommend Your Product</h2>
             <p>Have a product or service that complements Photo Date Rescue? Apply to be considered.</p>
           </button>
-        </div>
-
-        <div class="form-section" id="affiliate-form-section">
-          <h3>Affiliate Application</h3>
-          <p class="form-intro">Tell us about yourself and how you plan to promote Photo Date Rescue.</p>
-          
-          <form id="affiliate-form" data-testid="form-affiliate">
-            <input type="hidden" name="form_type" value="affiliate" />
-            <input type="hidden" name="timestamp" id="affiliate-timestamp" />
-            <input type="hidden" name="page_referrer" id="affiliate-referrer" />
-            
-            <div class="form-group">
-              <label for="affiliate-name">Full name *</label>
-              <input type="text" id="affiliate-name" name="name" required data-testid="input-affiliate-name" />
-            </div>
-            
-            <div class="form-group">
-              <label for="affiliate-email">Email address *</label>
-              <input type="email" id="affiliate-email" name="email" required data-testid="input-affiliate-email" />
-            </div>
-            
-            <div class="form-group">
-              <label for="affiliate-url">Website / channel / platform URL *</label>
-              <input type="url" id="affiliate-url" name="platform_url" required placeholder="https://" data-testid="input-affiliate-url" />
-            </div>
-            
-            <div class="form-group">
-              <label>Primary audience type *</label>
-              <div class="radio-group">
-                <label class="radio-option">
-                  <input type="radio" name="audience_type" value="Photography / Archiving" required data-testid="radio-audience-photography" />
-                  <span>Photography / Archiving</span>
-                </label>
-                <label class="radio-option">
-                  <input type="radio" name="audience_type" value="Families / Memories" data-testid="radio-audience-families" />
-                  <span>Families / Memories</span>
-                </label>
-                <label class="radio-option">
-                  <input type="radio" name="audience_type" value="Tech / Utilities" data-testid="radio-audience-tech" />
-                  <span>Tech / Utilities</span>
-                </label>
-                <label class="radio-option">
-                  <input type="radio" name="audience_type" value="Other" id="audience-other" data-testid="radio-audience-other" />
-                  <span>Other</span>
-                </label>
-              </div>
-              <div class="conditional-field" id="audience-other-details">
-                <div class="form-group" style="margin-bottom: 0;">
-                  <label for="audience-other-text">Please describe your audience</label>
-                  <input type="text" id="audience-other-text" name="audience_type_other" placeholder="Describe your audience..." data-testid="input-audience-other-text" />
-                </div>
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label for="affiliate-promotion">How do you plan to promote PDR? *</label>
-              <textarea id="affiliate-promotion" name="promotion_plan" required placeholder="Describe your promotion approach..." data-testid="input-affiliate-promotion"></textarea>
-            </div>
-            
-            <div class="form-group">
-              <label for="affiliate-reach">Approx. monthly reach *</label>
-              <select id="affiliate-reach" name="audience_reach" required data-testid="select-affiliate-reach">
-                <option value="">Select a range</option>
-                <option value="Under 9,999">Under 9,999</option>
-                <option value="10k – 49k">10k – 49k</option>
-                <option value="50k – 124k">50k – 124k</option>
-                <option value="125k – 249k">125k – 249k</option>
-                <option value="250k – 999k">250k – 999k</option>
-                <option value="1M – 5M">1M – 5M</option>
-                <option value="5M+">5M+</option>
-              </select>
-              <p class="hint">Reach helps us tailor commission and placement — quality matters more than size.</p>
-            </div>
-            
-            <div class="form-group">
-              <p class="hint" style="margin-top: 0;">Commission rates vary based on audience reach and promotion method and are agreed after review.</p>
-            </div>
-            
-            <div class="form-group">
-              <label for="affiliate-country">Country *</label>
-              <select id="affiliate-country" name="country" required data-testid="select-affiliate-country">
-                <option value="">Select your country</option>
-                <option value="UK">United Kingdom</option>
-                <option value="US">United States</option>
-                <option value="CA">Canada</option>
-                <option value="AU">Australia</option>
-                <option value="NZ">New Zealand</option>
-                <option value="IE">Ireland</option>
-                <option value="DE">Germany</option>
-                <option value="FR">France</option>
-                <option value="ES">Spain</option>
-                <option value="IT">Italy</option>
-                <option value="NL">Netherlands</option>
-                <option value="SE">Sweden</option>
-                <option value="NO">Norway</option>
-                <option value="DK">Denmark</option>
-                <option value="JP">Japan</option>
-                <option value="SG">Singapore</option>
-                <option value="IN">India</option>
-                <option value="BR">Brazil</option>
-                <option value="ZA">South Africa</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            
-            <div class="disclosure">
-              Applications are manually reviewed. Placement is selective and acceptance is not guaranteed. PDR reserves the right to remove listings or partnerships at any time.
-            </div>
-            
-            <div class="inline-message error-message" id="affiliate-error"></div>
-            <div class="inline-message success-message-inline" id="affiliate-success">
-              <strong>Application received</strong><br>
-              Thanks — your application has been sent successfully and is now under review.<br>
-              If it's a good fit, we'll be in touch by email.
-            </div>
-            
-            <button type="submit" class="submit-btn" id="affiliate-submit" data-testid="button-submit-affiliate">
-              Submit Affiliate Application
-            </button>
-          </form>
         </div>
 
         <div class="form-section" id="partner-form-section">
@@ -564,11 +444,8 @@
 
     <script>
       (function() {
-        const affiliatePath = document.getElementById('affiliate-path');
         const partnerPath = document.getElementById('partner-path');
-        const affiliateSection = document.getElementById('affiliate-form-section');
         const partnerSection = document.getElementById('partner-form-section');
-        const affiliateForm = document.getElementById('affiliate-form');
         const partnerForm = document.getElementById('partner-form');
         const affiliateProgramYes = document.getElementById('affiliate-program-yes');
         const affiliateProgramNo = document.getElementById('affiliate-program-no');
@@ -576,25 +453,14 @@
 
         function setTimestamps() {
           const now = new Date().toISOString();
-          document.getElementById('affiliate-timestamp').value = now;
           document.getElementById('partner-timestamp').value = now;
-          document.getElementById('affiliate-referrer').value = document.referrer || 'direct';
           document.getElementById('partner-referrer').value = document.referrer || 'direct';
         }
         setTimestamps();
 
-        affiliatePath.addEventListener('click', function() {
-          affiliatePath.classList.add('selected');
-          partnerPath.classList.remove('selected');
-          affiliateSection.classList.add('active');
-          partnerSection.classList.remove('active');
-        });
-
         partnerPath.addEventListener('click', function() {
           partnerPath.classList.add('selected');
-          affiliatePath.classList.remove('selected');
           partnerSection.classList.add('active');
-          affiliateSection.classList.remove('active');
         });
 
         affiliateProgramYes.addEventListener('change', function() {
@@ -606,18 +472,6 @@
           if (this.checked) {
             affiliateProgramDetails.classList.remove('show');
           }
-        });
-
-        const audienceRadios = document.querySelectorAll('input[name="audience_type"]');
-        const audienceOtherDetails = document.getElementById('audience-other-details');
-        audienceRadios.forEach(function(radio) {
-          radio.addEventListener('change', function() {
-            if (this.value === 'Other') {
-              audienceOtherDetails.classList.add('show');
-            } else {
-              audienceOtherDetails.classList.remove('show');
-            }
-          });
         });
 
         const partnerRoleSelect = document.getElementById('partner-role');
@@ -642,20 +496,14 @@
           errorEl.classList.remove('show');
           successEl.classList.remove('show');
 
-          const isAffiliate = form.id === 'affiliate-form';
-          const endpoint = isAffiliate ? 'https://webapp.photodaterescue.com/api/affiliate' : 'https://webapp.photodaterescue.com/api/partner';
+          const endpoint = 'https://webapp.photodaterescue.com/api/partner';
           
-          // Compose message field from form data (required by backend)
           const messageLines = Object.entries(data)
             .filter(([key]) => !['form_type', 'timestamp', 'page_referrer'].includes(key))
             .map(([key, value]) => `${key.replace(/_/g, ' ')}: ${value || 'Not provided'}`)
             .join('\n');
-          data.message = isAffiliate 
-            ? `Affiliate Application\n\n${messageLines}`
-            : `Partner Enquiry\n\n${messageLines}`;
-          const errorMessage = isAffiliate 
-            ? '<strong>We couldn\'t submit your application</strong>This isn\'t something you did — the submission didn\'t reach our server.<br>If the issue continues, please use the Support section of the website.'
-            : '<strong>We couldn\'t submit your enquiry</strong>This isn\'t something you did — the submission didn\'t reach our server.<br>If the issue continues, please use the Support section of the website.';
+          data.message = `Partner Enquiry\n\n${messageLines}`;
+          const errorMessage = '<strong>We couldn\'t submit your enquiry</strong>This isn\'t something you did — the submission didn\'t reach our server.<br>If the issue continues, please use the Support section of the website.';
 
           try {
             const response = await fetch(endpoint, {
@@ -676,14 +524,9 @@
             errorEl.innerHTML = errorMessage;
             errorEl.classList.add('show');
             submitBtn.disabled = false;
-            submitBtn.textContent = isAffiliate ? 'Submit Affiliate Application' : 'Submit Partner Enquiry';
+            submitBtn.textContent = 'Submit Partner Enquiry';
           }
         }
-
-        affiliateForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          submitForm(affiliateForm, document.getElementById('affiliate-error'), document.getElementById('affiliate-success'), document.getElementById('affiliate-submit'));
-        });
 
         partnerForm.addEventListener('submit', function(e) {
           e.preventDefault();
