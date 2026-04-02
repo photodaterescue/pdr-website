@@ -295,7 +295,7 @@ export default function Home() {
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 Photo Date Rescue Ltd. All rights reserved.
+            © 2026 Photo Date Rescue Ltd. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
             <Link href="/terms" className="hover:text-foreground transition-colors" data-testid="footer-link-terms">Terms of Service</Link>
