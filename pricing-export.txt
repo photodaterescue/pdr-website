@@ -20,75 +20,79 @@ PRICING HTML
       everything.
     </p>
 
+    <!-- PDR Core -->
+    <div class="pricing-tier-header">
+      <h3 class="pricing-tier-title">PDR Core</h3>
+      <p class="pricing-tier-subtitle">Fix and organise your photo &amp; video library</p>
+    </div>
+
     <div class="pricing-grid">
-      <!-- Free -->
+      <!-- Free / Web Demo -->
       <article class="pricing-card">
         <h3 class="plan-name">Free</h3>
         <p class="plan-price">$0</p>
-        <p class="plan-period">Web preview only</p>
+        <p class="plan-period"><strong>Web Demo Version</strong></p>
         <ul class="plan-features">
-          <li>Fix ZIPs up to 100&nbsp;MB in-browser.</li>
-          <li>Instant preview of corrected dates.</li>
-          <li>Works with Google Takeout / iCloud / WhatsApp exports.</li>
-          <li>No install required.</li>
-          <li>Files processed in temporary storage only, then deleted.</li>
-          <li><strong>ZIP files only</strong> (up to 100&nbsp;MB).</li>
+          <li>Fix photo dates (up to 200&nbsp;MB ZIP)</li>
+          <li>Works with Google Takeout, iCloud, WhatsApp, Messenger</li>
+          <li>Smart duplicate removal</li>
+          <li>Clean timeline renaming (photos only)</li>
+          <li>ZIP upload &amp; instant preview</li>
+          <li>Photos only — videos &amp; documents skipped</li>
         </ul>
+        <p class="plan-footer"><strong>Use on: Web demo</strong></p>
         <a
-          class="btn btn-primary btn-card"
-          href="https://app.photodaterescue.com"
-          target="_blank"
-          rel="noopener"
+          class="btn btn-muted btn-card"
+          href="https://webapp.photodaterescue.com"
         >
           Free web demo
         </a>
       </article>
 
-      <!-- Monthly -->
+      <!-- Core Monthly -->
       <article class="pricing-card">
         <h3 class="plan-name">Monthly</h3>
-        <p class="plan-price">$16.99</p>
-        <p class="plan-period">Full desktop access</p>
+        <p class="plan-price">$19</p>
+        <p class="plan-period"><strong>Desktop Version</strong></p>
         <ul class="plan-features">
-          <li>Fix unlimited ZIPs and folders.</li>
-          <li>Restore EXIF "Date Taken" + XMP timestamps.</li>
-          <li>Repair WhatsApp / Messenger / social downloads.</li>
-          <li>Correct Google Takeout &amp; Apple Photos exports.</li>
-          <li>Fix HEIC / JPG / PNG / MP4 timestamp issues.</li>
-          <li>Smart renaming for clean timelines.</li>
-          <li>Safe processing — originals untouched.</li>
-          <li>Use on up to <strong>3 devices</strong>.</li>
+          <li>Fix dates for photos and videos</li>
+          <li>Restore missing "Date Taken" timestamps</li>
+          <li>Fully repair social media exports (WhatsApp, Messenger, Instagram, Snapchat)</li>
+          <li>Organise unlimited folders, ZIPs, and libraries</li>
+          <li>Smart renaming for complete clean timelines</li>
+          <li>Safe processing — originals untouched</li>
         </ul>
+        <p class="plan-footer"><strong>Use on up to 3 devices</strong></p>
         <a
           class="btn btn-outline btn-card lemonsqueezy-button"
-          href="https://pay.photodaterescue.com/buy/ea41d61a-40b5-4be1-9130-2a0c3ee94ebb?embed=1"
+          href="https://pdr.lemonsqueezy.com/buy/ea41d61a-40b5-4be1-9130-2a0c3ee94ebb?embed=1&enabled=1112455%2C1112460"
         >
           Buy monthly
         </a>
       </article>
 
-      <!-- Yearly -->
+      <!-- Core Yearly -->
       <article class="pricing-card pricing-card--yearly">
-        <div class="plan-badge">Best value</div>
+        <div class="plan-badge">Best Value</div>
         <h3 class="plan-name">Yearly</h3>
-        <p class="plan-price">$99</p>
-        <p class="plan-period">For ongoing, long-term photo care</p>
+        <p class="plan-price">$59</p>
+        <p class="plan-period"><strong>Desktop Version</strong></p>
         <ul class="plan-features">
-          <li>Everything in Monthly.</li>
-          <li>Ideal for large or growing collections.</li>
-          <li>Receive new features as they're released.</li>
-          <li>Supports large folders (10&nbsp;GB–500&nbsp;GB+).</li>
-          <li>Use on up to <strong>3 devices</strong>.</li>
+          <li>Everything in Monthly, plus:</li>
+          <li>Ideal for large or growing libraries</li>
+          <li>Handles big collections (tens of GBs+)</li>
+          <li>Receive new features as they release</li>
         </ul>
+        <p class="plan-footer"><strong>Use on up to 3 devices</strong></p>
         <a
           class="btn btn-outline btn-card lemonsqueezy-button"
-          href="https://pay.photodaterescue.com/buy/c6ede893-fa25-4d63-95cf-17d099dfe3f0?embed=1"
+          href="https://pdr.lemonsqueezy.com/buy/c6ede893-fa25-4d63-95cf-17d099dfe3f0?embed=1&enabled=1112455%2C1112460"
         >
           Buy yearly
         </a>
       </article>
 
-      <!-- Lifetime -->
+      <!-- Core Lifetime -->
       <article class="pricing-card pricing-card--lifetime">
         <div class="ripple-background">
           <div class="ripple-ring ring-1"></div>
@@ -97,23 +101,90 @@ PRICING HTML
           <div class="ripple-ring ring-4"></div>
         </div>
         <h3 class="plan-name">Lifetime</h3>
-        <p class="plan-price">$199</p>
-        <p class="plan-period">One-time payment</p>
+        <p class="plan-price">$119</p>
+        <p class="plan-period"><strong>Desktop Version</strong></p>
         <ul class="plan-features">
-          <li>Everything in Yearly.</li>
-          <li>Permanent access for lifetime of the product.</li>
-          <li>No subscriptions — one payment.</li>
-          <li>Best long-term savings for loyal users.</li>
-          <li>Use on up to <strong>10 devices</strong>.</li>
+          <li>Everything in Yearly, plus:</li>
+          <li>Permanent access — one-time purchase</li>
+          <li>Best long-term savings</li>
         </ul>
-        <p class="lifetime-note">
-          Available only after one successful Monthly or Yearly payment.
-        </p>
+        <p class="plan-footer"><strong>Use on up to 10 devices</strong></p>
+        <a
+          class="btn btn-lifetime btn-card lemonsqueezy-button"
+          href="https://pdr.lemonsqueezy.com/checkout/buy/947cf4a2-1384-4b04-9175-837c539d5bc8?embed=1"
+        >
+          Buy lifetime
+        </a>
+      </article>
+    </div>
+
+    <!-- Pro Divider -->
+    <div class="pricing-pro-divider">
+      <span>Upgrade to Pro</span>
+    </div>
+
+    <!-- PDR Pro -->
+    <div class="pricing-tier-header pricing-tier-header--pro">
+      <h3 class="pricing-tier-title">PDR Pro</h3>
+      <p class="pricing-tier-subtitle">Advanced features for ongoing control</p>
+    </div>
+
+    <div class="pricing-grid pricing-grid--pro">
+      <!-- Pro Monthly -->
+      <article class="pricing-card pricing-card--pro">
+        <span class="plan-coming-soon">Coming soon</span>
+        <h3 class="plan-name">Monthly</h3>
+        <p class="plan-price">$29</p>
+        <p class="plan-period"><strong>Desktop Version</strong></p>
+        <ul class="plan-features">
+          <li>Everything in Core, plus:</li>
+          <li>Advanced Pro features</li>
+          <li>Priority support</li>
+        </ul>
         <button class="btn btn-disabled btn-card" disabled>
-          Unlock after first billing cycle
+          In development
+        </button>
+      </article>
+
+      <!-- Pro Yearly -->
+      <article class="pricing-card pricing-card--pro">
+        <span class="plan-coming-soon">Coming soon</span>
+        <h3 class="plan-name">Yearly</h3>
+        <p class="plan-price">$99</p>
+        <p class="plan-period"><strong>Desktop Version</strong></p>
+        <ul class="plan-features">
+          <li>Everything in Core Yearly, plus:</li>
+          <li>Advanced Pro features</li>
+          <li>Priority support</li>
+        </ul>
+        <button class="btn btn-disabled btn-card" disabled>
+          In development
+        </button>
+      </article>
+
+      <!-- Pro Lifetime -->
+      <article class="pricing-card pricing-card--pro">
+        <span class="plan-coming-soon">Coming soon</span>
+        <h3 class="plan-name">Lifetime</h3>
+        <p class="plan-price">$199</p>
+        <p class="plan-period"><strong>Desktop Version</strong></p>
+        <ul class="plan-features">
+          <li>Everything in Core Lifetime, plus:</li>
+          <li>Permanent access to Pro features</li>
+          <li>One-time purchase</li>
+        </ul>
+        <button class="btn btn-disabled btn-card" disabled>
+          In development
         </button>
       </article>
     </div>
+
+    <p class="pricing-disclaimer">
+      Prices shown exclude local taxes (VAT/GST may apply at checkout).
+    </p>
+    <p class="pricing-intro-note">
+      Introductory pricing — early access offer.
+    </p>
 
     <p class="pricing-footnote">
       Some people fix a single ZIP, export, or Takeout — and never need
@@ -122,7 +193,7 @@ PRICING HTML
       continuously updated, while Lifetime rewards loyal users fairly.
     </p>
     <p class="hero-footnote">
-      Web demo: ZIPs up to 100&nbsp;MB. Desktop app: unlimited folders,
+      Web demo: ZIPs up to 200&nbsp;MB. Desktop app: unlimited folders,
       ZIPs and devices.
     </p>
   </div>
@@ -352,7 +423,91 @@ CSS - PRICING SECTION STYLES
 }
 
 /* ========================================================= */
-/* Yearly Card (with "Best value" badge)                     */
+/* Tier headers (Core / Pro)                                 */
+/* ========================================================= */
+
+.pricing-tier-header {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 4px;
+}
+
+.pricing-tier-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.pricing-tier-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ========================================================= */
+/* Divider between Core and Pro                              */
+/* ========================================================= */
+
+.pricing-pro-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 48px 0 0;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pricing-pro-divider::before,
+.pricing-pro-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+/* ========================================================= */
+/* Pro tier grid                                             */
+/* ========================================================= */
+
+.pricing-grid--pro {
+  opacity: 0.82;
+}
+
+.pricing-card--pro {
+  position: relative;
+  border-color: rgba(140, 123, 255, 0.25);
+  box-shadow: 0 18px 40px rgba(23, 15, 73, 0.06), 0 0 0 1px rgba(140, 123, 255, 0.12);
+}
+
+.pricing-card--pro:hover {
+  border-color: rgba(140, 123, 255, 0.45);
+  box-shadow: 0 18px 40px rgba(23, 15, 73, 0.1), 0 0 0 1px rgba(140, 123, 255, 0.3);
+}
+
+/* "Coming soon" badge on Pro cards */
+
+.plan-coming-soon {
+  display: inline-block;
+  background: var(--lavender-soft);
+  color: var(--lavender-deep);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+  align-self: center;
+  text-align: center;
+}
+
+/* ========================================================= */
+/* Yearly Card (with "Best Value" badge)                     */
 /* ========================================================= */
 
 .pricing-card--yearly {
@@ -441,7 +596,7 @@ CSS - PRICING SECTION STYLES
   width: 65%;
   height: 60%;
   border-color: rgba(248, 193, 92, 0.5);
-  box-shadow: 
+  box-shadow:
     0 8px 24px rgba(248, 193, 92, 0.5),
     inset 0 2px 16px rgba(255, 255, 255, 0.8);
 }
@@ -451,7 +606,7 @@ CSS - PRICING SECTION STYLES
   width: 80%;
   height: 75%;
   border-color: rgba(183, 124, 255, 0.35);
-  box-shadow: 
+  box-shadow:
     0 12px 32px rgba(183, 124, 255, 0.3),
     inset 0 2px 16px rgba(255, 255, 255, 0.6);
 }
@@ -461,7 +616,7 @@ CSS - PRICING SECTION STYLES
   width: 95%;
   height: 90%;
   border-color: rgba(248, 193, 92, 0.3);
-  box-shadow: 
+  box-shadow:
     0 16px 40px rgba(248, 193, 92, 0.2),
     inset 0 2px 24px rgba(255, 255, 255, 0.5);
 }
@@ -471,35 +626,39 @@ CSS - PRICING SECTION STYLES
   width: 110%;
   height: 105%;
   border-color: rgba(183, 124, 255, 0.2);
-  box-shadow: 
+  box-shadow:
     0 20px 48px rgba(183, 124, 255, 0.15),
     inset 0 2px 30px rgba(255, 255, 255, 0.4);
 }
 
-/* Specific button styling for Lifetime Unlock */
-.pricing-card--lifetime .btn-disabled {
-  background: #f8f8fc;
+.plan-footer {
+  margin-top: auto;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
   color: var(--text-main);
-  border: 1px solid var(--lavender);
-  opacity: 0.6;
-  font-weight: 600;
-  box-shadow: none;
-}
-
-.lifetime-note {
-  margin-top: 12px;
-  margin-bottom: 2px;
-  font-size: 0.8rem;
-  color: var(--text-soft);
   text-align: center;
-  font-style: italic;
   position: relative;
   z-index: 5;
 }
 
-/* ========================================================= */
-/* Pricing Footnotes                                         */
-/* ========================================================= */
+/* Tax + intro note */
+
+.pricing-disclaimer {
+  margin-top: 28px;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  text-align: center;
+}
+
+.pricing-intro-note {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--lavender-deep);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Pricing footnote */
 
 .pricing-footnote {
   margin-top: 22px;
@@ -561,21 +720,26 @@ INTEGRATION NOTES
 1. LEMON SQUEEZY MODAL
    The "Buy monthly" and "Buy yearly" buttons use the Lemon Squeezy checkout
    modal. Add this script to your <head>:
-   
+
    <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
-   
+
    The `lemonsqueezy-button` class triggers the modal overlay.
 
-2. FOR REACT APPS
+2. LIFETIME URL
+   The Lifetime card uses a placeholder URL (LIFETIME_URL). Replace with the
+   live LemonSqueezy product URL before publishing.
+
+3. FOR REACT APPS
    Create a PricingSection component and use className instead of class.
    The ripple-background divs create the decorative effect on the Lifetime card.
 
-3. SPACING
+4. SPACING
    The section uses 80px top/bottom padding on desktop, scaling down on mobile.
    Container max-width is 1120px, centered with auto margins.
 
-4. CARD HOVER EFFECTS
-   Cards lift and scale slightly on hover with a lavender border highlight.
+5. CARD HOVER EFFECTS
+   Core cards lift and scale slightly on hover with a lavender border highlight.
+   Pro cards have a subtle purple glow treatment and render at reduced opacity.
 
 
 ================================================================================

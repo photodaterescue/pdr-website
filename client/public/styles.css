@@ -192,6 +192,34 @@ body {
   box-shadow: none;
 }
 
+.btn-muted {
+  background: var(--bg-page);
+  color: var(--text-soft);
+  border-color: var(--border-subtle);
+}
+
+.btn-muted:hover {
+  background: var(--lavender-soft);
+  color: var(--text-muted);
+  border-color: var(--lavender);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-lifetime {
+  background: linear-gradient(135deg, rgba(248, 193, 92, 0.12), rgba(183, 124, 255, 0.08));
+  color: var(--text-main);
+  border-color: rgba(248, 193, 92, 0.55);
+  box-shadow: 0 4px 16px rgba(248, 193, 92, 0.18);
+  font-weight: 600;
+}
+
+.btn-lifetime:hover {
+  background: linear-gradient(135deg, rgba(248, 193, 92, 0.22), rgba(183, 124, 255, 0.14));
+  border-color: rgba(248, 193, 92, 0.8);
+  box-shadow: 0 6px 22px rgba(248, 193, 92, 0.28);
+  transform: translateY(-2px) scale(1.02);
+}
+
 .btn-card {
   width: 100%;
   margin-top: 10px;
@@ -648,16 +676,6 @@ body {
     inset 0 2px 30px rgba(255, 255, 255, 0.4);
 }
 
-/* Specific button styling for Lifetime Unlock */
-.pricing-card--lifetime .btn-disabled {
-  background: #f8f8fc;
-  color: var(--text-main);
-  border: 1px solid var(--lavender);
-  opacity: 0.6;
-  font-weight: 600;
-  box-shadow: none;
-}
-
 .plan-footer {
   margin-top: auto;
   margin-bottom: 8px;
@@ -668,19 +686,99 @@ body {
   z-index: 5;
 }
 
-.lifetime-note {
-  margin-top: 8px;
-  margin-bottom: 2px;
-  font-size: 0.8rem;
-  color: var(--text-main);
+/* Tier headers (Core / Pro) */
+
+.pricing-tier-header {
   text-align: center;
-  font-style: normal;
-  position: relative;
-  z-index: 5;
+  margin-top: 40px;
+  margin-bottom: 4px;
 }
 
-.lifetime-note:first-of-type {
-  margin-top: 12px;
+.pricing-tier-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.pricing-tier-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Divider between Core and Pro */
+
+.pricing-pro-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 48px 0 0;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pricing-pro-divider::before,
+.pricing-pro-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+/* Pro tier grid — subtle elevation */
+
+.pricing-grid--pro {
+  opacity: 0.82;
+}
+
+.pricing-card--pro {
+  position: relative;
+  border-color: rgba(140, 123, 255, 0.25);
+  box-shadow: 0 18px 40px rgba(23, 15, 73, 0.06), 0 0 0 1px rgba(140, 123, 255, 0.12);
+}
+
+.pricing-card--pro:hover {
+  border-color: rgba(140, 123, 255, 0.45);
+  box-shadow: 0 18px 40px rgba(23, 15, 73, 0.1), 0 0 0 1px rgba(140, 123, 255, 0.3);
+}
+
+/* "Coming soon" badge on Pro cards */
+
+.plan-coming-soon {
+  display: inline-block;
+  background: var(--lavender-soft);
+  color: var(--lavender-deep);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
+  align-self: center;
+  text-align: center;
+}
+
+/* Tax + intro note */
+
+.pricing-disclaimer {
+  margin-top: 28px;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  text-align: center;
+}
+
+.pricing-intro-note {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--lavender-deep);
+  text-align: center;
+  font-weight: 500;
 }
 
 /* Pricing footnote */
