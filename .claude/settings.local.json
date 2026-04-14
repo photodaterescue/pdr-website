@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sudo apt-get:*)",
+      "Bash(nix-env:*)",
+      "Bash(git:*)",
+      "Bash(xargs -I {} sh -c 'echo \"=== {} ===\" && head -30 {}')",
+      "Bash(ls -la /home/runner/workspace/client/public/*.png /home/runner/workspace/client/public/*.ico)",
+      "Bash(grep -h \"og:image\\\\|og:title\\\\|og:type\\\\|twitter:image\" /home/runner/workspace/client/public/guides/*.html)"
+    ]
+  }
+}
