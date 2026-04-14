@@ -1,6 +1,6 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "mandatory": false,
   "downloadUrl": "https://app.lemonsqueezy.com/my-orders",
-  "releaseNotes": "Fixed Google Takeout archives larger than 2 GB, added RAR support for Apple Photos, About PDR panel with version history, performance guidance improvements"
+  "releaseNotes": "Fixed disk space detection on Windows 11 25H2+ where wmic is no longer available"
 }

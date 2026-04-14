@@ -17,10 +17,10 @@ export async function registerRoutes(
   // Version check endpoint for desktop app updates
   app.get("/api/version.json", (_req, res) => {
     res.json({
-      version: "1.0.1",
+      version: "1.0.2",
       mandatory: false,
       downloadUrl: "https://app.lemonsqueezy.com/my-orders",
-      releaseNotes: "Initial release of Photo Date Rescue"
+      releaseNotes: "Fixed disk space detection on Windows 11 25H2+ where wmic is no longer available"
     });
   });
 
