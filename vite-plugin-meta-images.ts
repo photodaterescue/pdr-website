@@ -38,16 +38,37 @@ export function metaImagesPlugin(): Plugin {
 
       const imageUrl = `${baseUrl}/opengraph.${imageExt}`;
 
+      // Only rewrite tags whose content is NOT already an absolute https URL
+      // to the canonical production domain — that way explicit author choices
+      // (e.g. /assets/og-pdr-dashboard.png hosted at photodaterescue.com) win.
+      const isCanonicalAbsolute = (content: string): boolean =>
+        /^https:\/\/(www\.)?photodaterescue\.com\//i.test(content);
+
+      const rewriteIfNotCanonical = (
+        pattern: RegExp,
+        attrName: 'property' | 'name',
+        tagName: string,
+      ): void => {
+        html = html.replace(pattern, (match, currentContent: string) => {
+          if (isCanonicalAbsolute(currentContent)) {
+            return match;
+          }
+          return `<meta ${attrName}="${tagName}" content="${imageUrl}" />`;
+        });
+      };
+
       log('[meta-images] updating meta image tags to:', imageUrl);
 
-      html = html.replace(
-        /<meta\s+property="og:image"\s+content="[^"]*"\s*\/>/g,
-        `<meta property="og:image" content="${imageUrl}" />`
+      rewriteIfNotCanonical(
+        /<meta\s+property="og:image"\s+content="([^"]*)"\s*\/>/g,
+        'property',
+        'og:image',
       );
 
-      html = html.replace(
-        /<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/>/g,
-        `<meta name="twitter:image" content="${imageUrl}" />`
+      rewriteIfNotCanonical(
+        /<meta\s+name="twitter:image"\s+content="([^"]*)"\s*\/>/g,
+        'name',
+        'twitter:image',
       );
 
       return html;

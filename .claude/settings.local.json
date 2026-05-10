@@ -7,7 +7,19 @@
       "Bash(xargs -I {} sh -c 'echo \"=== {} ===\" && head -30 {}')",
       "Bash(ls -la /home/runner/workspace/client/public/*.png /home/runner/workspace/client/public/*.ico)",
       "Bash(grep -h \"og:image\\\\|og:title\\\\|og:type\\\\|twitter:image\" /home/runner/workspace/client/public/guides/*.html)",
-      "Bash(grep *)"
+      "Bash(grep *)",
+      "Bash(node -e \"console.log\\(require\\('sharp/package.json'\\).version\\)\")",
+      "Bash(identify *)",
+      "Bash(node *)",
+      "Bash(npm run *)",
+      "Bash(curl -sS -o /dev/null -w \"HTTP %{http_code} | %{size_download} bytes | Content-Type: %{content_type}\\\\n\" http://localhost:5000/)",
+      "Bash(curl -sS -o /dev/null -w \"HTTP %{http_code} | %{size_download} bytes\\\\n\" http://localhost:5000/whats-new.html)",
+      "Bash(curl -sS -o /dev/null -w \"HTTP %{http_code} | %{size_download} bytes\\\\n\" http://localhost:5000/sitemap.xml)",
+      "Bash(curl -sS -o /dev/null -w \"HTTP %{http_code} | %{size_download} bytes\\\\n\" http://localhost:5000/assets/og-pdr-dashboard.png)",
+      "Bash(curl -s http://localhost:5000/)",
+      "Bash(ps -eo pid,ppid,stat,cmd --no-headers)",
+      "Bash(curl -s http://localhost:5000/whats-new.html)",
+      "Bash(curl -s http://localhost:5000/sitemap.xml)"
     ]
   }
 }
