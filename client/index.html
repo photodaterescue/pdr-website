@@ -95,7 +95,34 @@
           </a>
           <a class="btn btn-outline" href="#pricing">Get desktop app</a>
         </div>
+
+        <!-- Hamburger (mobile/tablet only) -->
+        <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
+            <line x1="6" y1="6" x2="18" y2="18"/>
+            <line x1="18" y1="6" x2="6" y2="18"/>
+          </svg>
+        </button>
       </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+        <a class="mobile-nav-link" href="#how-it-works">How it works</a>
+        <a class="mobile-nav-link" href="#pricing">Pricing</a>
+        <a class="mobile-nav-link" href="#guides">Guides</a>
+        <a class="mobile-nav-link" href="#faq">FAQ</a>
+        <a class="mobile-nav-link" href="#partners">Affiliates</a>
+        <a class="mobile-nav-link" href="/support.html">Support</a>
+        <div class="mobile-nav-ctas">
+          <a class="btn btn-primary" href="https://webapp.photodaterescue.com">Try free web demo</a>
+          <a class="btn btn-outline" href="#pricing">Get desktop app</a>
+        </div>
+      </nav>
     </header>
 
     <main id="top">
@@ -149,6 +176,66 @@
           <p class="privacy-banner">
             🔒 100% Private — web preview uses temporary processing only; the
             desktop app runs entirely on your own computer.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- WHAT'S NEW IN V2                                      -->
+      <!-- ===================================================== -->
+      <section class="section section-whats-new">
+        <div class="section-inner">
+          <h2 class="section-title section-title-center">What's new in v2</h2>
+          <p class="section-tagline section-tagline-center">
+            Date repair is the foundation. Here's what's built on top of it.
+          </p>
+
+          <div class="v2-grid">
+            <div class="v2-card">
+              <div class="v2-card-image">
+                <img
+                  src="/assets/pdr-PM_v2.0.4.png"
+                  alt="AI face recognition in Photo Date Rescue"
+                  loading="lazy"
+                />
+              </div>
+              <div class="v2-card-body">
+                <p class="v2-card-label">AI Face Recognition</p>
+                <p class="v2-card-caption">Identify and tag people across your entire library. Runs locally — your photos never leave your device.</p>
+              </div>
+            </div>
+
+            <div class="v2-card">
+              <div class="v2-card-image">
+                <img
+                  src="/assets/pdr-memories_v2.0.4.png"
+                  alt="Automatic Memories collections"
+                  loading="lazy"
+                />
+              </div>
+              <div class="v2-card-body">
+                <p class="v2-card-label">Automatic Memories</p>
+                <p class="v2-card-caption">PDR curates collections by date, event, and people so your library tells the story, not just stores the files.</p>
+              </div>
+            </div>
+
+            <div class="v2-card">
+              <div class="v2-card-image">
+                <img
+                  src="/assets/pdr-S%26D_v2.0.4.png"
+                  alt="Metadata search across your photo library"
+                  loading="lazy"
+                />
+              </div>
+              <div class="v2-card-body">
+                <p class="v2-card-label">Metadata Search</p>
+                <p class="v2-card-caption">Find any photo by date, location, person, or keyword. Your entire library, instantly searchable.</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="v2-strip-cta">
+            <a class="btn btn-primary" href="/whats-new.html">Read the full announcement →</a>
           </p>
         </div>
       </section>
@@ -661,6 +748,38 @@
               </p>
             </article>
 
+            <article class="faq-card">
+              <h3>Can I use PDR on my phone?</h3>
+              <p>
+                No — PDR is a desktop application (currently Windows; macOS
+                planned for late 2026). Photo libraries large enough to warrant
+                a tool like PDR aren't realistic to process on a phone, and
+                running locally on a real machine is what keeps your photos
+                private.
+              </p>
+            </article>
+
+            <article class="faq-card">
+              <h3>Is PDR just a photo date fixer?</h3>
+              <p>
+                Not anymore. PDR is a full premium photo library suite —
+                one-click date repair is one feature among many. You also get
+                AI face &amp; name recognition, metadata search (by date,
+                location, person, or any tag), custom library structures,
+                automatic memory collections, and a Date Editor for
+                fine-grained corrections.
+              </p>
+            </article>
+
+            <article class="faq-card">
+              <h3>Does PDR use AI?</h3>
+              <p>
+                Yes — for face recognition and tagging — but it runs entirely
+                on your computer. Your photos and the AI model never leave your
+                device, no cloud, no account, no training anyone else's model.
+              </p>
+            </article>
+
             <!-- Image Card to fill the grid -->
             <article class="faq-card faq-card-image">
               <img
@@ -892,6 +1011,30 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Photo Date Rescue is currently available for Windows. A MacOS version is planned for late 2026."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use PDR on my phone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No — PDR is a desktop application (currently Windows; macOS planned for late 2026). Photo libraries large enough to warrant a tool like PDR aren't realistic to process on a phone, and running locally on a real machine is what keeps your photos private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is PDR just a photo date fixer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not anymore. PDR is a full premium photo library suite — one-click date repair is one feature among many. You also get AI face & name recognition, metadata search (by date, location, person, or any tag), custom library structures, automatic memory collections, and a Date Editor for fine-grained corrections."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does PDR use AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — for face recognition and tagging — but it runs entirely on your computer. Your photos and the AI model never leave your device, no cloud, no account, no training anyone else's model."
             }
           }
         ]
