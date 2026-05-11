@@ -1409,13 +1409,47 @@ body {
   color: var(--lavender-deep);
 }
 
+/* ========================================================= */
+/* Hamburger button (base — must precede the @media override) */
+/* ========================================================= */
 
-@media (max-width: 768px) {
+.nav-hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--lavender-soft);
+  border: 1px solid var(--lavender-accent);
+  border-radius: 10px;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--lavender-deep);
+  flex-shrink: 0;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.nav-hamburger:hover,
+.nav-hamburger[aria-expanded="true"] {
+  background: var(--lavender);
+  border-color: var(--lavender);
+  color: #ffffff;
+}
+
+.nav-hamburger svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+@media (max-width: 900px) {
   .nav-inner {
     gap: 12px;
   }
 
   .primary-nav {
+    display: none;
+  }
+
+  .nav-cta {
     display: none;
   }
 
@@ -1680,35 +1714,8 @@ main.guide-page-enter {
 }
 
 /* ========================================================= */
-/* Hamburger button & Mobile nav drawer                       */
+/* Mobile nav drawer                                          */
 /* ========================================================= */
-
-.nav-hamburger {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background: var(--lavender-soft);
-  border: 1px solid var(--lavender-accent);
-  border-radius: 10px;
-  padding: 8px;
-  cursor: pointer;
-  color: var(--lavender-deep);
-  flex-shrink: 0;
-  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
-}
-
-.nav-hamburger:hover,
-.nav-hamburger[aria-expanded="true"] {
-  background: var(--lavender);
-  border-color: var(--lavender);
-  color: #ffffff;
-}
-
-.nav-hamburger svg {
-  width: 24px;
-  height: 24px;
-  display: block;
-}
 
 .mobile-nav {
   display: none;
@@ -1749,10 +1756,6 @@ main.guide-page-enter {
 /* ========================================================= */
 
 @media (max-width: 768px) {
-  .nav-cta {
-    display: none;
-  }
-
   .hero-title {
     font-size: 1.8rem;
   }

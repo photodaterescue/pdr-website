@@ -21,7 +21,16 @@
       "Bash(curl -s http://localhost:5000/whats-new.html)",
       "Bash(curl -s http://localhost:5000/sitemap.xml)",
       "WebFetch(domain:photodaterescue.com)",
-      "Bash(curl *)"
+      "Bash(curl *)",
+      "Read(//tmp/**)",
+      "Bash(sed -n '1410,1428p' /tmp/live-styles.css)",
+      "Bash(sed -n '1685,1750p' /tmp/live-styles.css)",
+      "Bash(sed -n '2200,2238p' /tmp/live-styles.css)",
+      "Bash(awk '/@media \\\\\\(max-width: 768px\\\\\\)/{f=1; print NR\": \"$0; next} f{print NR\": \"$0; if\\($0==\"}\"\\){f=0; print \"----\"}}')",
+      "Bash(npm install *)",
+      "Bash(npx puppeteer *)",
+      "Bash(/home/runner/.cache/puppeteer/chrome/linux-127.0.6533.88/chrome-linux64/chrome --version)",
+      "Bash(ldconfig -p)"
     ]
   }
 }
