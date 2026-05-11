@@ -19,7 +19,9 @@
       "Bash(curl -s http://localhost:5000/)",
       "Bash(ps -eo pid,ppid,stat,cmd --no-headers)",
       "Bash(curl -s http://localhost:5000/whats-new.html)",
-      "Bash(curl -s http://localhost:5000/sitemap.xml)"
+      "Bash(curl -s http://localhost:5000/sitemap.xml)",
+      "WebFetch(domain:photodaterescue.com)",
+      "Bash(curl *)"
     ]
   }
 }

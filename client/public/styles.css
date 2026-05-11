@@ -59,12 +59,22 @@ body {
 /* ========================================================= */
 
 .site-header {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 50;
+  -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
-  background: rgba(246, 246, 251, 0.9);
+  background: rgba(246, 246, 251, 0.94);
   border-bottom: 1px solid rgba(214, 210, 246, 0.8);
+}
+
+/* Browsers without backdrop-filter (older Chrome on Android) — make
+   the bar fully opaque so scrolling content can't bleed through. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .site-header {
+    background: rgba(246, 246, 251, 1);
+  }
 }
 
 .nav-inner {
@@ -279,6 +289,14 @@ body {
   text-align: center;
 }
 
+.section-tagline-hint {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+  font-style: italic;
+}
+
 /* ========================================================= */
 /* Hero                                                       */
 /* ========================================================= */
@@ -341,20 +359,64 @@ body {
   gap: 10px;
 }
 
+.hero-rotator {
+  outline: none;
+  border-radius: 8px;
+  /* Generous touch target for horizontal swipe on mobile */
+  padding: 4px 8px;
+  /* Avoid the browser interpreting horizontal swipes as page scroll */
+  touch-action: pan-y;
+}
+
+.hero-rotator:focus-visible {
+  outline: 2px solid #8c7bff;
+  outline-offset: 4px;
+}
+
 .hero-dots {
   display: flex;
-  gap: 4px;
+  gap: 2px;
 }
 
 .hero-dot {
+  /* Visual dot is 6×6, but the button itself is a 22×22 hit target */
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: transparent;
+  padding: 8px;
+  margin: 0;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+}
+
+.hero-dot::before {
+  content: "";
+  display: block;
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: #c9c5e4;
-  transition: background 0.25s;
+  transition: background 0.25s, transform 0.18s;
 }
 
-.hero-dot.active {
+.hero-dot:hover::before {
+  background: #8c7bff;
+  transform: scale(1.25);
+}
+
+.hero-dot:focus-visible {
+  outline: 2px solid #8c7bff;
+  outline-offset: 0;
+}
+
+.hero-dot.active::before {
   background: #6c63ff;
 }
 
@@ -815,25 +877,84 @@ body {
 
 
 .guide-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--bg-surface);
   border-radius: var(--radius-card);
   padding: 18px 18px 20px;
   box-shadow: var(--shadow-card);
-  border: 1px solid #ecebff;
+  border: 1px solid rgba(169, 156, 255, 0.15);
   font-size: 0.9rem;
   color: var(--text-soft);
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s ease;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .guide-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--lavender);
+  transform: translateY(-3px);
+  border-color: rgba(169, 156, 255, 0.4);
+  box-shadow: 0 14px 32px rgba(169, 156, 255, 0.18);
 }
 
 .guide-card h3 {
   margin: 0 0 8px;
   font-size: 1.02rem;
   color: var(--text-main);
+  padding-right: 24px;
+}
+
+.guide-card-corner {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--text-soft);
+  opacity: 0.6;
+  transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.guide-card:hover .guide-card-corner {
+  color: var(--lavender-deep);
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.guide-card-footer {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(169, 156, 255, 0.2);
+}
+
+.guide-card-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--lavender-accent);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--lavender-deep);
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.guide-card-cta-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.guide-card:hover .guide-card-cta-btn {
+  background: var(--lavender-soft);
+  border-color: var(--lavender);
+}
+
+.guide-card:hover .guide-card-cta-arrow {
+  transform: translateX(3px);
 }
 
 .guide-card-image {
@@ -1289,7 +1410,7 @@ body {
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .nav-inner {
     gap: 12px;
   }
@@ -1566,24 +1687,26 @@ main.guide-page-enter {
   display: none;
   align-items: center;
   justify-content: center;
-  background: none;
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  padding: 7px;
+  background: var(--lavender-soft);
+  border: 1px solid var(--lavender-accent);
+  border-radius: 10px;
+  padding: 8px;
   cursor: pointer;
-  color: var(--text-main);
+  color: var(--lavender-deep);
   flex-shrink: 0;
-  transition: background 0.18s ease, border-color 0.18s ease;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
-.nav-hamburger:hover {
-  background: var(--lavender-soft);
+.nav-hamburger:hover,
+.nav-hamburger[aria-expanded="true"] {
+  background: var(--lavender);
   border-color: var(--lavender);
+  color: #ffffff;
 }
 
 .nav-hamburger svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   display: block;
 }
 

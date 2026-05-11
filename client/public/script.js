@@ -4,27 +4,37 @@
 
 const phrases = [
   "Restore real photo dates from Google, Apple, WhatsApp, OneDrive and more.",
-  "Make your chaotic photo library finally make sense again.",
+  "Find any photo in seconds — search by date, place, person, or any metadata.",
   "Undo years of broken timestamps across clouds, phones, and apps.",
-  "Clean, correct dates for every photo you’ve ever backed up or downloaded.",
-  "Fix Google, Apple, WhatsApp, OneDrive and old scans — all in one click.",
-  "Bring order to years of mixed Android + iPhone timelines in seconds.",
+  "Name a person once. PDR finds them in every photo, across every year.",
+  "Repair Takeout exports, WhatsApp dumps, iCloud downloads — all in one click.",
+  "Photos become stories — automatic Memories curated by year, event, and person.",
   "Fix photos spread across multiple Google accounts, exports, and old device backups.",
-  "Repair every bad timestamp created by Takeout exports, app downloads, or file transfers.",
+  "Spin off Holidays, Family, Friends, Pets — any custom library from one Master.",
   "Make decades of photos appear in the right order — everywhere.",
-  "Turn messy folders into a clean, reliable photo history.",
+  "Everything runs on your computer. No cloud, no account, no uploading.",
 ];
 
 let idx = 0;
+const AUTO_MS = 20000;
+const PAUSE_MS = 5000;
+let autoInterval = null;
+let resumeTimeout = null;
+
 const heroEl = document.getElementById("hero-phrase");
 const dotsContainer = document.getElementById("hero-dots");
+const rotatorEl = document.querySelector(".hero-rotator");
 
 function renderDots() {
   if (!dotsContainer) return;
   dotsContainer.innerHTML = "";
   phrases.forEach((_, i) => {
-    const dot = document.createElement("div");
+    const dot = document.createElement("button");
+    dot.type = "button";
     dot.className = "hero-dot" + (i === idx ? " active" : "");
+    dot.setAttribute("aria-label", `Show phrase ${i + 1} of ${phrases.length}`);
+    if (i === idx) dot.setAttribute("aria-current", "true");
+    dot.addEventListener("click", () => goTo(i, true));
     dotsContainer.appendChild(dot);
   });
 }
@@ -39,12 +49,75 @@ function showPhrase() {
   }, 800);
 }
 
-if (heroEl && dotsContainer) {
-  showPhrase();
-  setInterval(() => {
+function startAuto() {
+  if (autoInterval) return;
+  autoInterval = setInterval(() => {
     idx = (idx + 1) % phrases.length;
     showPhrase();
-  }, 20000);
+  }, AUTO_MS);
+}
+
+function stopAuto() {
+  if (autoInterval) {
+    clearInterval(autoInterval);
+    autoInterval = null;
+  }
+}
+
+function pauseThenResume() {
+  stopAuto();
+  if (resumeTimeout) clearTimeout(resumeTimeout);
+  resumeTimeout = setTimeout(() => {
+    resumeTimeout = null;
+    startAuto();
+  }, PAUSE_MS);
+}
+
+function goTo(newIdx, fromUser) {
+  const len = phrases.length;
+  idx = ((newIdx % len) + len) % len;
+  showPhrase();
+  if (fromUser) pauseThenResume();
+}
+
+if (heroEl && dotsContainer) {
+  showPhrase();
+  startAuto();
+}
+
+if (rotatorEl) {
+  rotatorEl.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      goTo(idx - 1, true);
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      goTo(idx + 1, true);
+    }
+  });
+
+  let touchStartX = null;
+  let touchStartY = null;
+  rotatorEl.addEventListener(
+    "touchstart",
+    (e) => {
+      const t = e.touches[0];
+      touchStartX = t.clientX;
+      touchStartY = t.clientY;
+    },
+    { passive: true }
+  );
+  rotatorEl.addEventListener("touchend", (e) => {
+    if (touchStartX == null) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStartX;
+    const dy = t.clientY - touchStartY;
+    touchStartX = null;
+    touchStartY = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      goTo(idx + (dx < 0 ? 1 : -1), true);
+    }
+  });
 }
 
 // ========================================================

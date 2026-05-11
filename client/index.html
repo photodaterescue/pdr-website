@@ -143,11 +143,22 @@
           </p>
 
           <!-- Rotating pain-points (matches web app behaviour) -->
-          <div class="hero-rotator">
-            <p id="hero-phrase" class="hero-phrase"></p>
+          <div
+            class="hero-rotator"
+            tabindex="0"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Rotating product highlights. Use left and right arrow keys, swipe, or the dots below to navigate."
+          >
+            <p id="hero-phrase" class="hero-phrase" aria-live="polite"></p>
 
             <div class="hero-controls">
-              <div id="hero-dots" class="hero-dots"></div>
+              <div
+                id="hero-dots"
+                class="hero-dots"
+                role="tablist"
+                aria-label="Choose phrase"
+              ></div>
             </div>
           </div>
 
@@ -531,6 +542,8 @@
           <p class="section-tagline section-tagline-center">
             Short, practical paths for every kind of chaos — cloud, messaging,
             devices and scans.
+            <br />
+            <span class="section-tagline-hint">Click any card for the full walkthrough.</span>
           </p>
 
           <div class="guide-grid">
@@ -538,8 +551,9 @@
             <a
               href="/guides/cloud-services.html"
               class="guide-card"
-              style="text-decoration: none; color: inherit; display: block"
+              style="text-decoration: none; color: inherit"
             >
+              <span class="guide-card-corner" aria-hidden="true">↗</span>
               <h3>Cloud Services</h3>
               <p>
                 <strong>Google Photos:</strong> export with Takeout, keep JSON
@@ -558,14 +572,21 @@
                 full resolution where possible — PDR fixes whatever timestamps
                 survive.
               </p>
+              <div class="guide-card-footer">
+                <span class="guide-card-cta-btn">
+                  Read the Cloud Services guide
+                  <span class="guide-card-cta-arrow" aria-hidden="true">→</span>
+                </span>
+              </div>
             </a>
 
             <!-- Social Apps -->
             <a
               href="/guides/social-apps.html"
               class="guide-card"
-              style="text-decoration: none; color: inherit; display: block"
+              style="text-decoration: none; color: inherit"
             >
+              <span class="guide-card-corner" aria-hidden="true">↗</span>
               <h3>Social Apps</h3>
               <p>
                 <strong>WhatsApp:</strong> filenames + folder patterns let PDR
@@ -583,14 +604,21 @@
                 Ideal for multi-year chat archives, group albums, and shared
                 family histories.
               </p>
+              <div class="guide-card-footer">
+                <span class="guide-card-cta-btn">
+                  Read the Social Apps guide
+                  <span class="guide-card-cta-arrow" aria-hidden="true">→</span>
+                </span>
+              </div>
             </a>
 
             <!-- Hardware Devices -->
             <a
               href="/guides/hardware-devices.html"
               class="guide-card"
-              style="text-decoration: none; color: inherit; display: block"
+              style="text-decoration: none; color: inherit"
             >
+              <span class="guide-card-corner" aria-hidden="true">↗</span>
               <h3>Hardware Devices</h3>
               <p>
                 <strong>Phones & Cameras:</strong> copy DCIM folders directly;
@@ -605,14 +633,21 @@
                 scattered archives across different machines.
               </p>
               <p>Best for families consolidating long-term device histories.</p>
+              <div class="guide-card-footer">
+                <span class="guide-card-cta-btn">
+                  Read the Hardware guide
+                  <span class="guide-card-cta-arrow" aria-hidden="true">→</span>
+                </span>
+              </div>
             </a>
 
             <!-- Scans & Legacy Media -->
             <a
               href="/guides/scans-legacy-media.html"
               class="guide-card"
-              style="text-decoration: none; color: inherit; display: block"
+              style="text-decoration: none; color: inherit"
             >
+              <span class="guide-card-corner" aria-hidden="true">↗</span>
               <h3>Scans & Legacy Media</h3>
               <p>
                 <strong>Old Prints & Film:</strong> after digitising, PDR helps
@@ -627,14 +662,21 @@
                 modern photos without disrupting your timeline.
               </p>
               <p>Ideal for families digitising decades of albums.</p>
+              <div class="guide-card-footer">
+                <span class="guide-card-cta-btn">
+                  Read the Scans & Legacy Media guide
+                  <span class="guide-card-cta-arrow" aria-hidden="true">→</span>
+                </span>
+              </div>
             </a>
 
             <!-- Tools & Recommendations -->
             <a
               href="/guides/tools-recommendations.html"
               class="guide-card"
-              style="text-decoration: none; color: inherit; display: block"
+              style="text-decoration: none; color: inherit"
             >
+              <span class="guide-card-corner" aria-hidden="true">↗</span>
               <h3>Tools & Recommendations</h3>
               <p>
                 Suggested apps, hardware, and workflows that pair perfectly with
@@ -649,6 +691,12 @@
                 users build and maintain a master library.
               </p>
               <p>Your go-to toolkit for keeping everything tidy long-term.</p>
+              <div class="guide-card-footer">
+                <span class="guide-card-cta-btn">
+                  Read the Tools & Recommendations guide
+                  <span class="guide-card-cta-arrow" aria-hidden="true">→</span>
+                </span>
+              </div>
             </a>
 
             <!-- Picture for 6th grid card -->
